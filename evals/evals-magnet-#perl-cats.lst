@@ -1,0 +1,82 @@
+"0.0"+0 ? 1 : 0
+"0.0" ? 1 : 0
+0.0 ? 1 : 0
+"0e0"+"0e0" ? 1 : 0
+"0e0" ? 1 : 0
+0e0 ? 1 : 0
+0xffff == 0b1111111111111111
+1
+"1"
+1/0
+1.0 == 3.0/2.999999999999999999999999999999999999999999999
+1.0 == 3.0/3.0
+[20+4]
+BEGIN { package v5::Please; $INC{'v5/Please.pm'} = 1; sub import { print q[OK] } }; use v5::Please;
+BEGIN { package v5::Please; $INC{'v5/Please.pm'} = 1; sub import { q[OK] } }; use v5::Please;
+{foo => 1, foo => 2}
+gmtime
+"".gmtime
+gmtime.""
+($inf, $neginf, $nan) = (9**9**9, -9**9**9, -sin(9**9**9))
+($inf, $neginf, $nan) = (9**9**9, -9**9**9, -sin(9**9**9)); $nan
+($inf, $neginf, $nan) = (9**9**9, -9**9**9, -sin(9**9**9)); use List::Util qw/max/; max(1.0, $nan)
+($inf, $neginf, $nan) = (9**9**9, -9**9**9, -sin(9**9**9)); use List::Util qw/max/; max($nan, 1.0)
+length "America/Argentina/Buenos_Aires"
+length qq{{"customer_id":114631,"survey_id":485,"ttl":10}};
+length "\t->alloc called: 12345678 12345678 12345 12345"
+localtime
+localtime . ""
+my $a = [0]; sub foo {my $b = shift; return \$b->[0]}; foo $a
+my $a = [0]; sub foo {my $b = shift; return \$b->[0]}; ${foo $a} = 1; $a
+my @a = qw/a 1 b 2 c 3/; ${@a}->{a};
+my @a = qw/a 1 b 2 c 3/; {@A}->{a}
+my @a = qw/a 1 b 2 c 3/; {+@A}->{a}
+my @a = qw/a 1 b 2 c 3/; ${+@A}{a}
+my @a = qw/a 1 b 2 c 3/; my $h = {@a}; $h
+my @a = qw/a 1 b 2 c 3/; my $h = {@A}; $h
+my $b = []; $a = \$b;  $$a = []; $a = $$a; $a = []; $b
+my($this)=qw(viogel$pviT$vilxsre$xwyN); my(@arr)=split(//,$this);  foreach(reverse(@arr)){ print(chr(ord($_)-(1<<2))); } print "\n";
+"\N{NEL}"
+"\N{PILE OF POO}"
+"\N{SNOWMAN}"
+pi
+print "foo" if (+{});
+print "foo" if (keys %{+{}});
+print q;This is a test;;
+[quotemeta "\n"]
+quotemeta "\n"
+[quotemeta "\n" =~ s/\\\n/\n/gr]
+sprintf "%08b", 015  # dick
+sprintf('0x%x', 0b1111111111111111)
+sprintf "%8b", 015
+sub AUTOLOAD {Dumper(\@_, $AUTOLOAD)}; my $foo = "boo"; __PACKAGE__->$foo
+sub AUTOLOAD {Dumper(\@_, $AUTOLOAD}; my $foo = "boo"; __PACKAGE__->$foo
+sub AUTOLOAD {Dumper(\@_, $AUTOLOAD)}; my $foo = ""; __PACKAGE__->""
+sub AUTOLOAD {Dumper(\@_, $AUTOLOAD)}; my $foo = ""; __PACKAGE__->("foo")
+sub AUTOLOAD {Dumper(\@_, $AUTOLOAD)}; my $foo = ""; __PACKAGE__->$foo
+sub AUTOLOAD {Dumper@_}; my $foo = "boo"; __PACKAGE__->$foo
+sub AUTOLOAD {Dumper@_}; my $foo = ""; __PACKAGE__->$foo
+$^T
+[$^T, time]
+use CGI;
+use experimental 'signature';
+use experimental 'signatures';
+use experimental 'signatures'; sub foo($bar) {print $bar, $bar}; foo("hola hoops ");
+use JSON::MaybeXS; JSON->decode(q/{"foo": undefined, "bar": null}/)
+use JSON::MaybeXS; JSON->new()->decode(q/{"foo": undefined, "bar": null}/)
+use strict; my @foo; my $x = $foo[1];
+use strict; use warnings; my @x; $x['bar'] = 1; [@x]
+use utf8; *";" = {"Hello World"};
+use utf8; my $😫="hi";
+use utf8; print q;This is a test;;
+use utf8; *; = sub {"Hello World"};
+use utf8; sub ; {"Hello World"};
+$^V
+$^V - 10
+"√-\x{0305}1 2³ ∑π and it was really strange"
+"√-\x{0305}1\x{0305} 2³ ∑π and it was really strange"
+"√-\x{035E}1 2³ ∑π and it was really strange"
+"√-\x035E1 2³ ∑π and it was really strange"
+"√-\x{203E}1 2³ ∑π and it was really strange"
+"√\x{2212}\x{0305}1\x{0305} 2³ ∑π and it was really strange"
+"\x85"

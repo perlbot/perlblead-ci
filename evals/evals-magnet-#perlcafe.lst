@@ -1,0 +1,34 @@
+/(?[()-!])/
+[0b1010 & 0b1000]
+[0b11111100000]
+1022/24
+(188982-183984)/1024
+[20+4]
+[5+6]
+BEGIN(){i or$[}
+eval 'BEGIN(){i or$[}'
+eval 'BEGIN(){i or$[}'; [5+6]
+[grep {/Trig/} keys %INC]
+($inf, $neginf, $nan) = (9**9**9, -9**9**9, -sin(9**9**9)); use List::Util qw/max/; max(1.0, $nan)
+($inf, $neginf, $nan) = (9**9**9, -9**9**9, -sin(9**9**9)); use List::Util qw/max/; max($nan, 1.0)
+[map {$_->[1] * 2 ** (32-$_->[0])} ([11, 1], [21, 2], [22, 4], [23, 127], [24, 479])]
+my $line = "This is my line."; $line;
+my $string = 'I<Literature|^hardcover^>'; if ($string ~= /I\<(.+)\|(.+)\>/) { "<i $2>$1</i>"} else { "fail" }
+my $string = 'I<Literature|^hardcover^>'; if ($string =~ /I\<(.+)\|(.+)\>/) { "<i $2>$1</i>"} else { "fail" }
+my $string = 'I<Literature|^hardcover^> Other text'; $string =~ /I\<(.+)\|(.+)\>/<i $2>$1<\/i>/; $string;
+my $string = 'I<Literature|^hardcover^> Other text'; $string =~ /I\<(.+)\|(.+)\>/<i $2\>$1<\/i>/; $string;
+my $x = [{z => \{foo=>1}]; $x;
+my $x = [{z => \{foo=>1}}]; $x;
+my $x = [{z => \{foo=>1}}]; $x->[0]{z}->$*;
+pack('V' . 99999990);
+say "Hello libreman."
+tan(0)
+use experimental 'signatures'; sub rindolf($message) {print "There's a message for you sire: ", $message}; rindolf("HI!");
+use List::Util qw/reduce/; reduce {$a + $b} map {$_->[1] * 2 ** (32-$_->[0])} ([11, 1], [21, 2], [22, 4], [23, 127], [24, 479])
+use List::Utils qw/reduce/; reduce {$a + $b} map {$_->[1] * 2 ** (32-$_->[0])} ([11, 1], [21, 2], [22, 4], [23, 127], [24, 479])
+use POSIX; [POSIX::cot(0)]
+use POSIX; [POSIX::tan(0)]
+use strict; use warnings; my $sub = sub { print "Hello world\n" }; &$sub;
+use strict; use warnings; my $sub = sub { print 'Hello world'; }; $sub;
+$^V;
+$x[()[()]]

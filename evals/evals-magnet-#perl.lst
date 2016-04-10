@@ -1,0 +1,263 @@
+$.
+$$
+0 && 1
+$_ = '02 Maria';  my ( $n, $name ) = split ' '; my %h; push @{ $h{ $n } }, $name; \%h
+[0b00, 0b11, 0b01, 0b10]
+0 && print "foo"
+[1]
+10**20
+1 + 1
+11+16
+12*473
+1995 * .75
+@_=(1); [ defined(1), defined(shift) ]
+1+nan
+@_ = (1); print 'YES' if( shift == undef )
+ 2 * @
+ 2 * 2
+220/8*4/60
+2 ** 3
+(2**32)/92682
+[ 2.5 * 6 ];
+2 == ('a','b')
+2 == @{['a','b']}
+(3/2)*(3/2)*(19/16)*(271/512)
+34/26.81
+473*12*.04
+473*16
+499/80
+6/16
+ $_ = "a[b]"; [ "a[b]" =~ /$_/ ]
+ $_ = "a[b]"; [ "a[b]" =~ /\Q$_\E/ ]
+@ARGV = "hello"; [ shift ]
+a..z
+binmode STDOUT; $_ = "Just another Perl/BIDI Hacker,"; print "\x{202d}$1\x{202e}$3" while s/(.)(.*)(.)/$2/; # does this show up right for everyone?
+binmode STDOUT; 'Perl can be awesome, sometimes,' =~ s,([\x20-\x7f]),chr(ord($1)-0x20+0xff00),gre;
+binmode STDOUT; 'Perl can be awesome, sometimes,' =~ tr[\x20-\x7f][\x{ff00}-\x{ff5f}]r; # tr is better
+binmode STDOUT; 'Unicode can be confusing,' =~ tr[\x20-\x7f][\x{3000}\x{ff01}-\x{ff5f}]r; # tr is better
+binmode \*STDOUT, ':utf8'; print v3232.95.3232
+binmode STDOUT ':utf8'; print v3232.95.3232
+binmode(STDOUT, ':utf8'); print v3232.95.3232
+binmode \*STDOUT, ':utf8'; say v3232.95.3232
+binmode \&STDOUT, ':utf8'; say v3232.95.3232
+binmode STDOUT; v3232.95.3232
+$code
+$code =~ s/[^\$]*\$/\$/r;
+ctime time
+do{...;"abc"} if 0;
+do{...;"abc"} if 1;
+'$equation'
+'example@gmail.com' =~ m/[a-z0-9A-Z-_]+\@[a-z0-9A-Z-_]+\./
+"fmekmftestdwadwad" =~ m/test/i
+"fmekmftestdwadwad" =~ m/tesT/i
+"fmekmftestdwadwad" =~ /tesT/i # "m" is optional with standard / / delimiters
+'fnnny' =~ s/nn(?!n)/tt/r
+'foo'
+'foo&amp;bar' =~ /&amp;/;
+'foo bar' =~ s/(foo) bar/$1 $1/r
+'&foo' =~ /\b&foo/;
+'&foo' =~ /&\bfoo/;
+for $$code (sub { print 'ok' }) { print "[[[$code]]]" }
+$_++ for map $_, qw(hobbs mst)
+for \my @foo (['foo', 'foo'], ['foo', 'bar'], ['bar', 'foo'], ['bar', 'bar']) { my $correct = ($foo[0] ne 'foo' && $foo[1] ne 'foo');  my $x = !($foo[0] eq 'foo' && $foo[1] eq 'foo'); my $y = !($foo[0] eq 'foo' || $foo[1] eq 'foo');  print $correct == $x ? '' : 'x is wrong'; print $correct == $y ? '' : 'y is wrong'; }
+@_ = "hello"; [ shift ]
+%h = (   foo => "bar",  bar => [ "baz" ],  argle => { "blargle" => "blop" } ); print %h
+%h = (   foo => "bar",  bar => [ "baz" ],  argle => { "blargle" => "blop" } ); use Data::Dumper; print Dumper \%h
+%h = (   foo => "bar",  bar => [ "baz" ],  argle => { "blargle" => "blop" } ); use Data::Dumper; print Dumper %h
+if (rand) {{ say 1; next; say 2 }} say 3;
+index "banana", "na", -2
+join('','A'..'Z') =~ s/(.)/chr(ord($1)+1)/ger
+join"",map uc,map$_ eq"i"?"u":$_,("fist"=~/./sg)[2,3,0,1] or "Show Them Fury Unleashed" or St. Thomas Franciscan University or shut the fuck up or subsiste sermonem statim
+$_ = 'Just another Perl hacker,'; undef $_{++$x}, ($h eq %_ or ((${%_}=chop),($h=%_))) while length; @_ = grep m!^\d+/\d+$!, keys %::; print map ${join "/", @$_}, sort { $b->[1] <=> $a->[1] or $b->[0] <=> $a->[0] } map [/\d+/g], @_;
+$_ = 'Just another Perl hacker,'; undef $_{++$x}, ($h eq %_ or ((${%_}=chop),($h=%_))) while length; print map ${join "/", @$_}, sort { $b->[1] <=> $a->[1] or $b->[0] <=> $a->[0] } map [/\d+/g], grep m!^\d+/\d+$!, keys %::;
+$_ = 'Just another Perl hacker,'; undef $_{++$x}, ($h eq %_ or ((${%_}=chop),($h=%_))) while length; print map ${join "/", (unpack 'NN', $_)[1,0]}, reverse sort map {pack 'NN', (/\d+/g)[1,0] } grep m!^\d+/\d+$!, keys %::;
+kill 19, $$
+kill 19, $_ for 1..100000
+kill 19, getppid
+length sprintf "%b", ~0
+`ls`
+[ map prototype("CORE::$_"), qw(sysopen truncate) ]
+$memper = '60.1'; if ( int $memper > 90 ) { print "int($memper) is more than 90"  }
+$memper = 60.1; if ( int $memper > 90 ) { print "int($memper) is more than 90"  }
+my @array = ("1234567890abcdefghij1234567890", "1234567890klmnopqrst1234567890", "1234567890bcdefghijk1234567890");    my @sorted = sort { substr($a, 9, 10) cmp substr($b, 9, 10) } @array;  [ @sorted ] # seems to work for me
+my $a = sub{ shift == undef }; print "YES" if $a->( 1 );
+my $a = sub{ shift == undef }; print "YES" if $a->( 'AF' );
+my $copy; for my $foo (1) { $copy = $foo } [$copy]
+my $foo = 42; my $bar = \$foo; local $$bar = 53;
+my $foo; for  $foo (1) { $copy = $foo } [$foo]
+my $foo; for $foo (1) { ''; } [$foo]
+my @foo; local $foo[0] = 1; \@foo;
+my $foo = "wi(bb)le"; qr/\Q$foo\E/
+my $hack_int = 42; [ !!( $hack_int ^ $hack_int ) ]
+my $hack_int = 42; "$hack_int"; [ !!( $hack_int ^ $hack_int ) ]
+my $hack_str = "42"; [ !!( $hack_str ^ $hack_str ) ]
+my %h = ( A => q(W), a => q(w), B => q(G), b => q(g), y => q(h) ); [join q(), map { $h{$_} } split //, q(Baby)]
+my %h = (a..z)
+my %h = a..z
+my %h = (a..z); ${%h}
+my %h = ('a'..'z'); ${%h}{"how strange"} = "is this, anyway?"; \%{%h};
+my %h = (a..z); ${%h}{"how strange"} = "is this, anyway?"; \%{%h};
+ my $h = {"foo" => 5, "bar" => 6, "baz" => 2}; [ sort { $h->{$a} <=> $h->{$b} } keys %$h ]
+ my $h = {"foo" => 5, "bar" => 6, "baz" => 2}; [ sort keys %$h ]
+my $h = {}; undef( %$h ); warn $h
+my %map = map +( $_ => chr(ord()+1) ), 'A'..'Z', 'a'..'z'; @map{qw/A a Z z/} = qw/Z z A a/; my $encoded = 'Aneehw hr zvdrnld!'; $encoded =~ s#(.)#$map{$1} // $1#ge; $encoded
+my @names=["Bill", "Smith", "John", "Jane"]; [$names[0][0]]
+my @nums = 1..10; [\@nums]
+my @nums = 1..10; [$nums[0]]
+my $s = sub{wantarray?'YES':'NO'}; $z='a'; my( $fh ) =  $s->()  ||  $s->(); print $fh;
+my $s = sub{wantarray?'YES':'NO'}; $z='a'; my( $fh ) =  $z =~/^(\d+)$/  ||  $s->(); print $fh;
+my $str = "asdf"; open(my $fh, "+<", \$str) or die "open: $!"; [ <$fh> ]
+my $str = "foo"; open my $fh, '<', \$str; <$fh>
+my $str = "\x{2603}"; $fh = IO::String->new($str) or die "new: $!"; [ <$fh> ]
+my $str = "\x{2603}"; open(my $fh, "+<", \$str) or die "open: $!"; [ <$fh> ]
+my $test_link = "http://zombo.com/"; my $re = q`(?^:[a-zA-Z][a-zA-Z0-9\+]*):[\;\/\?\\@\&\=\+\$\,\[\]\p{isAlpha}A-Za-z0-9\-_\.\!\~\*\'\(\)%][\|\;\/\?\:\@\&\=\+\$\,\[\]\p{isAlpha}A-Za-z0-9\-_\.\!\~\*\'\(\)%#]*`; $test_link =~ /$re/g && warn 1; $test_link =~ /$re/g && warn 2; 
+my $test = sub { say 'ran it' }; my $foo = \&$test;
+my $test = sub { say 'ran it' }; my $foo = &$test;
+my $t = v3232.95.3232;  [map ord, split //, $t]
+my $t = v3232.95.3232; utf8::decode($t); $t
+my $t = v3232.95.3232; utf8::downgrade($t); [map ord, split // 4t]
+my $t = v3232.95.3232; utf8::downgrade($t); [map ord, split //, $t]
+my $t = v3232.95.3232; utf8::downgrade($t); $t
+my $t = v3232.95.3232;  utf8::encode($t); binmode STDOUT; $t
+my $t = v3232.95.3232;  utf8::encode($t); binmode STDOUT, ":utf8"; $t
+my $t = v3232.95.3232;  utf8::encode($t); [map ord, split //, $t]
+my $t = v3232.95.3232; utf8::encode($t); $t
+my $t = v3232.95.3232; utf::downgrade($t); $t
+my $t = v3232.95.3232; utf::encode($t); $t
+my %unstricthash = ( a => [ qw / 1 2 3 4 /] , b => [ qw/ camel snake  hummingbird hamster/ ]) ; for ( %unstricthash ) {  print  " @{ $_ } "  if (@{ $_ } )  }  ;
+my $w = 'The'; my @r = "The\nend" =~ /$w$end/msg; @r;
+my $w = 'The'; my @r = "The\nend" =~ /$w$end/msg; \@r
+my $w = 'The'; "The\nend" =~ /$w$end/msg;
+my $w = 'The'; ("The\nend" =~ /$w$end/msg);
+my $x = [1..10]; say $x->@[2,4]
+my $x = "lex"; eval 'say $x'
+    $     OMG     =     8_0;    $                 OMG
+package Foo { sub index { ... } index('aaaao', 'o'); }
+package Foo; use strict; use warnings; our $VERSION = 'blah'; package main; say Foo->VERSION
+package loose; sub import { shift; strict->unimport(@_) }; sub unimport { shift; strict->import(@_) }
+[pack 'NI', 12345, 12345]
+perl -e 'warn hey { "wtf" }'
+'Please identify via /msg NickServ identify <password>.' =~ /^(?:If this is your nickname, type|Please identify via|Type) \/msg NickServ identify/
+print $code
+print"F"x!($_%3).b x!($_%5)||$_ for 1..32
+print "hi"
+print "I'm a Perl ", 5 + !!"0", " program."
+print sort { $|-- or -1 } 'ruJt tc,en hoetokarrasS h' =~ /./g
+print v3232.95.3232
+print 'YES'  if( 1 == undef ) 
+({qw/ a 1 b 2/})->{b} # kes
+qw/BuildBot, Tinderbox, Hudson, Jenkins, TeamCity, Bamboo/[rand]
+qw/dial_a_bottle  take_a_cab/[rand 2]
+qw (foo bar);
+qw ́yó
+rindex "banana", "na"
+say $$
+say 0xFFFFFFFFFFFFFFFFF
+say 1 + 1
+say ༡ + ༢
+say ⅓²
+say `ps ax`
+say q’42’;
+say $^V
+scalar ('a','b')
+sprintf "%08b", 0x36
+sprintf '%.18f', .025 + .05
+sprintf '%.18f', .075
+sprintf "%b", 0x36
+sqrt(2)
+sqrt(2)*(2 ** 16)
+*STDOUT{IO}
+$str = '2 floor'; $str =~ s/([0-9]*)\bFlo*r/${1}00/i; say $str
+$str = '2 floor'; $str =~ s/([0-9]*)( +Flo*r)/${1}00$2/i; say $str
+$str = '2 floor'; $str =~ s/([0-9]*) +Flo*r/${1}00/i; say $str
+s TT$ Donald Trump
+sub foo { "bar" }; goto +foo; print "foo"; bar: print "bar"
+sub foo { "bar" }; goto +foo; say "foo"; bar: say "bar"
+sub foo :lvalue { print "foo called"; $tmp }; tie &foo, "main";
+sub foo { my $bar = \@_; $bar->[0] = 'abc'; 'def' }; my $quux = 42; foo($quux); $quux;
+sub foo { my $bar = \@_; local $_[0] = 'abc'; 'def' }; my $quux = 42; foo($quux); $quux;
+sub foo { my $bar = \@_; local $bar->[0] = 'abc'; 'def' }; my $quux = 42; foo($quux); $quux;
+sub foo { my @x = (0,0,0); @x } [ [foo()], scalar foo() ]
+sub hacker'Perl{"Perl @_,"}sub another'Just{"Just @_ "}     Just another Perl hacker, 
+sub o { (!$_[0]) && (!$_[1]) } sub j { !( $_[0] && $_[1] ) }  sub p { !($_[0] || $_[1]) } [ map [o($_->[0], $_->[1]), j($_->[0], $_->[1]), p($_->[0], $_->[1])], [0, 0], [1, 0], [1, 1], [0, 1] ]
+substr("banana", -2) =~ /na/
+sub test { say 'ran it' }; my $test = *test; my $foo = \&$test;
+sub test { say 'ran it' }; my $test = *test; ( \&$test ) -> ();
+sub TIEHANDLE { [] }; sub READLINE { "asdf" }; sub AUTOLOAD { print "In autoload!"; 42 }; tie *FH, 'main'; [ scalar readline FH ];
+system('ls')
+use bigint; my ($k, $c) = ("3", "37"); say ((($k+0)**($c+0))-1);
+use bigint; my ($k, $c) = ("3", "37"); say (($k**$c)-1);
+use bigint; my ($k, $c) = (3, 37); say (($k**$c)-1);
+use bigint; print 11**20;
+use bigint; print 11**2000;
+use DateTime; DateTime->now;
+use DateTime; DateTime->now."";
+use experimental 'postderef'; my $z =[ 1..10]; $z->$#* # or this
+use experimental 'switch'; use warnings; given (1) { when (1) { print "ok"; } }
+use feature 'refaliasing'; my @a = (1, 2, 3); \my (@b) = \(@a); @b[2] = 5; [@a];
+use feature 'refaliasing'; my @a = (1, 2, 3); \my (@b) = \(@a); @b[2] = 5; shift @b; [@a];
+use feature 'refaliasing'; my @a = (1, 2, 3); \my @b = \@a; @b[2] = 5; shift @b; [@a];
+use feature 'refaliasing'; my @a = (1, 2, 3); \my (@b) = \(@a); @b[2] = 5; shift @b; [@b];
+use feature 'refaliasing'; my $zoit = [1 .. 3]; \my $narf = \$zoit; [ $narf ]
+use feature 'refaliasing'; my $zoit = [1 .. 3]; my $narf = \$zoit; say $narf;
+use feature 'refaliasing'; my $zoit = [1 .. 3]; my \$narf = \$zoit; say $narf;
+use integer; my $x; for $x (1 .. 10 ) { say $x; }
+use List::Util qw(reduce); reduce { my $key = join '', sort split '', $b; +{ %$a, $key => [ @{$a->{$key}||[]}, $b ] } } {}, qw(foo oof bar baz bza)
+use List::Utils qw(reduce); reduce { my $key = join '', sort split '', $b; +{ %$a, $key => [ @{$a->{$key}||[]}, $b ] } } {}, qw(foo oof bar baz bza)
+use open qw(:std utf8); say v3232.95.3232
+use overload '&{}' => sub { sub { 42 } }; (bless [])->();
+use overload '&{}' => sub { sub { 42 } }; my $foo = bless []; my $bar = bless [], 'baz'; [ $bar->$foo ]
+use overload '&{}' => sub { sub { 42 } }; my $foo = bless []; my $bar = bless [], 'baz'; no overloading; [ $bar->$foo ]
+use strict; my $foo  = () = 3; say $foo;
+use strict; my( $foo ) = () = 3; say $foo;
+use strict; my $foo = $bar = 3;
+use strict; my $foo = my $bar = 3; say $bar;
+use strict; my $foo = my $bar = 3; say $foo;
+use strict; my $foo  = my( $bar ) = 3; say $foo;
+use strict; my( $foo  ) = my( $bar ) = 3; say $foo;
+use strict; my $w = 'The'; my @r = "The\nend" =~ /$w$(?:)end/msg; \@r
+use strict; my $w = 'The'; my @r = "The\nend" =~ /$w$end/msg; \@r
+use strict; my $z=7; my ( $fh ) =  $z =~/^(\d+)$/  ||  $fh; print $fh;
+use strict; use warnings; my $h = {"foo" => 5, "bar" => 6, "baz" => 2}; print Dumper(@{$h}->{qw/foo bar baz/});
+use strict; use warnings; sub TIEHANDLE { bless [] }; sub READLINE { "asdf" }; sub AUTOLOAD { print "In autoload!"; 42 }; tie *FH, 'main'; [ scalar readline FH ];
+use strict; use warnings; sub TIEHANDLE { [] }; sub READLINE { "asdf" }; sub AUTOLOAD { print "In autoload!"; 42 }; tie *FH, 'main'; [ scalar readline FH ];
+use ut8; sub 您好 { say "您好" }; 您好
+use utf8; ${"☺"} = "❤"; binmode STDOUT; chr 1 + ord ${"☺"}
+use utf8; package テスト; sub new { bless {}, shift} sub モー { say "モー" }; package main; テスト->new->モー
+use utf8; package テスト; sub モー { say "モー" }; package main; テスト->new->モー
+use utf8; qw ́yó
+use utf8; say ༡ + ༢
+use utf8; sub 您好 { say "您好" }; 您好
+use v5.20; say "hi"; state $your_business;
+use warnings; $^I = 42; [ \$^I, 0, eval("\$\t;"), $@ ]
+use warnings; my @foo = 0..10; print "this matches" if "0 but true" ~~ @foo; # thanks, pink_mist++  
+use warnings; my @foo = qw/bar/; print @foo[0] # Perl911 yours will warn I expect
+use warnings; package Foo; sub index { ... }  index('aaaao', 'o');
+use warnings; package Foo; sub index :method { ... }  index('aaaao', 'o');
+use warnings; use experimental 'switch'; given (1) { when (1) { print "ok"; } }
+use warnings; use feature 'switch'; given (1) { when (1) { print "ok"; } }
+use warnings; use strict; my $x; for $x (1 .. 10) { last if $x % 2 == 0; } [ $x ]
+[$^V]
+$^V
+v3232.95.3232
+v3232.95.3232;  # This looks like à ² _ à ² 
+[$^V,$^O, log(~0+1)/log(2)]
+warn hey { "wtf" }
+$_="Whfg nabgure crey unpxre"; tr/A-Za-z/N-ZA-Mn-za-m/;
+$_="Whfg nabgure crey unpxre"; tr/A-Za-z/N-ZA-Mn-za-m/ * 2; 
+$_="Whfg nabgure crey unpxre"; tr/A-Za-z/N-ZA-Mn-za-m/r; 
+$_="Whfg nabgure crey unpxre"; tr/A-Zn-za-m/N-ZA-Ma-z/r;
+write select
+$^X
+"\x{02}" =~ /\s/
+%x = ( 1 => "a", b => 3 ); $str = "ab"; print $x{ $str =~ /(.)$/ }
+"\x7f" =~ /[[:cntrl:]]/ ? "yes" : "no"
+$x = 99; $x =~ s/([0-9])/${1}00/g; say $x
+$x = 99; $x =~ s/([0-9])/${1}00/; say $x
+"\x{a9}\x{263a}\x{2665}"
+[ '+-++-X' =~ /([+\-](?=[+\-]*X))/g ]
+$z=0; ( $fh ) =  $z =~/^(\d+)$/  ||  $fh; print $fh;
+$z=7; ( $fh ) =  $z =~/^(\d+)$/  ||  $fh; print $fh;
+$z='a'; my( $fh ) =  $z =~/^(\d+)$/  ||  sub {wantarray?'YES':'NO'}->(); print $fh;
+$z='a'; my( $fh ) =  $z =~/^(\d+)$/  ||  (wantarray?'YES':'NO'); print $fh;
+"Zoffix" =~ m ☃zof☃i ? 'yes' : 'nope'

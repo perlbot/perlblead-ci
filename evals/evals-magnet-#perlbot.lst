@@ -1,0 +1,1817 @@
+
+- -
+- - ' .'
+- - ' '
+- - '-'
+- - '.'
+- - '"'
+- - '+'
+- - '❧'
+;;;;;;;;;;;;;;;;;;;
+"$^";
+()
+();
+[ :: ]
+[{} . '', {} . '',{} . '', {} . '',{} . '', {} . '',]
+[{} . '', {} . '',{} . '', {} . '',{} . '', {} . '',{} . '', {} . '',{} . '', {} . '',{} . '', {} . '',]
+[{} . '', {} . '',{} . '', {} . '',{} . '', {} . '',{} . '', {} . '',{} . '', {} . '',{} . '', {} . '',\]
+@_
+$^]
+$!
+$]
+\@_
+\%::
+;
+;;;;;;;;;;;;;;;;;;;;
+0^^0
+0**0
+'0.00'+0 ? 'y' : 'n'
+'000202056D4C' =~ s/..\K\B/:/gr
+'000202056D4C' =~ s/..\K/:/gr
+'0.00' ? 'y' : 'n'
+'0.0'? 'y' : 'n'
+0%10
+[ '010' + 0 ]
+ "!(0 || 1 && (0 || 0)) && !(1 && 1)"
+((0.1 + 0.2)
+((0.1 + 0.2))
+[ 0.1 + 0.2, ((0.1 + 0.2) == 0.3) ? 'y' : 'n' ]
+((0.1 + 0.2) == 0.3) ? 'y' : 'n'
+0.1 + 0.2 == 0.3 ? 'y' : 'n'
+0+grep - - chr, 0..255;
+0+grep { length(- - chr) > 1 } 0..255;
+[ '0x010' + 0 ]
+[ 0x7f - 0x20, 0xff5f - 0xff00 ];
+0x80
+0xFFF
+1
+"1"
+$! = 1; "$!"
+[ !1, !0, !0+0]
+[ !1, !0, !1+0]
+10**length q|*******|
+[\1, \1]
+[ 1111111 =~ /^(1+)+$/ ];
+1111111 =~ /^(1{1,10})(1{1,10})(1{1,10})(?{ push @comb, [$1, $2, $3] })(?!)/; \@comb
+1111111 =~ /^(1{1,10})(1{1,10})(1{1,10})(?{ push @comb, [$1, $2, $3] })(?!)/; [map [map length, @$_], @comb]
+1111111 =~ /^(1{1,10})(1{1,10})(1{1,10})$(?{ push @comb, [$1, $2, $3] })(?!)/; [map [map length, @$_], @comb]
+1111111 =~ /^((1+)(?{ local @one = @one, $1 }))+$(?{ push @comb, \@one })(?!)/; \@comb;
+1111111 =~ /^((1+)(?{ local @one = @one, $2 }))+$(?{ push @comb, \@one })(?!)/; \@comb;
+1111111 =~ /^((1+)(?{ local @one = @one, $2 })+$(?{ push @comb, \@one })(?!)/; \@comb;
+[ 1111111 =~ /^(<A>1+)+$/ ];
+[ 1111111 =~ /^(?<A>1+)+$/ ];
+1111111 =~ /^(<A>1+)*$/;
+1111111 =~ /^(<A>1+)*$(?{ print 'yes'; push @comb, [@{$-{A}}] })(?!)/; \@comb;
+1111111 =~ /^(?<A>1+)*$(?{ print 'yes'; push @comb, [@{$-{A}}] })(?!)/; \@comb;
+1111111 =~ /^(?<A>1+)*$(?{ push @comb, [@{$-{A}}] })(?!)/; \@comb;
+1111111 =~ /^(<A>1+)*$(?{ push @comb, [@{$-{A}}] })(?!)/ ? [map [map length, @$_], @comb] : 
+1111111 =~ /^(<A>1+)*$(?{ push @comb, [@{$-{A}}] })(?!)/; [map [map length, @$_], @comb]
+1111111 =~ /^(<A>1+)*$(?{ push @comb, [@{$-{A}}] })(?!)/ ? [map [map length, @$_], @comb] : 'no';
+1+2
+'12' =~ /1\B2/ ? 'match' : 'nope'
+[ '1234567890' =~ /.{0,3}/g ]
+[ '1234567890' =~ /.{1,3}/g ]
+[ '1234567890' =~ /.{,3}/g ]
+/13
+1.5 * 14
+/1\b2/ ? 'match' : 'nope'
+/1\B2/ ? 'match' : 'nope'
+1e1000
+[ 1e205 / 1e192 ]
+1+print 4
+1+print "4"
+$[ = 1;  [ qw/Foo Bar/[1] ]
+'-1' =~ s/(.+)/-$1/er
+++${\1}; say 1
+$! = 2; "$!"
+20%10
+2 << 1
+[ 2 << 1, 2 >> 1 ]
+[ 2 << 1, 4 >> 1 ]
+2 << 2
+220/10*4/60
+220/8*4/60
+*2=2.5; *2+*2
+- - '234567'
+2**40
+255.244
+3%10
+378/462
+[ 3 + asdfadsf->import ]
+(4095 & 0xFF00) >> 8;
+417 * 256
+42
+’42’
+('42 bottles of beer' =~ /(\d+)/)[0]
+\42->can("foo");
+42->can("foo");
+(42 =~ /(\d+)/)[0]
+473*6
+*4 = sub { 'ok' }; main->${ \4 };
+*4 = sub { 'ok' }; main->4;
+*4 = sub { print "yes" }; 4->()
+6%10
+71503 + 46697- 999
+[ 98-110,106-117,118-103]  
+998*999
+999*999
+- - ' A'
+- - 'A'
+*$a = 1;
+@a=(1..5); $a[-20]
+[ 'a 42 b' =~ s/\D+//, 'a 42 b' =~ s/\D+//g ]
+[ 'a 42 b' =~ s/\D+//r, 'a 42 b' =~ s/\D+//gr ]
+$_ = "aa"; /^(.)$1$/
+$_ = "aa"; /^(.)\1$/
+$a = 'a'; my $b = \*a; for $$b (0..5) { print $a }
+\$a = \$b
+/a\Ba/ ? 'match' : 'nope'
+[ \'abc', \'abc' ]
+[ \abc::, \abc:: ]
+[ \('abc' x 2) ]
+[ \(abc:: x 2) ]
+/a\b/ ? 'match' : 'nope'
+/a\b#/ ? 'match' : 'nope'
+$a="foo bar" *$a = 1;
+$a="foo bar"; *$a = 1;
+$a="foo bar"; *$a = sub {"baz"};
+$a="foo bar"; *$a = sub {"baz"}; "foo bar"->()
+/a/ ? 'match' : 'nope'
+'A' =~ s/(A)/lcfirst $1/re
+'A' =~ s/(A)/'lcfirst $1'/ree
+[asdfadsf->can('import')]
+asdfadsf->fooo
+[ asdfadsf->import ]
+asdfadsf->import
+'/asdf//' =~ m{/[^/]*/(?!/)} ? 'y' : 'n'
+[ ('a' x 30) =~ /(.*a){25,}/ ];
+('a' x 30) =~ /([^a]*a){25,}/
+[ ('a' x 30) =~ /([^a]*a){25,}/ ];
+'aXYbXYcXYdeXfYgX' =~ s/.+\KXY.+$//r;
+'aXYbXYcXYdeXfYgX' =~ s/(.+)XY.+$/$1/r;
+'aXYbXYcXYdeXfYgX' =~ s/XY(.(?!=XY))+//r
+'aXYbXYcXYdeXfYgX' =~ s/XY(.(?!=XY))+$//r
+'aXYbXYcXYdeXfYgX' =~ s/XY(.(?!=XY)+)//r
+'aXYbXYcXYdeXfYgX' =~ s/XY(.(?!=XY)+)$//r
+'aXYbXYcXYdeXfYgX' =~ s/XY(.(?!=XY)+)+//r
+'aXYbXYcXYdeXfYgX' =~ s/XY(.(?!XY))+$//r
+[ ('A'..'Z', 0..9)[29] ]
+[(a..z)[24]]
+[ ('a'..'z')[25] ]
+[ ('a'..'z')[26] ]
+[ 'babgbag' =~ /.*?b.*?a.*?g.*?/g ]
+[ 'babgbag' =~ /.*?b.*?a.*?g.*/g ]
+[ 'babgbag' =~ /.*b.*a.*g.*/g ]
+[ () = 'babgbag' =~ /.*?b.*?a.*?g.*?/g ]
+[ () = 'babgbag' =~ /.*b.*a.*g.*/g ]
+- - '+bar'
+- 'bar'
+--'bar'
+-(-'bar')
+'bar' - 'bar'
+BEGIN { *4 = sub () { 'ok' } }; &{ 4 };
+BEGIN { *4 = sub () { 'ok' } }; &{ 4 }();
+BEGIN { $::{ARRAY} = \[qw(one two three)] }; ARRAY
+BEGIN { *consecrate = \&CORE::bless }  [ consecrate  {}, 'Foo' ]
+BEGIN{ $^H = 0 }; use strict; use feature 'state';  for( 1..3) { print ++(state $x) }
+BEGIN{ $^H = 0 }; use strict; use feature 'state';  for( 1..3) { state $x; print ++$x }
+BEGIN { &Internals::SvREADONLY(\1, 0); ++${ \1 } }; say 1
+BEGIN { Internals::SvREADONLY(\1, 0); ++${ \1 } }; say 1
+BEGIN { &Internals::SvREADONLY(\undef, 0); ++${ \undef } }; say undef;
+BEGIN { $SIG{__DIE__} = sub { say "42"; } } '..'
+BEGIN { $SIG{__DIE__} = sub { say "42"; } }  a ab 
+BEGIN { $SIG{__DIE__} = sub { say 42 };  }  a bc
+BEGIN { $SIG{__DIE__} = sub { say 42; };  }  a bc
+BEGIN { $SIG{__DIE__} = sub { say 42; exit  };  }  a bc
+BEGIN { $SIG{__DIE__} = sub { say 42; return 0 };  }  a bc
+BEGIN { $SIG{__DIE__} = sub { say 42; return  };  }  a bc
+BEGIN { $SIG{__DIE__} = sub { say 42; return false };  }  a bc
+"BenGoldberg \N{HEAVY SPARKLE}"
+binmode STDOUT; ($a,$b) = ("\x{202d}", "\x{202e}");
+binmode STDOUT; ($a,$b) = ("\x{202d}", "\x{202e}"); $_ = "Just another BIDI Hacker,\n"; print "$a$1$b$3" while s/(.)(.*)(.)/$2/;
+binmode STDOUT; ($a,$b) = ("\x{202d}", "\x{202e}"); $_ = "Just another BIDI Hacker, "; print "$a$1$b$3" while s/(.)(.*)(.)/$2/;
+binmode STDOUT; ($a,$b) = ("\x{202d}", "\x{202e}"); $_ = "Just another BIDI Hacker"; print "$a$1$b$3" while s/(.)(.*)(.)/$2/;
+binmode STDOUT, 'encoding(utf8)'; my @o = ("\x{202d}", "\x{202e}"); print "$o[--$|]$_" for split //, 'J,ursetk cAanHo tIhDeIrB /Pler'
+binmode STDOUT; $_ = "Just another BIDI Hacker, "; print "\x{202d}$1\x{202e}$3" while s/(.)(.*)(.)/$2/;
+binmode STDOUT; $_ = "Just another Hexchat Hacker,  "; print "\x{202d}$1\x{202e}$3" while s/(.)(.*)(.)/$2/;
+binmode STDOUT; $_ = "Just another Hexchat Hacker, "; print "\x{202d}$1\x{202e}$3" while s/(.)(.*)(.)/$2/;
+binmode STDOUT; $_ = "Just another Hexchat Hacker,"; print "\x{202d}$1\x{202e}$3" while s/(.)(.*)(.)/$2/;
+binmode STDOUT; $_ = "Just another Perl/BIDI Hacker,"; print "\x{202d}$1\x{202e}$3" while s/(.)(.*)(.)/$2/;
+binmode STDOUT; 'Just another Unicode hacker,' =~ tr[\x10-\x7f][\xff00-\xff5f]r;
+binmode STDOUT; 'Just another Unicode hacker,' =~ tr[\x20-\x7f][\x{2000}\x{ff01}-\x{ff5f}]r;
+binmode STDOUT; 'Just another Unicode hacker,' =~ tr[\x20-\x7f][\x{2001}\x{ff01}-\x{ff5f}]r;
+binmode STDOUT; 'Just another Unicode hacker,' =~ tr[\x20-\x7f][\x{2003}\x{ff01}-\x{ff5f}]r;
+binmode STDOUT; 'Just another Unicode hacker,' =~ tr[\x20-\x7f][\x{ff00}-\x{ff5f}]r;
+binmode STDOUT; 'Just another Unicode hacker,' =~ tr[\x20-\x7f][\xff00-\xff5f]r;
+binmode STDOUT; 'Just another Unicode hacker,' =~ tr[\x20-\x7f][ \x{ff01}-\x{ff5f}]r;
+binmode STDOUT; 'Just another Unicode hacker,' =~ tr[\x20-\x7f][\xff10-\xff5f]r;
+binmode STDOUT; 'Just another Unicode hacker,' =~ tr[\x20-\x7f][\xff20-\xff5f]r;
+binmode STDOUT; 'Just another Unicode hacker,' =~ tr[\x20-\x7f][\xff30-\xff5f]r;
+binmode STDOUT; 'Just another Unicode hacker,' =~ tr[\x20-\x7f][\xff40-\xff5f]r;
+binmode STDOUT; 'Just another Unicode hacker,' =~ tr[\x20-\x7f][\xff50-\xff5f]r;
+binmode STDOUT; 'Just another Unicode hacker,' =~ tr[\x30-\x7f][\xff00-\xff5f]r;
+binmode STDOUT; 'Just another Unicode hacker,' =~ tr[\x40-\x7f][\xff00-\xff5f]r;
+binmode STDOUT; my @o = ("\x{202d}", "\x{202e}"); print "$o[--$|]$_" for split //, 'J,ursetk cAanHo tIhDeIrB /Pler'
+binmode STDOUT; print '✙' .. '❉'
+binmode STDOUT; print chr($_) for 0x2719 .. 0x2749;
+binmode STDOUT; print for '✙' .. '❉'
+binmode STDOUT; print "\x{1f4a9}"
+binmode STDOUT; srand 42; my @o = ("\U{202d}", "\U{202e}"); print "$o[--$|]$_" for 'a'..'z', '_';
+binmode STDOUT; srand 42; my @o = ("\U202d", "\U202e"); print "$o[--$|]$_" for 'a'..'z', '_';
+binmode STDOUT; srand 42; my @o = ("\U202d", "\U202e"); print "$o[rand 2]$_" for 'a'..'z', '_';
+binmode STDOUT; srand 42; my @o = ("\U202d", "\U202e"); print "$o[rand 2]$_" for 'A'..'Z', '_';
+binmode STDOUT; srand 42; my @o = ("\x{202d}", "\x{202e}"); print "$o[--$|]$_" for 'a'..'z', '_';
+binmode STDOUT; srand 42; my @o = ("\x{202d}", "\x{202e}"); print "$o[--$|]$_" for 'a'..'z', 0..3;
+binmode STDOUT; srand 42; my @o = ("\x{202d}", "\x{202e}"); print "$o[rand 2]$_" for 'a'..'z', '_';
+binmode STDOUT; srand 42; my @o = ("\x202d", "\x202e"); print "$o[rand 2]$_" for 'a'..'z', '_';
+binmode STDOUT; srand 42; my @o = ("\x{202d}", "\x{202e}"); print "$o[rand 2]$_" for split //, "rJust anekocath ehder oUcin";
+binmode STDOUT; srand 42; my @o = ("\x{202d}", "\x{202e}"); print "$o[rand 2]$_" for split //, "rJust_anekocath_ehder_oUcin";
+binmode STDOUT; srand 42; my @o = ("\x{202d}", "\x{202e}"); print "$o[rand 2]$_" for split //, "rJust__Anekocath_ehder_oUcin";
+binmode STDOUT; srand 42; my @o = ("\x{202d}", "\x{202e}"); print "$o[rand 2]$_" for split //, "rJust_Anekocath_ehder_oUcin";
+binmode STDOUT; srand 42; my @o = ("\x{202d}", "\x{202e}"); print "$o[rand 2]$_" for split //, "rJustA_nekocath_ehder_oUcin";
+binmode STDOUT; srand 42; my @o = ("\x{202d}", "\x{202e}"); print "$o[rand 2]$_" for split //, "rJustAnekocath_ehder_oUcin_";
+binmode STDOUT, 'utf8'; my @o = ("\x{202d}", "\x{202e}"); print "$o[--$|]$_" for split //, 'J,ursetk cAanHo tIhDeIrB /Pler'
+blahblah q|0.000.000_YYMMDDhhmm|
+bless bless(), "Bar"
+bless bless({}, "Foo"), "Bar"
+*::bless = sub { print "foo" }; bless {}, 'Foo';
+*bless = sub { print "foo" }; bless {}, 'Foo';
+$_ = 'CamelCaseXMLParser'; join('_', map {lc} grep {length} split /([A-Z]+[^A-Z]*)/)
+$_ = 'CamelCaseXMLParser'; join '', map { ucfirst lc } split '_', join('_', map {lc} grep {length} split /([A-Z]+[^A-Z]*)/)
+$_ = 'CamelCaseXMLParser'; join('', map { ucfirst lc } split '_', join('_', map {lc} grep {length} split /([A-Z]+[^A-Z]*)/)
+'CamelCaseXMLParser' =~ s/([A-Z]+[^A-Z]*)/\u\L$1/gr;
+""->can("foo");
+$Carp::CarpLevel++; Carp::croak("loaded");
+Carp::croak("loaded")
+$Carp::Internal{"main"}++; Carp::croak("loaded");
+$cat_line = 'Bez*::*Bur'; my $is_deep = (() = $cat_line =~ /\Q*::*\E/g) > 3 ? 1 : 0; [ $is_deep ]
+$cat_line = 'Foo*::*Bar*::*Ber*::*Bez*::*Bur*::*Brooze'; my $is_deep = (() = $cat_line =~ /\Q*::*\E/g) > 1 ? 1 : 0; my @cat_bits = split /\Q*::*\E/, $cat_line; splice @cat_bits, -2; my $unwanted_cat = join '*::*', @cat_bits; [ \@cat_bits, $unwanted_cat  ]
+$cat_line = 'Foo*::*Bar*::*Ber*::*Bez*::*Bur'; my $is_deep = (=() = $cat_line =~ /\Q*::*\E/) > 3 ? 1 : 0; [ $is_deep ]
+$cat_line = 'Foo*::*Bar*::*Ber*::*Bez*::*Bur'; my $is_deep = (() = $cat_line =~ /\Q*::*\E/) > 3 ? 1 : 0; [ $is_deep ]
+$cat_line = 'Foo*::*Bar*::*Ber*::*Bez*::*Bur'; my $is_deep = (() = $cat_line =~ /\Q*::*\E/g) > 1 ? 1 : 0; my @cat_bits = split /\Q*::*\E/, $cat_line; [ \@cat_bits ]
+$cat_line = 'Foo*::*Bar*::*Ber*::*Bez*::*Bur'; my $is_deep = (() = $cat_line =~ /\Q*::*\E/g) > 1 ? 1 : 0; my @cat_bits = split /\Q*::*\E/, $cat_line; $cat_line = join '*::*', splice @cat_bits, 2; [ \@cat_bits, $cat_line ]
+$cat_line = 'Foo*::*Bar*::*Ber*::*Bez*::*Bur'; my $is_deep = (() = $cat_line =~ /\Q*::*\E/g) > 1 ? 1 : 0; my @cat_bits = split /\Q*::*\E/, $cat_line = join '*::*', splice @cat_bits, 2; [ \@cat_bits, $cat_line ]
+$cat_line = 'Foo*::*Bar*::*Ber*::*Bez*::*Bur'; my $is_deep = (() = $cat_line =~ /\Q*::*\E/g) > 1 ? 1 : 0; my @cat_bits = split /\Q*::*\E/, $cat_line = join '*::*', splice @cat_bits, 3; [ \@cat_bits, $cat_line ]
+$cat_line = 'Foo*::*Bar*::*Ber*::*Bez*::*Bur'; my $is_deep = (() = $cat_line =~ /\Q*::*\E/g) > 1 ? 1 : 0; my @cat_bits = split /\Q*::*\E/, $cat_line; splice @cat_bits, -2; my $unwanted_cat = join '*::*', @cat_bits; [ \@cat_bits, $unwanted_cat  ]
+$cat_line = 'Foo*::*Bar*::*Ber*::*Bez*::*Bur'; my $is_deep = (() = $cat_line =~ /\Q*::*\E/g) > 1 ? 1 : 0; my @cat_bits = split /\Q*::*\E/, $cat_line; splice @cat_bits, 2; my $unwanted_cat = join '*::*', @cat_bits; [ \@cat_bits, $unwanted_cat  ]
+$cat_line = 'Foo*::*Bar*::*Ber*::*Bez*::*Bur'; my $is_deep = (() = $cat_line =~ /\Q*::*\E/g) > 1 ? 1 : 0; my $prefix = splice 0, 3, @{[split /\Q*::*\E/, $cat_line]; [ $prefix ]
+$cat_line = 'Foo*::*Bar*::*Ber*::*Bez*::*Bur'; my $is_deep = (() = $cat_line =~ /\Q*::*\E/g) > 1 ? 1 : 0; my $prefix = splice 0, 3, @{[split /\Q*::*\E/, $cat_line]}; [ $prefix ]
+$cat_line = 'Foo*::*Bar*::*Ber*::*Bez*::*Bur'; my $is_deep = (() = $cat_line =~ /\Q*::*\E/g) > 1 ? 1 : 0; my $prefix = splice 0, 3, split /\Q*::*\E/, $cat_line; [ $prefix ]
+$cat_line = 'Foo*::*Bar*::*Ber*::*Bez*::*Bur'; my $is_deep = (() = $cat_line =~ /\Q*::*\E/g) > 3 ? 1 : 0; [ $is_deep ]
+$cat_line = 'Foo*::*Bar*::*Ber*::*Bez*::*Bur'; my $is_deep = () = $cat_line =~ /\Q*::*\E/g;  [ $is_deep ]
+$cat_line = 'Foo*::*Bar*::*Ber*::*Bez*::*Bur'; my $is_deep = () = $cat_line =~ /\Q*::*\E/;  [ $is_deep ]
+$cat_line = 'Foo*::*Bar*::*Ber*::*Bez*::*Bur'; my $is_deep = () = $cat_line =~ /\Q*::*\E/);  [ $is_deep ]
+$cat_line = '[Foo*::*Bar*::*Ber*::*Bez*::*Bur]'; $wanted_cat = join '*::*', (split /\Q*::*\E/, $cat_line)[-3,-1]; [ $wanted_cat ]
+$cat_line = 'Foo*::*Bar*::*Ber*::*Bez*::*Bur'; $wanted_cat = join '*::*', (split /\Q*::*\E/, $cat_line)[-3,-1]; [ $wanted_cat ]
+$c="{a,v,p,r}"; [grep {$_ !~ /(.)\1/} glob $c.$c]
+$_ = 'C########C_##'; /(#*)C/; [ length $1 ]
+$_ = '########C_##'; /(#+)C/; [ length $1 ]
+$_ = '########C_##'; /C/; [ pos ]
+@charmap = qw/Botje!!!/; @charmap->[qw/Botje/]
+@charmap = qw/Botje/; @charmap->[qw/Botje!/]
+charnames::string_vianame("SNOWMAN")
+charnames::viacode(1234)
+chr 0xd800
+chr 'Χ'
+$_ = '########_##'; /(#*)C/; [ length $1 ]
+$code
+*code = sub { print 'ok' }; say '[', code, ']';
+\&code = sub { print 'ok' }; say '[', code, ']';
+*CORE::bless = sub { print "foo" }
+\*$CORE::bless = sub { print "foo" }
+\*CORE::bless = sub { print "foo" }
+*CORE::bless = sub { print "foo" }; bless
+*CORE::bless = sub { print "foo" }; bless {}, 'Foo';
+*CORE::die = sub { say "42"; } die  
+*CORE::die = sub { say "42"; }; die  
+$CORE::GLOBAL::print = sub { print 42 }; print "foo"
+*CORE::GLOBAL::print = sub { print 42 }; print "foo"
+CORE::GLOBAL{print} = sub { print 42 }; print "foo"
+*CORE::print
+\*CORE::print
+[ ctime ]
+[ ctime time ]
+@d
+$Data::Dumper::Deparse = 1; my $a = sub { say "Hello World" }; my $b = $a; \(sub {say "Goodbye Mars"});
+Data::Dumper::Deparse = 1; my $a = sub { say "Hello World" }; my $b = $a; \(sub {say "Goodbye Mars"});
+$Data::Dumper::Terse = 1; $r = [ 1, 2, 3, { foo => bar }, ]; @a = @$r; $r->[0] = 42; $r->[3]{ber} = 'bez'; [ \@a, $r ]
+$_ = { date_updated => 0 }; $_->{date_updated} = $_->{date_updated} ? strftime "%Y-%m-%d", gmtime $_->{date_updated} : 'N/A'; say $_;
+$_ = { date_updated => 0 }; $_->{date_updated} = $_->{date_updated} ? strftime "%Y-%m-%d", gmtime $_->{date_updated} : 'N/A'; say Dumper $_;
+$_ = { date_updated => 42 }; $_->{date_updated} = $_->{date_updated} ? strftime "%Y-%m-%d", gmtime $_->{date_updated} : 'N/A'; say Dumper $_;
+decode_json
+deparse: sub foo (;$) { say "[@_]"; }; my %h = ( bar => foo(42), meow => 'moo' ); \%h
+deparse: sub foo ($) { say "[@_]"; }; my %h = ( bar => foo(42), meow => 'moo' ); \%h
+deparse: sub foo ($$) { say "[@_]"; }; my %h = ( bar => foo(42), meow => 'moo' ); \%h
+()?(): die 'Denied.';
+do {my $print = \&CORE::GLOBAL::print; *CORE::GLOBAL::print = sub { $print->("wut wut: ", @_)}}; CORE::print "foo"
+do { my @tmp = 1, 2, 3; \@tmp }
+[ $!{EINSUFFICIENT_POO} ]
+$!{EINSUFFICIENT_POO}
+\%ENV
+[ Errno::EBADE ]
+[ Errno::EBADY ]
+[ Errno::EBUSY ]
+[ Errno::EPERM ]
+[ Errno::ETOOMANYREFS ]
+eval "!(0 || 1 && (0 || 0)) && !(1 && 1)"
+[ eval "qw(yes yes),\n#no\nqw(yes yes)" ]
+exec '/bin/cwd'; $!;
+exec '/bin/ls'; $!;
+exec '/usr/bin/ls'; $!;
+$_ = '@f@f@f'; s'@f'$b'gr; 
+$fl = '+++????? random shit any user can send to the bot'; my @mem_list = grep { $_ =~ /^$fl/i} 42;
+$fl = '+++ random shit any user can send to the bot'; my @mem_list = grep { $_ =~ /^$fl/i} keys %$refer;
+$fl = '+++????? random shit any user can send to the bot'; my @mem_list = grep { $_ =~ /^$fl/i} keys %$refer;
+$fl = '+++????? random shit any user can send to the bot'; my @mem_list = grep { $_ =~ /^$fl/i} keys %$refer; 42
+++($foo++)
+++${($foo++)
+* "foo" = 1;
+*'foo' = 1;
+$foo = 1; $bar = *foo; [ $$bar ]
+$foo1 = $foo2 = '4 a 2'; ( $foo1 ) = $foo1 =~ /(\d+)/; $foo2 =~ s/\D+//g; [ $foo1, $foo2 ]
+$foo = 42; $bar = *foo; [ *$bar = sub { 53 } ]
+$foo = 42; $bar = *foo; *$bar = sub { 53 }; $$bar;
+$foo = 42; $bar = *foo; *$bar = sub { 53 }; $bar->();
+'foo   ' ^. '   bar'
++{ foo => bar => 'ber' }
+$foo = 'bar'; $qux = \$foo; for $$qux (1..3) { print $foo }
+$foo = 'bar'; $qux = \*foo; for $$qux (1..3) { print $foo }
+'foo' =~ /(?<foo>foo)/; 'bar' =~ /(ba)/; [ $+{foo} 
+'foo' =~ /(?<foo>foo)/; 'bar' =~ /(ba)/; [ $+{foo} ]
+'foo' =~ /(?<foo>foo)/; 'bar' =~ /(ba)/; $+{foo}
+"foo" =~ /(?<foo>foo)/; "bar" =~ /(ba)/; [ $+{foo} ]
+'foo' =~ /(?<foo>foo)/; $+{foo}
+'foo' =~ /.+/; 'foo' =~ s//bar/r;
+Foo->meta
+'foo\n' =~ /foo$/m ? 'y' : 'n'
+'foo\n' =~ /foo$/ ? 'y' : 'n'
+[ 'foo' =~ s/foo/bar/r, 'foo' =~ tr/o/x/r ]
+* "foo"* = sub {"bar"};
+*"foo" = sub {"bar"};
+*"foo*" = sub {"bar"};
+*"foo*"* = sub {"bar"};
+'foo' =~ /x.+/; 'foo' =~ s//bar/r;
+for ("a".."z", " ") { say ($_ eq " " ? "SPACE" : $_) if (/(c|a)/i && /[^MCI]/i && /[ai]/i && /[^ki\sp]/i) }
+for ("a".."z", " ") { say ($_ eq " " ? "SPACE" : $_) if (/(cat|a-t)/i && /[^MCI]/i && /[ai]/i && /[^ki\sp]/i) }
+for ("a".."z", " ") { say if (/[a-gn-z]/i && /[^a-ru-z]/i && /[a-ks-v]/i && /[^a-di-s]/i) }
+for ("a".."z", " ") { say if (/[a-gn-z]/i && /[d-hj-m]/i && /[^f-km-z]/i && /[^a-di-s]/i) }
+for ("a".."z", " ") { say " " if (/(cat|a-t)/i && /[^MCI]/i && /[ai]/i && /[^ki\sp]/i) }
+for ("a".."z", " ") { say if (/(cat|a-t)/i && /[^MCI]/i && /[ai]/i && /[^ki\sp]/i) }
+for ("a".."z") { say if /[HELP\s]/ }
+for ("a".."z") { say if /[HELP\s]/i }
+for ("a".."z", " ") { say if (/[HELP\s]/i && /[\sCOPE]/i && /[^SEAP]/i) }
+for ("a".."z") { say if (/[HELP\s]/i && /[\sCOPE]/i && /[^SEAP]/i) }
+for ("a".."z", " ") { say "N" if (/[a-gn-z]/i && /[^a-ru-z]/i && /[a-ks-v]/i && /[^a-di-s]/i) }
+for ("a".."z", " ") { say "N" if (/[a-gn-z]/i && /[d-hj-m]/i && /[^f-km-z]/i && /[^a-di-s]/i) }
+for ("a".."z", " ") { say "N" if (/[HELP\s]/i && /[\sCOPE]/i && /[^SEAP]/i) }
+for $$code (sub { print 'ok' }) { $code->() }
+for $$code (sub { print 'ok' }) { code() }
+for *code (sub { print 'ok' }) { code() }
+for \$code (sub { print 'ok' }) { code() }
+for \*code (sub { print 'ok' }) { code() }
+for \&code (sub { print 'ok' }) { code }
+for \&code (sub { print 'ok' }) { code() }
+for \&code (sub { print 'ok' }) { print "[[[$asdf]]]" }
+for $$code (sub { print 'ok' }) { print "[[[$code]]]" }
+for $$code (sub { print 'ok' }) { print $code }
+for $code (sub { print 'ok' }) { print "[[[$code]]]" }
+for \&code (sub { print 'ok' }) { print "[[[$code]]]" }
+for \&code (sub { print 'ok' }) { print code }
+for $$code (sub { print 'ok' }) { print ref $code }
+for $*code (sub { print 'ok' }) { print ref $code }
+for \&code (sub { print 'ok' }) { say '[', code, ']' }
+for \&code (sub { print 'ok' }) { say code }
+for my ("a".."z") { say if /[HELP\s]/ }
+for ( [qw/foo bar/]->@* ) { print}
+for ( [qw/foo bar/]->*@ ) { print}
+for $x (0..1) {for $y (0..1) {say $x ^ $y, " "}}
+@f{qw/sign exponent fraction/} = (unpack "b*",(pack "d", 0.1)) =~ /^(\d)(\d{11,11})(\d+)$/; \%f
+@f{qw/sign exponent fraction/} = unpack "b*",(pack "d", 0.1) =~ /^(\d)(\d{11,11})(\d+)$/; \%f
+ 'get http://ignorantdesigner.com/japh.html' =~ y ☻ a-z:/ ☻ n-za-m|☻r 
+ 'get http://ignorantdesigner.com/japh.html' =~ y • a-z:/ • n-za-m ☻•r 
+ 'get http://ignorantdesigner.com/japh.html' =~ y • a-z:/ • n-za-m •r 
+ 'get http://ignorantdesigner.com/japh.html' =~ y • a-z:/ • n-za-m☃ •r 
+ 'get http://ignorantdesigner.com/japh.html' =~ y☻ a-z:/ ☻ n-za-m|☻r 
+ 'get http://ignorantdesigner.com/japh.html' =~ y☻a-z:/☻n-za-m|☻r 
+ 'get http://ignorantdesigner.com/japh.html' =~ y☻a-z:/☻n-za-m.|☻r 
+ [ 'get http://ignorantdesigner.com/japh.html' =~ y • a-z: • n-za-m •r ]
+ [ 'get http://ignorantdesigner.com/japh.html' =~ y • a-z:/ • n-za-m☃ •r ]
+[ 'get http://ignorantdesigner.com/japh.html' =~ y • a-z: • n-za-m • r ]
+[ 'get http://ignorantdesigner.com/japh.html' =~ y/a-z/n-za-m/r ]
+ 'get http://ignorantdesigner.com/japh.html' =~ y☻a-z:/☻n-za-mX|☻r 
+'.gitattributes' eq '.gitattributes'
+[ glob '{a,b,c}' ]
+[grep {$_ !~ /(.)\1/} glob "{a,v,p,r}{a,v,p,r}"]
+[ grep /cc/i, keys \%INC ]
+[ grep /CC/, keys \%INC ]
+[ grep /cgi/i, keys \%INC ]
+[ grep /file/i, keys \%INC ]
+[grep {/Foo/} keys %INC]
+grep {/Foo/} keys %INC
+[ grep /::$/, keys %:: ]
+[grep !/^_/, keys %main:: ]
+[ grep { length($_) == 1 and $_ ne 0 } map - - chr, 0..255 ]
+[ grep { length(- - $_) == 1 } map chr, 0..255 ]
+[ grep { length(- - chr) == 1 } 0..255 ]
+[ grep { length(- - chr) == 1 } 0..255; ]
+[ grep m|^http://(?!.*avatar)|, qw( http://assets.tumblr.com/images/default_avatar/octahedron_open_48.png http://assets.tumblr.com/images/default_avatar/cube_closed_48.png http://40.media.tumblr.com/b3e62ef833996a4ffb544ed37300807d/tumblr_nlf8czGMpJ1s61cido1_500.jpg http://40.media.tumblr.com/c0e108161497f351e40db139289b3818/tumblr_nldblnzio71s61cido1_500.jpg ) ]
+[ grep m|^http://(?=.*avatar)|, qw( http://default_avatar/octa  http://40.media ) ]
+[ grep m|^http://(?!.*?avatar)|, qw( http://default_avatar/octa  http://40.media ) ]
+[ grep m|^http://(?!.*avatar)|, qw( http://default_avatar/octa  http://40.media ) ]
+grep { $_ ne 0 } map - - chr, 0..255
+$h={a=>1, v=>2}; {av =>{;print 1}, ap=>, ar=>, pv=>, rv=>, pr=>sub{}}
+$h={a=>1, v=>2}; sub calc {my %h=@_;my ($a,$v,$p,$r)=@h{qw/a v p r/};  {av =>sub {$r=$v/$a;$p=$v*$a}, ap=>sub{$v=$p/$a;$r=$v/$a}, ar=>sub{$v=$r*$a;$p=$a*$v}, pv=>sub{$a=$p/$v;$r=$v/$a}, rv=>sub{$a=$v*$r}, pr=>sub{$a=sqrt($p/$r);$v=$p/$a}}};
+$h={a=>1, v=>2}; sub calc {my %h=@_;my ($a,$v,$p,$r)=@h{qw/a v p r/};  {av =>sub {$r=$v/$a;$p=$v*$a}, ap=>sub{$v=$p/$a;$r=$v/$a}, ar=>sub{$v=$r*$a;$p=$a*$v}, pv=>sub{$a=$p/$v;$r=$v/$a}, rv=>sub{$a=$v*$r;$p=$v*$a}, pr=>sub{$a=sqrt($p/$r);$v=$p/$a}}};
+$h={a=>1, v=>2}; sub calc {my %h=@_;my ($a,$v,$p,$r)=@h{qw/a v p r/}; my $c=join '', sort keys %h; {av =>sub {$r=$v/$a;$p=$v*$a}, ap=>sub{$v=$p/$a;$r=$v/$a}, ar=>sub{$v=$r*$a;$p=$a*$v}, pv=>sub{$a=$p/$v;$r=$v/$a}, rv=>sub{$a=$v*$r;$p=$v*$a}, pr=>sub{$a=sqrt($p/$r);$v=$p/$a}}->{$c}->(); [$a, $v, $r, $p]}; calc %$h
+$h={a=>1, v=>2}; sub calc {my %h=@_;my ($a,$v,$p,$r)=@h{qw/a v p r/}; my $c=sort keys %h; {av =>sub {$r=$v/$a;$p=$v*$a}, ap=>sub{$v=$p/$a;$r=$v/$a}, ar=>sub{$v=$r*$a;$p=$a*$v}, pv=>sub{$a=$p/$v;$r=$v/$a}, rv=>sub{$a=$v*$r;$p=$v*$a}, pr=>sub{$a=sqrt($p/$r);$v=$p/$a}}->{$c}->(); [$a, $v, $r, $p]}
+$h={a=>1, v=>2}; sub calc {my %h=@_;my ($a,$v,$p,$r)=@h{qw/a v p r/}; my $c=sort keys %h; {av =>sub {$r=$v/$a;$p=$v*$a}, ap=>sub{$v=$p/$a;$r=$v/$a}, ar=>sub{$v=$r*$a;$p=$a*$v}, pv=>sub{$a=$p/$v;$r=$v/$a}, rv=>sub{$a=$v*$r;$p=$v*$a}, pr=>sub{$a=sqrt($p/$r);$v=$p/$a}}->{$c}->(); [$a, $v, $r, $p]}; calc %$h
+%h = ( -desc => 'created_at' ); 
+%h = ( -desc => 'created_at' ); \%h
+hex 0x255
+hex 0x80
+hex 100
+hex 255
+"hi ".(v0.01)
+"hi ".(v0.1)
+$holyshit < 0
+<- htmleval
+ [ 'http://go2web4free.com:7004/img/users/1/1J2KAFHQk_.jpg' =~ m{[^/]+$}g ]
+ 'http://ignorantdesigner.com/japh.html' =~ y☻a-z:/☻n-za-m|☻r 
+ 'http://ignorantdesigner.com/japh.html' =~ y☻a-z:/☻n-za-m.|☻r 
+ 'http://ignorantdesigner.com/japh.html' =~ y☻a-z:/☻n-za-mX|☻r 
+h->{two}();  sub h { +{ one => sub { 1 }, two => sub { 2 } } } 
+h()->{two}();  sub h { +{ one => sub { 1 }, two => sub { 2 } } } 
+huf->can("can")->()
+huf->can("can")->can
+huf->can("can")->("can")->("can")->("can")->("can")->("can")
+huf->can("can")->(huf => "can")
+huf->can("can")->(huf => "can")->(huf => "can")->(huf => "can")->(huf => "can")->(huf => "can")->(huf => "can")->(huf => "can")
+$^I
+if ( '0.00' ) { say "foo" }
+if ( 0.00 ) { say "foo" }
+if (1 ) { last; print "lols"; } print "lulz"
+{ if (1 ) { last; print "lols"; } print "lulz"; } print "lelz"; 
+if('besaid' =~ m/(\w*said)/) {print qq{matched "$1"\n};} 
+if ( $x = "\0" ) { print 1 }
+if ( $x = "x\b" ) { print "_${x}_" }
+if ( $x = "x\b" ) { print "_$x_" }
+Im a little teapot
+\%INC
+[ $INC{'strict.pm'} ]
+inf
++Inf
+\%ISA;
+is [fact htmleval [arg]]  
+[join '']
+join "\035", qw/freenode.net #regex re101/
+$_ = join '', 'a'..'y'; tr<acegikmoqsuwybdfhjlnprtvx><Just another Sort hacker,>; print
+$_ = join '', 'a'..'y'; tr<acegikmoqsuwybdfhjlnprtvx><Just another Sort hacker,>; print "[$_]"
+$_ = join '', 'a'..'y'; tr/cbvokujpfynsewmtdxlrgqiah/Just another Sort hacker,/; print
+[ (join '', 'a'..'y') =~ tr/sdyckamijgqbhtrfwuelnpovx/Just another :8() hacker,/r ]
+[ (join '', 'a'..'y') =~ tr/sdyckamijgqbhtrfwuelnpovx/Just another sort hacker,/ ]
+[ (join '', 'a'..'y') =~ tr/sdyckamijgqbhtrfwuelnpovx/Just another sort hacker,/r ]
+$_ = join '', 'a'..'z', 0..3; tr!acegikmoqsuwy0231zxvtrpnljhfdb!Just Another Perl/BIDI Hacker,!; print
+$_ = join '', 'a'..'z', 0..3; tr/acegikmoqsuwy0231zxvtrpnljhfdb/Just Another Perl/BIDI Hacker,/; print
+$_ = join '', 'a'..'z'; $_ =~ tr/434dfddsaaaaa//d; $_
+$_ = join '', 'a'..'z'; $_ =~ tr/434dfdds//d; $_
+$_ = join('', 'a'..'z','_'); tr/bcdefghknrtuvx_zywsqpomljifa/Just another Unicode hacker/; [ $_  ]
+$_ = join '', 'a'..'z'; $_ =~ tr/JwG7IpBbAFr4tyoVbbECZ26HYml 5QdDjLicbhUTdvWIzsnOuRTfE9ahgam2EkDqgVSXpUNGCPID KW exU7M//d; $_
+[ join "", map +{}, 1..10 ]
+join('_', map {lc} grep {length} split /([A-Z]{1}[^A-Z]*)/)
+[ join '', map { pack "c", $_ } 72,101,108,108,111,32,87,111,114,108,100,-30,-104,-125,32]
+[join '|', map ref, \*f, +{}, [], qr//,  \'', sub{}, \substr(\$x, 0, 0), \\"", \*STDOUT{FORMAT}, \*STDIN{IO}, \v5.10.0 ]
+join '', map { ucfirst lc } 'CamelCaseXMLParser' =~ /([A-Z]+[^A-Z]*)/g;
+join '', map { ucfirst lc } split /([A-Z]+[^A-Z]*)/, 'CamelCaseXMLParser';
+join '', map { ucfirst lc } split /([A-Z]+[^A-Z]*)/i, 'CamelCaseXMLParser';
+join '', map {; "\x03".int(rand 16).",".int(rand 16)."X" } 0..20;
+[join '', sort {$|--} a..'y']
+[join '', sort {$|--} split //, "suJta nohterP er lhakcer,"]
+[join '', sort {$|--} split //, "sutJa nohterP er lhakcer,"]
+[join '', sort {$|--} split //, "tuJsa nohterP er lhakcer,"]
+[ join ":", split /../, '000202056D4C' ]
+[ join ":", split /(?<=..)/, '000202056D4C' ]
+[ join ":", split /(?=..)/, '000202056D4C' ]
+[ join ":", split /(..)/, '000202056D4C' ]
+join ":", split /../, '000202056D4C'
+[ join ":", split /(?=\w{2])/, '000202056D4C' ]
+[ join ":", split /(?=\w{2})/, '000202056D4C' ]
+[join '', undef]
+[ JSON() ]
+\@JSON::MaybeXS::EXPORT
+keys( {} ) = 42
+[keys %DB:: ]
+[ keys \%INC ]
+[keys %main:: ]
+'knbZw6mW5RGbCQksNDg64g==' =~ /([\w=]{12,30})/
+length @{[10]}
+length 'barbarbarbarbarbar'
+[ length 'bcdefghknrtuvx_zywsqpomljifa' ]
+length '`eval use JSON::XS;@lt=gmtime;$m=($lt[2]*60+$lt[1])*60+$lt[0];$d=q{`fact _ipv4_json~};$h=decode_json $d;sub  sx{local$_;($t4,$d)=@_;$_=2*int($t4*128-($m*$d/675));1 while s/^(\d+)(\d{3})/$1,$2/;$_};"Estimated IPv4 Addresses left: ".join(" ",(map{(uc $_.":  ".sx($h->{$_."24s"},$h->{$_."24delta"}))." (".$h->{$_."Percent"}."%)"}qw/arin apnic afrinic ripe lacnic/))~'
+length '`eval use JSON::XS;@lt=gmtime;$m=($lt[2]*60+$lt[1])*60+$lt[0];$d=q{`fact _ipv4_json~};$h=decode_json($d);sub  sx{local$_;($t4,$d)=@_;$_=2*int($t4*128-($m*$d/675));1 while s/^(\d+)(\d{3})/$1,$2/;$_};"Estimated IPv4 Addresses left: ".join(" ",(map{(uc $_.":  ".sx($h->{$_."24s"},$h->{$_."24delta"}))." (".$h->{$_."Percent"}."%)"} qw/arin apnic afrinic ripe lacnic/))~'
+length '`eval use JSON::XS;@lt=gmtime;$m=($lt[2]*60+$lt[1])*60+$lt[0]; $d=q{`fact _ipv4_json~};$h=decode_json($d);sub  sx{local$_;($t4,$d)=@_;$_=int($t4*256-($m*$d*2/675));1 while s/^([-+]?\d+)(\d{3})/$1,$2/;$_};"Estimated IPv4 Addresses left: ".join(" ",(map{(uc $_.":  ".sx($h->{$_."24s"}, $h->{$_."24delta"}))." (".$h->{$_."Percent"}."%)"} qw/arin apnic afrinic ripe lacnic/))~
+length '`eval use JSON::XS;@lt=gmtime;$m=($lt[2]*60+$lt[1])*60+$lt[0]; $d=q{`fact _ipv4_json~};$h=decode_json($d);sub  sx{local$_;($t4,$d)=@_;$_=int($t4*256-($m*$d*2/675));1 while s/^([-+]?\d+)(\d{3})/$1,$2/;$_};"Estimated IPv4 Addresses left: ".join(" ",(map{(uc $_.":  ".sx($h->{$_."24s"}, $h->{$_."24delta"}))." (".$h->{$_."Percent"}."%)"} qw/arin apnic afrinic ripe lacnic/))~'
+length '`eval use JSON::XS;@lt=gmtime;$m=($lt[2]*60+$lt[1])*60+$lt[0]; $d=q{`fact _ipv4_json~};$h=decode_json($d);sub  sx{local$_;($t4,$d)=@_;$_=int($t4*256-($m*$d*2/675));1 while s/^(\d+)(\d{3})/$1,$2/;$_};"Estimated IPv4 Addresses left: ".join(" ",(map{(uc $_.":  ".sx($h->{$_."24s"}, $h->{$_."24delta"}))." (".$h->{$_."Percent"}."%)"} qw/arin apnic afrinic ripe lacnic/))~'
+length $holyshit < 0
+[length "Just Another Perl/BIDI Hacker,"];
+[length "Just another perl hacker,"]
+[ length "Just another Unicode hacker" ]
+length "Just another Unicode hacker"
+length q|	|
+length q|"Added note that raw license copy/paste needs modification of copyright owner"|
+length q|Croatia [Zagreb], Czechia [Brno Prague], Denmark [Aarhus Copenhagen], Equatorial Guinea [Bata Malabo], France [Lyon Marseille Nice Paris Toulouse], Gabon [Libreville Port-Gentil], Germany [Berlin Cologne Essen Frankfurt Hamburg Munich Stuttgart], Gibraltar, Hungary [Budapest Debrecen], Italy [Milan Naples Palermo Rome Turin], Liechtenstein, Luxembourg, Macedonia [Bitola Skopje], Malta [Valletta]|
+length q|Happy New Year to Albania [Durrës Tirana], Algeria [Algiers Boumerdas Oran], Andorra, Angola [Luanda N'dalatando], Austria [Graz Vienna], Belgium [Antwerp Brussels], Benin [Abomey-Calavi Porto-Novo], Bosnia and Herzegovina [Sarajevo], Cameroon [Douala Yaoundé], Central African Republic [Bangui Bimbo], Chad [Moundou N'Djamena], Congo-Brazzaville [Brazzaville Pointe-Noire], Congo-Kinshasa [Kikwit Kinshas|
+length q|	if ( !$ok and $@=~/^SKIP:.+BEGIN failed--compilation aborted/si ) {|
+length q# mojobar.removeClass('animated');
+length q# mojobar.removeClass('animated').css({'position': 'absolute', 'top': start + 'px'});#
+length q|See C<< ->new >> method for mo|
+$l = "foos" . chr(0x220); [ $l & chr(0x80)x(length $l) ]
+$l = "foos" . chr(0xFA); [ $l & chr(0x80)x(length $l) ]
+$l = "foos"; [ $l & chr(0x80)x(length $l) ]
+$l = "fooso"; [ $l & chr(0x80)x(length $l) ]
+\%LoadAllMooseXDeclare::
+local $/ = 'd'; print "abc"
+local $\ = 'd'; print "abc"
+local $/ = $\; print "abc"
+local $\ = $/; print "abc"
+[[localtime], [gmtime]]
+[ log(1e205 / 1e192)/log 10 ]
+[ log(1e205 / 1e192)/log 2 ]
+log(2**40)/log(10)
+$long_var_blah = 42;  $my_pay = $long_var_b1ah * 1000; print "I'm fucking rich, I got $my_pay!";
+@lt=localtime(time-7*3600);($two4s, $delta, $secs)=(417, 144.442, ($lt[2]*60+$lt[1])*60+$lt[0]); $secs
+@lt=localtime(time-8*3600);($two4s, $delta, $secs)=(417, 144.442, ($lt[2]*60+$lt[1])*60+$lt[0]); $secs
+@lt=localtime;($two4s, $delta, $secs)=(417, 144.442, ($lt[2]*60+$lt[1])*60+$lt[0]); $secs
+[ main:: ]
+*main::bless = sub { print "foo" }; bless {}, 'Foo';
+main->foo
+main->foo;
+[ *main::{JSON} ]
+*main::{JSON}
+[ *main::JSON{CODE} ]
+[ map [ $_+0, $_ ], Scalar::util::dualvar 6*9, '42 (base 13)' ]
+[ map [ $_+0, $_ ], Scalar::Util::dualvar 6*9, '42 (base 13)' ]
+[map +(1x$_), 3..541]
+[map --$| ? *{$_}{ARRAY} : $_, %DB:: ]
+[map chr, 72,101,108,108,111,32,87,111,114,108,100,226,152,131,32]
+[map --$| ? *{$_}{CODE} : $_, %DB:: ]
+[map --$| ? $_ : $$_, %DB:: ]
+[map --$| ? $$_ : $_, %DB:: ]
+[map --$| ? \%$_ : $_, %DB:: ]
+[map { - - $_ } map chr, 0..255]
+[map { - - $_ }, map chr, 0..255]
+[ map ord,  'b' => 'n', 'j' => 'u', 'v' => 'g' ]
+[ map ord, split //, '                                                     ' ]
+map ord, split //, '                                                     
+map ord, split //, '                                                     '
+[map ord, split //, "Hello World☃ "]
+[map { pack "c", $_ } 72,101,108,108,111,32,87,111,114,108,100,-30,-104,-125,32]
+[map pack "c", 72,101,108,108,111,32,87,111,114,108,100,-30,-104,-125,32]
+[map {rand * 10} 1..10]
+[map {rand() * 10} 1..10]
+[ map ref, \1, [], {}, sub{}, qr//,  ]
+[ map ref, \1, [], {}, sub{}, qr//, \*CORE::substr ]
+[ map ref, \1, [], {}, sub{}, qr//, \&CORE::substr ]
+[ map ref, \1, [], {}, sub{}, qr//, \CORE::substr ]
+[ map ref, \1, [], {}, sub{}, qr//, &CORE::substr ]
+[ map ref, \1, [], {}, sub{}, qr//, \(pos) ]
+[ map ref, \1, [], {}, sub{}, qr//, \(pos),  ]
+[ map ref, \1, [], {}, sub{}, qr//, \pos,  ]
+[ map ref, \1, [], {}, sub{}, qr//, \pos, \v1.2  ]
+[ map ref, \1, [], {}, sub{}, qr//, sub :lvalue{} ]
+[ map ref, \1, [], {}, sub{}, qr//, \&substr ]
+[ map ref, \1, [], {}, sub{}, qr//, \substr ]
+[ map ref, \1, [], {}, sub{}, qr//, substr ]
+[ map ref, \1, [], {}, sub{}, qr//, substr() ]
+[ map ref, \1, [], {}, sub{}, qr//, substr($_) ]
+[ map ref, \1, [], {}, sub{}, qr//, \(substr($_,1) ]
+[ map ref, \1, [], {}, sub{}, qr//, \(substr($_,1)) ]
+[ map ref, \1, [], {}, sub{}, qr//, substr($_, 1) ]
+[ map ref, \1, [], {}, sub{}, qr//, \(substr($_,1,1) ]
+[ map ref, \1, [], {}, sub{}, qr//, substr($_, 1)=1 ]
+[map ref, \*f, +{}, [], qr//,  \'',  ]
+[map ref, \*f, +{}, [], qr//,  \'', sub{}, \\"" ]
+[map ref, \*f, +{}, [], qr//,  \'', sub{}, sub:lvalue{}, ]
+[map ref, \*f, +{}, [], qr//,  \'', sub{}, substr ''  ]
+[map ref, \*f, +{}, [], qr//,  \'', sub{}, substr(), ]
+[map ref, \*f, +{}, [], qr//,  \'', sub{}, substr(),\  ]
+[map ref, \*f, +{}, [], qr//,  \'', sub{}, substr(),\ ]
+[map ref, \*f, +{}, [], qr//,  \'', sub{}, substr(\$x, "", "", ""), ]
+[map ref, \*f, +{}, [], qr//,  \'', sub{}, \substr(\$x, 0, 0), ]
+[map ref, \*f, +{}, [], qr//,  \'', sub{}, \substr(\$x, 0, 0), \\"" ]
+[map ref, \*f, +{}, [], qr//,  \'', sub{}, substr(\$x, 0, 0), ]
+[map ref, \*f, +{}, [], qr//,  \'', sub{}, substr(\$x, 0, 0, 0, 0), ]
+[map ref, \*f, +{}, [], qr//,  \'', sub{}, (substr(\$x, 0, 0, 0) = "foo"), ]
+[map ref, \*f, +{}, [], qr//,  \'', sub{}, substr(\$x, 0, 0, 0) = "foo", ]
+[map ref, \*f, +{}, [], qr//,  \'', sub{}, (substr(\$x, 0, 0) = "foo"), ]
+[map ref, \*f, +{}, [], qr//,  \'', sub{}, \substr(\$x, 0, 0), \\"", *STDOUT{FORMAT} ]
+[map ref, \*f, +{}, [], qr//,  \'', sub{}, \substr(\$x, 0, 0), \\"", *STDOUT{FORMAT}, *STDIN{IO} ]
+[map ref, \*f, +{}, [], qr//,  \'', sub{}, \substr(\$x, 0, 0), \\"", \*STDOUT{FORMAT}, \*STDIN{IO}, \v5.10.0 ]
+[map +ref, \*, {}, [], qr//,  \'',  ]
+[map ref, \*, {}, [], qr//,  \'',  ]
+[map ref, \*, +{}, [], qr//,  \'',  ]
+[ map {scalar caller $_} -1 .. 4 ]
+[map ~$_, sort map ~$_, 'a'..'z']
+[map { sprintf '%0.0f', $_ } -2.5, -1.5, -0.5, 0.5, 1.5, 2.5]
+[map { sprintf '%0f', $_ } -2.5, -1.5, -0.5, 0.5, 1.5, 2.5]
+[ map sprintf('%.f', $_), 6.5, 7.5, 8.5, 11.5 ]
+[ map sprintf('%.f', $_), 6.5, 7.5, 8.5, 9.5 ]
+[ map sprintf('%.f', $_), 8.5, 11.5 ]
+[ map //'undef', 1, '', undef, 42 ]
+[ map $_//'undef', 1, '', undef, 42 ]
+[map $$_, values %DB:: ]
+methname {'main'} 1;
+methname {main} 1;
+ $    money   +    $    money   ==    $ $money
+ $    money   +    $    money   ==    $ $    money
+ $    money   +    $    money   ==    $$money
+my @a = 1..10; [ $a[-20], \@a ]
+my @a = 1..10; [ $a[20%$#a], \@a ]
+my @a = 1..10; [ delete $a[-20], \@a ]
+my @a = 1..10; [ delete $a[20], \@a ]
+my @a = 1..10; [ delete $a[20%$#a], \@a ]
+my @a = 1..3; 
+my @a = 1..3; \@a
+my @a = 1..3; each @a; \@a
+my @a = 1..4; [ @a == grep $_ =~ /42/, @a ]
+my @a = 1..4; [ @a == grep $_ =~ /4/, @a ]
+my @a = 1..4; [ @a == grep $_, @a ]
+my @a = 1..4; my %h1 = map +( $_ => $_+1 ), @a[0..@a/2]; my %h2 = map +( $_ => $_+1 ), @a[@a/2-1..$#a]; [ \%h1, \%h2 ]
+my @a = 1..4; my %h1 = map +( $_ => $_+1 ), splice @a, 0, @a/2; my %h2 = map +( $_ => $_+1 ), splice @a, @a/2-1; [ \%h1, \%h2 ]
+my @a = 1..4; my %h1 = map +( $_ => $_+1 ), splice @a, 0, @a/2; my %h2 = map +( $_ => $_+1 ), splice @a, @a/2; [ \%h1, \%h2 ]
+my @a = 1..5; (shift @a)x3; \@a
+my @a = 1..5; (shift @a)x5; \@a
+my @a = 'a'..'c'; for( @a ) { print $_; push @a, 'x' if rand > .5 }; \@a;
+my @a = 'a'..'c'; for( @a ) { push @a, 'x' if rand > .5 }; \@a;
+my $a = 'a'; my $b = \$a; for $$b (0..5) { print $a }
+my (  @a, @b ) = 1..10; $_%2 and push @b, delete $a[$_
+my ($a, $b, (undef) x 3, $c) = (1..10); [$a, $b, $c]
+my $a = {foo => 1}; sub foo {my $b={%{shift()}}; delete $b->{foo}}; foo($a); $a
+my $a = {foo => 1}; sub foo {my $b=\%{shift()}; delete $b->{foo}}; foo($a); $a
+my @a = (grep /2/, 1..4 )[0..5];
+my @a = (grep /2/, 1..4 )[0..5]; splice @a, 2; \@a
+my @a = (grep /2/, 1..4 )[0..5]; splice @a, 4; \@a
+[ ++(my $a = "l"), ++(my $b = "1") ]
+my @a; { local push @a, 1 }; \@a;
+my $a; print;
+my @a; { push (local @a), 42 }; \@a;
+my @a = qw/one two/; [ $a['forty two'] ];
+my $_ = 'asdf "foo"'; my $h = 0x20000; my %h; s/((["'])(?:[^"']+|\\.|(?!\2).)*\2)/$h{chr $h}=$1;chr($h++)/ge; my @words = split ' '; $h = chr($h-1); s/([\x{20000}-$h])/$h{$1}/g for @words; \@words;
+my $_ = 'asdf "foo"'; my $h = 0x20000; my %h; s/((["'])(?:[^"']+|\\.|(?!\2).)*\2)/$h{chr $h}=$1;chr($h++)/ge; my @words = split ' ', $str; $h = chr($h-1); s/([\x{20000}-$h])/$h{$1}/g for @words; \@words;
+my $_ = 'asdf "foo"'; my $h = 0x20000; my %h; $str =~ s/((["'])(?:[^"']+|\\.|(?!\2).)*\2)/$h{chr $h}=$1;chr($h++)/ge; my @words = split ' ', $str; $h = chr($h-1); s/([\x{20000}-$h])/$h{$1}/g for @words; \@words;
+my $a = sub { say "Hello World" }; my $b = $a; $a
+my $a = sub { say "Hello World" }; my $b = $a; $a->();
+my $a = sub { say "Hello World" }; my $b = $a; \*$a
+my $a = sub { say "Hello World" }; my $b = $a; \&$a
+my $a = sub { say "Hello World" }; my $b = $a; &$a
+my $a = sub { say "Hello World" }; my $b = $a; *$a = \(sub {say "Goodbye Mars"});
+my $a = sub { say "Hello World" }; my $b = $a; &$a = \(sub {say "Goodbye Mars"});
+my $a = sub { say "Hello World" }; my $b = $a; &$a = \&{sub {say "Goodbye Mars"}};
+my $a = sub { say "Hello World" }; my $b = $a; &$a = &{sub {say "Goodbye Mars"}};
+my $a = sub { say "Hello World" }; my $b = $a; \(sub {say "Goodbye Mars"});
+my $bar = 42; my @foo = (12, 24, 42); say grep($_ eq $bar, @foo) ? 42 : 52;
+my $bar = 42; my @foo = (12, 24); say grep($_ eq $bar, @foo) ? 42 : 52;
+my $c = \&CORE::pop; my @abc = qw,a b c,; [$c->(\@abc)]
+my @chars = '$#**\01000' =~/(.)+?([01]+)$/; \@chars
+my $dist = { author => [qw/foo bar/] }; my %z = ( author_id => $dist->{author} // (ref $dist->{authors} ? $dist->{authors}[0] : $dist->{authors}) // 'N/A', url => 'N/A',); \%h
+my $dist = { author => [qw/foo bar/] }; my %z = ( author_id => $dist->{author} // (ref $dist->{authors} ? $dist->{authors}[0] : $dist->{authors}) // 'N/A', url => 'N/A'); \%z
+my $foo = 'BAR!'; BEGIN { say $foo }
+my $foo = 'BAR!'; BEGIN say { $foo }
+my $foo = 'bar' =~ /ber/; [ $foo ]
+my $foo = 'bar'; -$foo
+my $foo = 'bar'; $foo = -$foo for 1, 2; $foo
+my $foo = '-'; $foo = -$foo for 1, 2; $foo
+my $foo = ''; $foo = -$foo for 1, 2; $foo
+my $foo = grep $_, 1..5, 'a', 'b'; $foo;
+my $foo = grep $_, 1..5; $foo;
+my ($foo) if 0;
+my foo $x = 3; [ $x ]
+my foo:: $x = 3; [ $x ]
+my $h = {1..4};  [$h->@{1, 3}]
+my $hash = {ref => [1, 2, 3]}; while(my $num = $hash->{ref}->"CORE::each") {print $num, " => ";}
+my $hash = {ref => [1, 2, 3]}; while(my $num = $hash->{ref}->&CORE::each) {print $num, " => ";}
+my %hash = ( "أ" => 1, )
+my %hash = ( "أ" => 1", )
+my %hash = ( "أ" => 1"", )
+my %h = (a..z); ${%h}{"how strange"} = "is this, anyway?"; \%{%h};
+my @heterological_scalar; my %autological_hash;
+my %h = ( foo => { bar => {ber => [boor] } } } ); my $ar = $h{foo}{bar}{ber}; push @$ar, 'foor';  
+my %h = ( foo => { bar => {ber => [boor] } } ); my $ar = $h{foo}{bar}{ber}; push @$ar, 'foor';  \%h
+my %h = ( foo => { bar => {ber => [boor] } } } ); my $ar = $h{foo}{bar}{ber}; push @$ar, 'foor';  \%h
+my ($home) = "git://github.com/labster/p6-IO-Path-More.git" =~ m[(?:git|https?)://([\w\.]+)/]; $home
+my ($home) = "git://github.com/labster/p6-IO-Path-More.git" =~ m[(?:git|https?)://([\w\.]+)/]; my ($auth, $repo_name) = $url =~ m[(?:git|https?)://$home/([^/]+)/([^/]+)\.git];
+my ($home) = "http://github.com/labster/p6-IO-Path-More/" =~ m[(?:git|https?)://([\w\.]+)/]; $home
+my %h=qw/q 1 d 2 b 3/; [@h{qw/q d b/}]
+my $hyphenated = 'foo-bar'; *$hyphenated = sub { 'works' }; main->$hyphenated();
+my $i = 0; ++$i until charnames::viacode($i) =~ /music|note/i; chr $i;
+my $i = 0; my $n; ++$i until ($n=charnames::viacode($i)) =~ /music|\bnote/i; [ chr $i, $n ]
+my $i = 0; my $n; ++$i until ($n=charnames::viacode($i)) =~ /music|note/i; [ chr $i, $n ]
+my $j = 'Foo'; $j =~ tr/\x20-\x7f/\xff00-\xff5f/; binmode STDOUT; print $j;
+my $j = 'Foo'; $j =~ tr/\x20-\x7f/\xff0x-\xff5f/; binmode STDOUT; print $j;
+my $j = 'Foo'; $j =~ tr/\x20-\x7f/\xff10-\xff5f/; binmode STDOUT; print $j;
+my $j = 'Foo'; $j =~ tr/\x20-\x7f/\xff20-\xff5f/; binmode STDOUT; print $j;
+my $j = 'Foo'; $j =~ tr/\x20-\xff/\xff10-\xff5f/; binmode STDOUT; print $j;
+my $j = 'Foo'; $j =~ tr/\x20-\xff/\xff10-\xffff/; binmode STDOUT; print $j;
+my $j = 'Just another Perl/Unicode Hacker,'; $j =~ tr/\x00-\xff/\xff00-\xffff/; binmode STDOUT;  $j;
+my $j = 'Just another Perl/Unicode Hacker,'; $j =~ tr/\x00-\xff/\xff00-\xffff/; binmode STDOUT; print $j;
+my $j = 'Just another Perl/Unicode Hacker,'; $j =~ tr/\x00-\xff/\xff00-\xffff/; $j;
+my $j = 'Just another Perl/Unicode Hacker,'; $j =~ tr/\x20-\x7f/\xff00-\xff5f/; binmode STDOUT; print $j;
+my $l = 0; [ 0 << 2 ]
+my $l = 0; [ 1 << 1 ]
+my $l = 0; [ 1 << 2 ]
+my $l = 0; [ 1 << 2  << 2]
+my $l = 0; [ 2 << 1 ]
+my $l = 0; [ 3 << 1 ]
+my $l = 0; [ 3 << 2 ]
+my $l = 0; [ sprintf('b', 3), sprintf('b', 3 << 1) ]
+my $lambda = sub { shift @_+1 }; @a=1..4; [{map{$_=>$lambda->($_)}@a[0..@a/2-1]},{map{$_=>$lambda->($_)}@a[@a/2..$#a]}]
+my $lambda = sub { shift()+1 }; @a=1..4; [{map{$_=>$lambda->($_)}@a[0..@a/2-1]},{map{$_=>$lambda->($_)}@a[@a/2..$#a]}]
+my $lambda = sub { shift+1 }; @a=1..4; [{map{$_=>$lambda->($_)}@a[0..@a/2-1]},{map{$_=>$lambda->($_)}@a[@a/2..$#a]}]
+my main $x = 3; [ $x ]
+my $n = 3; my $str = q(|1|2a|3abc|4abcd|5abcde); [join q(|), (split /\|/, $str)[0..$n]];
+{my $print = \&CORE::GLOBAL::print; *CORE::GLOBAL::print = sub { $print->("wut wut: ", @_)}}; CORE::GLOBAL::print "foo"
+{my $print = \&CORE::GLOBAL::print; *CORE::GLOBAL::print = sub { $print->("wut wut: ", @_)}}; CORE::print "foo"
+{my $print = \&CORE::GLOBAL::print; *CORE::GLOBAL::print = sub { $print->("wut wut: ", @_)}}; print "foo"
+my $print = \&CORE::GLOBAL::print; sub myprint {$print->("I don't wanna");}; *CORE::GLOBAL::print = &myprint; print "foo"
+{my $print = \&CORE::print; *CORE::GLOBAL::print = sub { $print->("wut wut: ", @_)}}; print "foo"
+{my $print = \&CORE::print; \*CORE::GLOBAL::print = sub { $print->("wut wut: ", @_)}}; print "foo"
+my $print = \*CORE::print; sub myprint {$print->("I don't wanna");}; *CORE::GLOBAL::print = &myprint; print "foo"
+my $print = \&CORE::print; sub myprint {$print->("I don't wanna");}; *CORE::GLOBAL::print = &myprint; print "foo"
+{my $print = \&CORE::print; sub print { $print->("wut wut: ", @_)}}; print "foo"
+{my $print = \&CORE::print; sub print { $print->("wut wut: ", @_}}; print "foo"
+my $_ = q,asdf "foo"='bar baz',; my $h = 0x20000; my %h; s/((["'])(?:[^"']+|\\.|(?!\2).)*\2)/$h{chr $h}=$1;chr($h++)/ge; my @words = split ' '; $h = chr($h-1); s/([\x{20000}-$h])/$h{$1}/g for @words; \@words;
+my $rule = qr/!!(.+?)!!/; my $s = "Foo bar !!meow!! lulz  !!mooo!!"; my @s; { my @bits = split /$rule/, $s, 2; push @s, @bits == 1 ? { t => $bits[0] } : ( { t => $bits[0]}, { t => $bits[1], shiny => 1 }, { t => $bits[2] } );  last if @bits == 1; $s =~ s/$rule//; } \@s
+my $rule = qr/!!(.+?)!!/; my $s = "Foo bar !!meow!! lulz  !!mooo!!"; my @s; { my @bits = split /$rule/, $s, 2; push @s, @bits == 1 ? { t => $bits[0] } : ( { t => $bits[0]}, { t => $bits[1], shiny => 1 }, { t => $bits[2] } );  redo unless @bits == 1} \@s
+my $rule = qr/!!(.+?)!!/; my $s = "Foo bar !!meow!! lulz  !!mooo!!"; my @s; { my @bits = split /$rule/, $s, 2; push @s, @bits == 1 ? { t => $bits[0] } : ( { t => $bits[0]}, { t => $bits[1], shiny => 1 }, { t => $bits[2] } ); } \@s
+my $rule = qr/!!(.+?)!!/; my $s = "Foo bar !!meow!! lulz  !!mooo!!"; my @s; { my @bits = split /$rule/, $s, 2; push @s, @bits == 1 ? { t => $bits[0] } : ( { t => $bits[0]}, { t => $bits[1] }, { t => $bits[2] } ); } \@s
+my $rule = qr/!!(.+?)!!/; my $s = "Foo bar !!meow!! lulz  !!mooo!!"; my @s; { my @bits = split /$rule/, $s, 2; push @s, @bits == 1 ? { t => $bits[0] } : ( { t => $bits[0]}, { t => $bits[1] }, { t => $bits[2] } ); \@s
+my $rule = qr/!!(.?)!!/; my $s = "Foo bar !!meow!! lulz  !!mooo!!"; [  split /$rule/, $s ]
+my $rule = qr/!!(.?)!!/; my $s = "Foo bar !!meow!! lulz  !!mooo!!"; [  split $rule, $s ]
+my $rule = qr/!!(.+?)!!/; my $s = "Foo bar !!meow!! lulz  !!mooo!!"; [  split /$rule/, $s ]
+my $rule = qr/!!(.+?)!!/; my $s = "Foo bar !!meow!! lulz  !!mooo!!"; [  split /$rule/, $s, 1 ]
+my $rule = qr/!!(.+?)!!/; my $s = "Foo bar !!meow!! lulz  !!mooo!!"; [  split /$rule/, $s, 2 ]
+my %seen; $seen{foo}; $seen{bar}; \%seen
+my %seen; $seen{''} //= keys(%seen); print $seen{''}."\n";
+my %seen; $test="one"; $seen{$test} //= [keys(%seen)]; \%seen
+my $self; $self->{messages} = [1,2,3]; $self->{messages}->[0] = "a"; $self->{messages}
+my $stash = %main:: ; *{$main->{foo}} = sub { 'bar' };
+my $stash = %main:: ; *{$main}{foo} = sub { 'bar' };
+my $stash = \%main:: ; sub foo { 42 }; [ $main->{foo} ]
+my $stash = %main:: ; sub foo { 42 };  $main->{foo}
+my $stash = %main:: ; sub foo { 42 }; [ $main->{foo} ]
+my $stash = %main:: ; sub foo { 42 };  *{$main->{foo}} = sub { 'bar' };
+my $stash = \%{ __PACKAGE__ . "::" } ; sub foo { 42 }; [ $main->{foo} ]
+my $stash = \%{ __PACKAGE__ . "::" } ; sub foo { 42 }; [ $stash->{foo} ]
+my sub stat;
+my sub stat { 1.3 }; [ stat ]
+my $t = 'ＹＯＵ  ＨＡＶＥ'; binmode STDOUT;  $t;
+my @tmp; $tmp[3] = "gi|300707803|ref|XP_002996096.1|hypothetical protein NCER_100860 [Nosema ceranae BRL01] >gi|239605364|gb|EEQ82425.1| hypothetical protein NCER_100860 [Nosema ceranae BRL01]"; my($ia,$ib) = split(/\[/,$tmp[3]); [ $ia, $ib]
+my $t = 'ＹＯＵ  ＨＡＶＥ'; $t;
+my $u = 'ABC'; say $u =~ /./pos $u/ger;
+my $u = 'ABC'; say $u =~ s/./pos $u/ger;
+my $url = "http://github.com/labster/p6-IO-Path-More/"; my ($auth, $repo_name) = $url =~ m[(?:git|https?)://$home/([^/]+)/([^/]+)\.git]; [ $auth, $repo_name ]
+my $url = "http://github.com/labster/p6-IO-Path-More/"; my ($home) = $url =~ m[(?:git|https?)://([\w\.]+)/]; my ($auth, $repo_name) = $url =~ m[(?:git|https?)://$home/([^/]+)/([^/]+)\.git]; [ $auth, $repo_name ]
+my $url = "http://github.com/labster/p6-IO-Path-More/"; my ($home) = $url =~ m[(?:git|https?)://([\w\.]+)/]; my ($auth, $repo_name) = $url =~ m[(?:git|https?)://$home/([^/]+)/([^/]+)\.git]; [ $home, $auth, $repo_name ]
+my $url = "http://github.com/labster/p6-IO-Path-More/"; my ($home) = $url =~ m[(?:git|https?)://([\w\.]+)/]; my ($auth, $repo_name) = $url =~ m[(?:git|https?)://\Q$home\E/([^/]+)/([^/]+)(\.git|/)?$]; [ $home, $auth, $repo_name ]
+my $url = "http://github.com/labster/p6-IO-Path-More/"; my ($home) = $url =~ m[(?:git|https?)://([\w\.]+)/]; my ($auth, $repo_name) = $url =~ m[(?:git|https?)://\Q$home\E/([^/]+)/([^/]+)(\.git|/)$]; [ $home, $auth, $repo_name ]
+my ( $user, $nick ) = ( 'root', 'ro.+' ); if($user =~ /^$nick$/){ say 'pwned' }
+my ( $user, $nick ) = ( 'root', 'ro.+' ); if($user =~ /^$nick$/){ say 'pwned' } else { say 'you are not root' }
+my utf8 $x = 3; [ $x ]
+my @vals = (0); [pack("C*", @vals)];
+my $x = 0.1 + 0.2; [ $x,  ("$x" == "0.3") ? 'y' : 'n' ]
+my $x = 0.1 + 0.2; [ $x,  ($x == 0.3) ? 'y' : 'n' ]
+my $x = 0; my $y = 1; $x += log, $y *= $_ for 1 .. 123456; [ exp $x, $y ];
+my $x = 0; my $y = 1; $x += log, $y *= $_ for 1 .. 123456; [ $x, exp $x, $y ];
+my $x = 0; my $y = 1; $x += log, $y *= $_ for 1 .. 12345; [ exp $x, $y ];
+my $x = 0; my $y = 1; $x += log, $y *= $_ for 1 .. 12345; [ $x, exp $x, $y ];
+my $x = 0; my $y = 1; $x += log, $y *= $_ for 1 .. 1234; [ $x, exp $x, $y, (exp $x) - $y ];
+my $x = 0; my $y = 1; $x += log, $y *= $_ for 1 .. 1234; [ $x, exp $x, $y, exp $x - $y ];
+my $x = 0; my $y = 1; $x += log, $y *= $_ for 1 .. 123; [ $x, exp $x, $y ];
+my $x = 0; my $y = 1; $x += log, $y *= $_ for 1 .. 123; [ $x, exp $x, $y, (exp $x) - $y ];
+my $x = 0; my $y = 1; $x += log, $y *= $_ for 1 .. 123; [ $x, exp $x, $y, $y - exp $x ];
+my $x = 0; my $y = 1; $x += log, $y *= $_ for 1 .. 12; [ $x, exp $x, $y, $y - exp $x ];
+my $x = 0; $x += log for 1 .. 123456; "123456! is a " . int($x / log 10 + .99999) . " digit number";
+my $x = 0; $x += log for 1 .. 123456; "123456! is a " . int($x / log 10) . " digit number";
+my $x = 0; $x += log for 1 .. 123456; "123456! is a " . ($x / log 10) . " digit number";
+my $x = 0; $x += log for 1 .. 123456; "123456! is a " . $x / log 10 . " digit number";
+my $x = 0; $x += log for 1 .. 123456; [ $x, $x / log 10, $x / log 2 ];
+my $x = 0; $x += logfor 1 .. 123456; [ $x, $x / log 10, $x / log 2 ];
+my $x = 10.01; $x -= 10.00; print $x
+my $x = 10.01; $x -= 10; print $x
+my $x = [1..10]; say $x->@[2,4]
+my @x = (1, { x => z }, 2); sub foo {my @t = @_; undef @t } foo(@x); \@x
+my $x = [3, 4, 5]; for my $y (map @$_, $x) { ++$y }
+my $x = [3, 4, 5]; for my $y (map @$_, $x) { ++$y }; $x;
+my $x = [3, 4, 5]; for my $y (map @$_, $x) { ++$y, ++$x }; $x;
+my $x = [3, 4, 5]; for my $y (map @$_, $x) { ++$y, ++$y }; $x;
+my $x = [3, 4, 5]; for my $y (@$x) { ++$y, ++$y }; $x;
+my $x = 42; join ' ', ++$x, ++$x, ++$x;
+my $x = '$5.99'; $x =~ tr/0-9//cd; $x
+my $x = 5; until ( $x-- == 0 ) { print "foos " }
+my $x = *a; [ ref \$x ]
+my $x = bless [], 'foo'; [ ref($x)->isa( 'main' ) ]
+my $x = "cbdafeghjiklnmoprqstvuwxy"; $x =~ tr/a-y/Just another Perl hacker,/; [$x];
+my $x; [ defined &$x ]
+my $x = 'foo bar baz'; say 's-' . ($x =~ s/\s.+//r) . '42'
+my $x = 'foo bar baz'; say 's-' . $x =~ s/\s.+//r . '42'
+my $x = 'foo bar baz'; say 's-' . ($x =~ s/\S.+//r) . '42'
+my $x = 'foo bar baz'; say 's-' . $x =~ s/\S.+//r . '42
+my $x = 'foo bar baz'; say 's-' . $x =~ s/\S.+//r . '42'
+my $x = \*foo; $x
+my $x = \*foo; *$x
+my $x = '+foo'; $x =~ s/^\+// and say "42";
+my $x = 'foo'; $x =~ s/^\+// and say "42";
+my @x; local $x[0] = 1; \@x
+my $x; local $x->[0] = 1; [ $x ]
+my @x; local $x[0] = 42; "@x";
+my @x; local $x[0] = 42; \@x
+my $x; local $$x = 1; [ $x ]
+my $x = "main::a"; [ ref \$x ]
+my $x = 'nowhere'; eval { goto $x }; [ 'got', $@ ]
+my $x = pack('C*', map rand(128), 1..1e5); my ($index, $regex); my $start = time; 1 while $start==time;++$start; { index($x, "\\x"); ++$index; redo if $start == time }; ++$start; { $x =~ /\\x/; ++$regex; redo if $start == time }; [ $index / $regex ]
+my $x = pack('C*', map rand(128), 1..1e5); my ($index, $regex); my $start = time; 1 while $start==time;++$start; { index($x, "\\x"); ++$index; redo if $start == time }; ++$start; { $x =~ /\\x/; ++$regex; redo if $start == time }; [ $index, $regex ]
+my $x = pack('C*', map rand(128), 1..1e5); my ($index, $regex); my $start = time; 1 while $start==time;++$start; { index($x, "\\x"); ++$index; redo if $start == time }; ++$start; { $x =~ /\\x/; ++$regex; redo if $start == time }; [ $index, $regex, $index / $regex ]
+my $x = pack('C*', map rand(128), 1..1e5); my ($index, $regex); my $start = time; 1 while $start == time; ++$start; index($x, "\\x"), ++$index while $start == time; ++$start; $x =~ /\\x/, ++$regex while $start == time; [ $index, $regex, $index / $regex ]
+my $x = []; [ ref($x)->isa( 'main' ) ]
+my $x = []; [ ref($x)->SUPER::isa( 'main' ) ]
+my $x = "\r\n"; chomp $x; [ $x ]
+my $x = "\r\n"; chomp $x; $x
+my $x = (sub { [1..3], [a..c] })->();
+my $x = []; $x->@*
+my $x; $x += 4;
+my $x = {}; $x->@{qw/foo bar/} = ("foo", "bar"); $x
+my $x = {}; $x->@*{qw/foo bar/} = ("foo", "bar"); $x
+my $x = []; [ $x->SUPER::isa( 'main' ) ]
+my $x = 'Zoffix'; substr($x, 2, 1) = 'ooooo'; $x
+my $x = "z\r\n"; chomp $x; [ $x ]
+my @Z = 'a'..'z'; my @Z2; for ( @Z ) { push @Z2, $_, uc $_; } \@Z2;
+$n == 0 + reverse $n
+$! = 'NaN'; $!
+$! = 'NaN'; $1
+"\N{DONG SIGN}"
+no feature ':all'; sub foo (;$$;) { [@_] }; my %h = ( bar => foo 42, 'bar'  );  \%h
+no feature ':all'; sub foo (;$$;) { [@_] }; my %h = ( bar => foo 42, bar => meow => 'moo' );  \%h
+no feature ':all'; sub foo (;\[$@]) { [@_] }; my %h = ( bar => foo 42, bar => meow => 'moo' );  \%h
+no feature ':all'; sub foo (;\[$$]) { [@_] }; my %h = ( bar => foo 42, bar => meow => 'moo' );  \%h
+no feature ':all'; sub foo ($$;) { [@_] }; my %h = ( bar => foo 42, bar => meow => 'moo' );  \%h
+no feature ':all'; sub foo ($$) { [@_] }; my %h = ( bar => foo 42, bar => meow => 'moo' );  \%h
+no feature ':all'; sub foo (+) { [@_] }; my %h = ( bar => foo 42, bar => meow => 'moo' );  \%h
+no feature ':all'; sub foo (+$) { [@_] }; my %h = ( bar => foo 42, bar => meow => 'moo' );  \%h
+no feature ':all'; sub foo (;$) { [@_] }; my %h = ( bar => foo 42, meow => 'moo' );  \%h
+no feature ':all'; sub foo (;$$;) { [@_] }; my %h = ( bar => foo 42, meow => 'moo' );  \%h
+no feature ':all'; sub foo (;$$) { [@_] }; my %h = ( bar => foo 42, meow => 'moo' );  \%h
+no feature ':all'; sub foo (;%$) { [@_] }; my %h = ( bar => foo 42, meow => 'moo' );  \%h
+no feature ':all'; sub foo ($$) { [@_] }; my %h = ( bar => foo 42, meow => 'moo' );  \%h
+no feature ':all'; sub foo ($;@) { [@_] }; my %h = ( bar => foo 42, x => meow => 'moo' );  \%h
+no feature ':all'; sub foo ($@) { [@_] }; my %h = ( bar => foo 42, x => meow => 'moo' );  \%h
+no feature ':all'; sub foo (+) { [@_] }; my %h = ( bar => foo 42, x => meow => 'moo' );  \%h
+no feature ':all'; sub foo (++) { [@_] }; my %h = ( bar => foo 42, x => meow => 'moo' );  \%h
+no feature ':all'; sub foo (;$$) { print  "[@_]"; }; my %h = ( bar => foo 42, meow => 'moo' ); \%h
+no feature ':all'; sub foo (;$$) { print  "[@_]"; }; my %h = ( bar => foo(42), meow => 'moo' ); \%h
+no feature ':all'; sub foo ($) { print  "[@_]"; }; my %h = ( bar => foo(42), meow => 'moo' ); \%h
+no feature ':all'; sub foo (;$) { print "[@_]"; }; my %h = ( bar => foo 42, meow => 'moo' ); print Dumper \%h
+no feature ':all'; sub foo (;$$) { print "[@_]"; }; my %h = ( bar => foo 42, meow => 'moo' ); print Dumper \%h
+no feature ':all'; sub foo ($) { say "[@_]"; }; my %h = ( bar => foo(42), meow => 'moo' ); \%h
+no feature 'signatures'; sub foo (\@) { say @_ };
+no feature 'signatures'; sub foo (\@) { say @_ };  foo +(split //, "foobar")
+no indirect; try {print "hw"} catch {die "hello"};
+'nonexist'->import();
+"\N{PILE OF POO}"
+"\N{SNOWMAN}"
+"\N{SPARKLE}"
+"\N{SPARKLE}\N{SPARKLE}"
+"\N{SPARKLE}\N{SPARKLE}"
+"\N{SPARKLE}\N{SPARKLE}"
+'\n' =~ /^$/ ? 'y' : 'n'
+"\n" =~ /^$/ ? 'y' : 'n'
+"\n" =~ /^\z/ ? 'y' : 'n'
+$^O
+[ 'o010' + 0 ]
+    $     OMG     =     8_0         ;$_;
+    $     OMG     =     8_0         ;$_$;
+    $     OMG     =     8_0      ;$    OMG
+    $     OMG     =     8_0      ;$    OMG!
+    $     OMG     =     8_0      ;$    OMG\
+    $     OMG     =     8_0;                 $    OMG
+    $     OMG     =     8_0;    $                 OMG
+open my $fh, '<', $z; [ map ref, \1, [], {}, sub{}, qr//, \pos, \v1.2, $fh ]
+open my $fh, '<', $z; [ map ref, \1, [], {}, sub{}, qr//, \pos, \v1.2, \$fh ]
+ord 'a'
+ord 'X'
+ord 'Χ'
+our @a; { push (local @a), 42 }; \@a;
+our @CARP_NOT=qw/main/; Carp::croak("loaded");
+our %temp = (1,2); [ %main:: ]
+our %temp = (1,2); [ *main::{ temp } ]
+our %temp = (1,2); [ $main::{ 'temp' }{ HASH } ]
+our %temp = (1,2); [ *main::{ 'temp' }{ HASH } ]
+our %temp = (1,2); my $stash = \%main:: ; [ grep /tem/, keys %$stash ]
+our %temp = (1,2); my $stash = \%main:: ; [ grep /t/, keys %$stash ]
+our %temp = (1,2); my $stash = \%main:: ; [ keys %$stash ]
+our %temp = (1,2); my $stash = %main:: ; [ keys %$stash ]
+our %temp = (1,2); my $stash = \%main:: ; [ $stash->{temp} ]
+our %temp = (1,2); my $stash = %main:: ; [ $stash->{'temp::'} ]
+our %temp = (1,2); my $stash = %main:: ; [ $stash->{temp} ]
+our %temp = (1,2); my $stash = \%main:: ; [ *{$stash->{temp}}{array} ]
+our %temp = (1,2); my $stash = \%main:: ; [ *{$stash->{temp}}{ARRAY} ]
+our %temp = (1,2); my $stash = \%main:: ; [ $stash->{temp}{HASH} ]
+our %temp = (1,2); my $stash = \%main:: ; [ *{$stash->{temp}}{HASH} ]
+our %temp = (1,2); my $stash = \%main:: ; [ *{$stash->{temp}}{SCALAR} ]
+our %temp = (1,2); my $temp = 4; my $stash = \%main:: ; [ *{$stash->{temp}}{SCALAR} ]
+our %temp = (1,2); my $temp; my $stash = \%main:: ; [ *{$stash->{temp}}{SCALAR} ]
+our %temp = (1,2); our $temp = 4; my $stash = \%main:: ; [ ref $stash->{temp} ]
+our %temp = (1,2); our $temp = 4; my $stash = \%main:: ; [ $stash->{temp} ]
+our %temp = (1,2); our $temp = 4; my $stash = \%main:: ; [ *{$stash->{temp}}{SCALAR} ]
+our %temp; [ $main::{ 'temp' }
+our %temp; [ $main::{ 'temp' } ]
+our %temp; [ $main::{ 'temp' }{ 'HASH' ]
+our %temp; [ $main::{ 'temp' }{ 'HASH' } ]
+our %temp; [ $main::{ 'temp' }{ HASH } ]
+our $VERSION = 'blah';  __PACKAGE__->VERSION
+%p = (1, 2); ++$$_ for \(%p); \%p
+%p = (1, 2); [ (()=%p) ]
+%p = (1, 2); [ \(%p) ]
+%p = (1, 2); [ \%p, map s/\d/3/, (()=%p) ]
+%p = (1, 2); [ \%p, map s/\d/3/, %p ]
+%p = (1, 2); [ \%p, map s/\d/3/r, %p ]
+%p = 1, 2; [ \%p, map s/\d/3/r, %p ]
+%p = 1, 2; \%p, map s/\d/3/r, %p
+__PACAKAGE__
+pacakge Foo; sub foo { bar() }; BEGIN { print join ",", keys %Foo:: }; 
+__PACKAGE__
+package Bar; CHECK { my @early; BEGIN { @early = keys %Bar:: }; print "CHECK: @early" }; sub quux { 42 }; print "Later: ", join(",", keys %Bar:: )
+package Bar; CHECK { my @early; BEGIN { @early = keys %Bar:: }; print "@early" }; sub quux { 42 }; print "Later: ", join(",", keys %Bar:: )
+package Bar; [ keys %Bar:: ]
+package Bar; [ keys %Foo:: ]
+package Bar; use Carp qw,croak,; CHECK { my @early; BEGIN { @early = keys %Bar:: }; print "CHECK: @early" }; sub quux { 42 }; print "Later: ", join(",", keys %Bar:: )
+package Bar; use Carp qw,croak,; do { my @early; BEGIN { @early = keys %Bar:: }; print "Early: @early" }; sub quux { 42 }; print "Later: ", join(",", keys %Bar:: )
+package Bar; use Carp qw,croak,; INIT { my @early; BEGIN { @early = keys %Bar:: }; print "Early: @early" }; sub quux { 42 }; print "Later: ", join(",", keys %Bar:: )
+package Charlie; sub talk { 'blah' }; package main; $::{'DB::Sandie::'} = $::{'Charlie::'};
+package Charlie; sub talk { 'blah' }; package main; $::{'DB::Sandie::'} = $::{'Charlie::'}; DB::Sandie->talk
+package Charlie; sub talk { 'blah' }; package main; *::{'DB::Sandie::'} = $::{'Charlie::'}; DB::Sandie->talk
+package Charlie; sub talk { 'blah' }; package main; *::{'DB::Sandie::'} = *::{'Charlie::'}; DB::Sandie->talk
+package Charlie; sub talk { 'blah' }; package main; *::{'DB::Sandie::'} = \%$::{'Charlie::'}; DB::Sandie->talk
+package Charlie; sub talk { 'blah' }; package main; *{$::{'DB::Sandie::'}} = \%{$::{'Charlie::'}}; DB::Sandie->talk
+package Charlie; sub talk { 'blah' }; package main; *{$::{'DB::Sandie::'}} = \%{*::{'Charlie::'}}; DB::Sandie->talk
+package Charlie; sub talk { 'blah' }; package main; *DB::Sandie:: = *Charlie:: ; DB::Sandie->talk;
+package Charlie; sub talk { 'blah' }; package main; local *DB::Sandie:: = *Charlie:: ; DB::Sandie->talk;
+package Charlie; sub talk { 'blah' }; package main; local $::{'DB::Sandy::'} = $::{'Charlie::'}; DB::Sandy->talk;
+package Charlie; sub talk { 'blah' }; package main; local *::{'DB::Sandy::'} = *::{'Charlie::'}; DB::Sandy->talk;
+package Charlie; sub talk { 'blah' }; package main; local *::{'DB::Sandy::} = *::{'Charlie::'}; DB::Sandy->talk;
+package Charlie; sub talk { 'blah' }; package main; local %$::{'DB::Sandy::'} = %$::{'Charlie::'}; DB::Sandy->talk;
+package Charlie; sub talk { 'blah' }; package main; my $g = $::{'Charlie::'}; $::{'DB::Sandie::'} = $g; Charlie->talk;
+package Charlie; sub talk { 'blah' }; package main; my $g = $::{'Charlie::'}; $::{'DB::Sandie::'} = $g; DB::Sandie->talk;
+package Charlie; sub talk { 'blah' }; package main; my $g = $::{'Charlie::'}; $::{'DB::Sandie::'} = $g; $g = $Charlie::{'::'} [ map *{$g}{$_}, qw,HASH SCALAR ARRAY GLOB, ]
+package Charlie; sub talk { 'blah' }; package main; my $g = $::{'Charlie::'}; $::{'DB::Sandie::'} = $g; $g = *Charlie:: ; [ map *{$g}{$_}, qw,HASH SCALAR ARRAY GLOB, ]
+package Charlie; sub talk { 'blah' }; package main; my $g = $::{'Charlie::'}; $::{'DB::Sandie::'} = $g; $g = *Charlie:: [ map *{$g}{$_}, qw,HASH SCALAR ARRAY GLOB, ]
+package Charlie; sub talk { 'blah' }; package main; my $g = $::{'Charlie::'}; $::{'DB::Sandie::'} = $g; $g = $DB::Sandie::{'::'} [ map *{$g}{$_}, qw,HASH SCALAR ARRAY GLOB, ]
+package Charlie; sub talk { 'blah' }; package main; my $g = $::{'Charlie::'}; $::{'DB::Sandie::'} = $g; [ map *{$g}{$_}, qw,HASH SCALAR ARRAY GLOB, ]
+package Charlie; sub talk { 'blah' }; package main; my $g = $::{'Charlie::'}; [ map *{$g}{$_}, qw,HASH SCALAR ARRAY GLOB, ]
+package Charlie; sub talk { 'blah' }; package main; my $g = \*::{'Charlie::'}; [ map *{$g}{$_}, qw,HASH SCALAR ARRAY GLOB, ]
+package Charlie; sub talk { 'blah' }; package main; print $::{'Charlie::'}
+package Charlie; sub talk { 'blah' }; package main; print *::{'Charlie::'}
+package Foo; [ keys %Foo:: ]
+package Foo; [ map {scalar caller $_} -1 .. 4 ]
+package Foo; our $foo = 42; package main; \%{\Foo}::
+package Foo; our $foo = 42; package main; \%Foo::
+package Foo; our $foo = 42; package main; \%{Foo}::foo
+package Foo; our $foo = 42; package main; \%Foo::foo
+package Foo; our $foo = 42; package main; my $z = 'Foo';  \%"$x"::
+package Foo; our $foo = 42; package main; my $z = 'Foo';  \%{{$x}::
+package Foo; our $foo = 42; package main; my $z = 'Foo';  \%{$x}::
+package Foo; our $foo = 42; package main; my $z = 'Foo';  \%$x::
+package Foo; our $VERSION = 'blah'; package main; say Foo->VERSION
+package Foo; package main; [ Foo->can('import') ]
+package Foo; sub bar { 42 }; package main; my $x = bless {}, 'Foo'; my %foo = ( bar => 'bar' );
+package Foo; sub bar { 42 }; package main; my $x = bless {}, 'Foo'; my %foo = ( bar => 'bar' );  $x->can($foo{bar})->()
+package Foo; sub bar { 42 }; package main; my $x = bless {}, 'Foo'; my %foo = ( bar => 'bar' );  $x->"$foo{bar}"
+package Foo; sub bar { 42 }; package main; my $x = bless {}, 'Foo'; my %foo = ( bar => 'bar' );  $x->("$foo{bar}")
+package Foo; sub bar { 42 }; package main; my $x = bless {}, 'Foo'; my %foo = ( bar => 'bar' );  $x->\"$foo{bar}"
+package Foo; sub bar { 42 }; package main; my $x = bless {}, 'Foo'; my %foo = ( bar => 'bar' ); $x->($foo{bar})
+package Foo; sub bar { 42 }; package main; my $x = bless {}, 'Foo'; my %foo = ( bar => 'bar' ); $x->(\"$foo{bar}")
+package Foo; sub bar { 42 }; package main; my $x = bless {}, 'Foo'; my %foo = ( bar => 'bar' ); $x->(\$foo{bar})
+package foo; sub bar {"baz"}; sub boo {"boobs"}; $a = "bar"; *{"foo::".$a}->()
+package foo; sub bar {"baz"}; sub boo {"boobs"}; $a = "bar"; \*{"foo::".$a}
+package foo; sub bar {"baz"}; sub boo {"boobs"}; $a = "bar"; \*{"foo::".$a}->()
+package foo; sub bar {"baz"}; sub boo {"boobs"}; $a = "bar"; \*{foo::$a}
+package Foo; sub bar; [ grep defined &$_, keys %Foo:: ]
+package Foo; sub bar; [ keys %Foo:: ]
+package Foo; sub bar; use strict; [ grep defined &$_, keys %Foo:: ]
+package Foo; sub foo { bar() }; BEGIN { print join ",", keys %Foo:: }; 
+package Foo; sub import {} package main; [ Foo->can('import') ]
+package FOO; sub new { return bless [42], __PACKAGE__ };  package main; use constant BAR => 'FOO';  BAR->new
+package FOO; sub new { return bless [42], __PACKAGE__;  use constant BAR => 'FOO';  BAR->new
+package foo; tie *STDOUT, 'foo'; sub TIEHANDLE { return bless {}, 'foo' } sub PRINT { CORE::print "TEST" } print "hello"
+package foo; tie *STDOUT, 'foo'; sub TIEHANDLE { return bless {}, 'foo' } sub PRINT { print "TEST" } print "hello"
+package Foo; use overload q{""} => sub {42 }; package main; my $x = bless {}, 'Foo'; 'foo'->$x
+package Foo; use overload q{""} => sub {42 }; package main; my $x = bless sub{ 45 }, 'Foo'; [ 'foo'->$x // 'z', "$x" //'z' ]
+package Foo; use overload q{""} => sub {42 }; package main; my $x = bless sub{}, 'Foo'; 'foo'->$x
+package Foo; use overload q{""} => sub {42 }; package main; my $x = bless sub{}, 'Foo'; [ 'foo'->$x, "$x" ]
+package Foo; use overload q{""} => sub {42 }; package main; my $x = bless sub{}, 'Foo'; [ 'foo'->$x, "$x"]
+package Foo; use overload q{""} => sub {42 }; package main; my $x = bless sub{}, 'Foo'; [ 'foo'->$x // 'z', "$x" //'z' ]
+package Foo; use overload q{""} => sub {42 }; package main; my $x = bless sub{ shift }, 'Foo'; [ 'foo'->$x // 'z', "$x" //'z' ]
+package Foo; use strict; use warnings; 'blah'->VERSION;
+package Foo; use strict; use warnings; our $VERSION = 'blah';
+package Foo; use strict; use warnings; our $VERSION = 'blah'; package main; say Foo->VERSION
+package Foo; use warnings; sub foo { undef()+0 }; package main; foo();
+package Foo; use warnings; sub foo { undef+0 }; package main; foo();
+package Foo; use warnings; sub foo { undef()+0 }; package main; Foo::foo();
+package Foo; use warnings; sub foo { undef()+0 }; package main; $Foo::{'^WARNING_BITS'}=0; Foo::foo();
+package Foo; use warnings; sub foo { undef()+0 }; package main; $Foo::{'^WARNING_BITS'}=0; Foo::foo(); [1]
+package Foo; use warnings; sub foo { undef()+0 }; package main; no warnings; Foo::foo();
+package Foo; use warnings; sub foo { undef()+0 }; package main; no warnings 'Foo::uninitialized'; Foo::foo();
+package OOBLA; sub _compare {"compare"}; $self = bless {}; my $method = $self->can("_compare_".ref $comp) || $self->can("_compare"); &$method($self, "foo");
+package OOBLA; sub _compare {"compare"}; $self = bless {}; my $method = $self->can("_compare_".ref $comp) || $self->can("_compare"); &$method($self, \"foo");
+package OOBLA; sub _compare {"compare"}; sub _compare_SCALAR {"compare_scalar"}; my $self = bless {}; my $comp = "foo"; my $method = $self->can("_compare_".ref $comp) || $self->can("_compare"); &$method($self, $comp);
+package OOBLA; sub _compare {"compare"}; sub _compare_SCALAR {"compare_scalar"}; my $self = bless {}; my $comp = \"foo"; my $method = $self->can("_compare_".ref $comp) || $self->can("_compare"); &$method($self, $comp);
+package OOBLA; sub _compare {"compare"}; sub _compare_SCALAR {"compare_scalar"}; $self = bless {}; my $method = $self->can("_compare_".ref $comp) || $self->can("_compare"); &$method($self, \"foo");
+package OOBLA; sub _compare_OOBLA {"compare_OOBLA"; \@_}; sub _compare {"compare"}; sub _compare_SCALAR {"compare_scalar"}; my $self = bless {}; my $comp = $self; my $method = $self->can("_compare_".ref $comp) || $self->can("_compare"); $method->($self, $comp);
+package OOBLA; sub _compare_OOBLA {"compare_OOBLA"}; sub _compare {"compare"}; sub _compare_SCALAR {"compare_scalar"}; my $self = bless {}; my $comp = $self; my $method = $self->can("_compare_".ref $comp) || $self->can("_compare"); $method->($self, $comp);
+package OOBLA; sub _compare_OOBLA {"compare_OOBLA"}; sub _compare {"compare"}; sub _compare_SCALAR {"compare_scalar"}; my $self = bless {}; my $comp = $self; my $method = $self->can("_compare_".ref $comp) || $self->can("_compare"); &$method($self, $comp);
+package OOBLA; sub _compare_OOBLA {"compare_OOBLA"; \@_}; sub _compare {"compare"}; sub _compare_SCALAR {"compare_scalar"}; my $self = bless {}; my $comp = $self; $self->${["_compare"]}
+package OOBLA; sub _compare_OOBLA {"compare_OOBLA"; \@_}; sub _compare {"compare"}; sub _compare_SCALAR {"compare_scalar"}; my $self = bless {}; my $comp = $self; $self->${\("_compare")}
+package _; use constant test => 1; [ _->test ]
+package π; package main; require π;
+package π; sub 2 {atan2(1,1) * 2}; π::2
+package π; sub new { bless {}, shift } package main;   my $x = π->new; say $x
+package π; use overload fallback => 1, '+' => sub () {atan2(0,-1)}; 0+bless []
+package π; use overload fallback => 1, '+' => sub {atan2(0,-1)}; 0+bless []
+package π; use overload fallback => 1, '+' => sub () {atan2(0,-1)}; ''.bless []
+package π; use overload '+' => sub () {atan2(0,-1)}; ''.bless []
+package π; use π;
+package π; \*{"π::2"}
+package π; *{"π::2"} = sub {atan2(0,-1)}; π->${\2}
+package π; *{"π::2"} = sub {atan2(1,1) * 2}
+package π; *{"π::2"} = sub {atan2(1,-1) * 2}; π->${\2}
+package π; *{"π::2"} = sub {atan2(1,1) * 2}; π->2
+package π; *{"π::2"} = sub {atan2(1,1) * 2}; π->${\2}
+package π; *{"π::2"} = sub {atan2(1,1) * 2}; π::2
+package π; *{"π::2"} = sub {atan2(1,-1)}; π->${\2}
+package π; *{"π::(+"} = sub () {atan2(0,-1)}; ''.bless []
+package π; *{"π::+)"} = sub () {atan2(0,-1)}; ''.bless []
+[pack("C*", 0)];
+pack("C*", 0);
+pack "d", 0.1
+[ pack 'H', 1 ]
+pack("H*", 4095);
+pack "H*", "547275746820"
+pack "H*", "54727574682077617320746865206f6e6c79206461"
+pack "H*", "54727574682077617320746865206f6e6c79206461756768746572206f662054696d652e"
+print '✙' .. '❉'
+print 1
+print 1; 1
+print 1; 2
+print 123 =~ /[[digit]]/;
+print ’42’
+print 4; 2
+print "\a"
+printf '[%5s]', 'x'
+print "I'm a Perl ", 5 + !!"0", " program."
+print q ; $a ; 
+print q; $a; 
+print qfoo/bar
+print sort { $|-- or -1 } 'a'..'y'
+print sort { $|-- or -1 } 'ruJt tc,en hoetokarrasS h'
+print sort { $|-- or -1 } 'ruJt tc,en hoetokarrasS h' =~ /./g
+print "\x{1f4a9}"
+push(@$campaigns_by_type->{$$campaign{'campaign_type'}}, $campaign);  [ $campaigns_by_type ]
+push @ISA, 'main'; [ main::->can('foo') ]
+q;;
+q;;;;;;;;;;;;;;;;;;;;
+q=;$a;=;
+q=;$a; =;
+q =; $a; =;
+q =; $a; =; 5; 
+q= $a = 5; print q ; $a ; 
+q =; $a; =; 5; print q ; $a ; 
+$_ = q<acegikmoqsuwybdfhjlnprtvx>; tr/a-y/Just another Sort hacker,/; print
+$_ = q«acegikmoqsuwybdfhjlnprtvx»; tr/a-y/Just another Sort hacker,/; print
+q|{:amount($[4.95e0, 4.85e0, 2.4e0]), :description($["Hot beef burrito", "Mild fish taco", "Medium size orange juice"]), :name($["BUBH", "TAFM", "BEOM"]), :price($[4.95e0, 4.85e0, 1.2e0]), :quantity($[1, 1, 2])}| eq q|{:amount($[4.95e0, 4.85e0, 2.4e0]), :description($["Hot beef burrito", "Mild fish taco", "Medium size orange juice"]), :name($["BUBH", "TAFM", "BEOM"]), :price($[4.95e0, 4.85e0, 1.2e0]), :quantity($[1, 1, 2])}|
+q= $a; print q ; $a ; 
+q = $a; print q ; $a ; 
+q=;$a;==~s/;//gr
+q=;$a;=~s/;//r
+q=;$a;==~s/;//r
+q=;$a;=;=~s/;//r
+[ q(\d) ]
+$_ = q,echo foo bar=baz hmm="1 2 3" nn='aa bb',; my @h; s/((["'])(?:[^"']+|\\.|(?!\2).)*\2)/push @h, $1;"\xFFFD"/ge; my @words = split ' '; s/\xFFFD/shift @h/ge for @words; \@words;
+[  q{"foo bar \"something\""} =~ s/(?!<=\\)"//gr ]
+q ❤‎ Happy Valentine's Day, #perl ❤‎  s ❤ ❤ ❤‎r
+q ❤‎ Happy Valentine's Day, #perl ❤‎  s ❤ ❤‎r
+q{Number::RGB->new_from_guess() couldn't guess type} =~ /new_from_guess() couldn't guess/ ? 'y' : 'n'
+q 😁 ☺ Perl \o/ ☺  😁
+[ quotemeta "~!@#$%^&*()_\\+?" ]
+quotemeta '~!@#$%^&*()_\\{}.,+?'
+quotemeta '~!@#$%^&*()_\\+?'
+quotemeta '~!@#$%^&*()_+?'
+quotemeta "ǁ
+quotemeta "\x{D000}"
+({qw/ a 1 b 2/})->{b}
+{qw/ a 1 b 2/}->{b}
+qw/dial_a_bottle  take_a_cab/[rand 2]
+qw[foo bar]
+$r = [ 1, 2, 3, { foo => bar }, ]; @a = @$r; $r->[0] = 42; $r->[3]{ber} = 'bez'; [ \@a, $r ]
+rand 4
+readpipe q(echo foo)
+[ref bless [], 'foo' ]
+ref &CORE::GLOBAL::print
+ref *CORE::print
+ref \*CORE::print
+ref &CORE::print
+ref &print
+ref qr//
+[ require File::Spec ]
+require Foo; [ Foo::bar "baz" ]
+require Foo; [ Foo::bar( "baz" ) ]
+$s=[0xA0, 0xB0, 0xC0, 0xD0]->[rand(4)]; $c=int(rand(13)); chr 0x1F000+$s+$c
+$s=[0xA0, 0xB0, 0xC0, 0xD0]->[rand*4]; $c=int(rand*13);  hex $s+$c
+$s=[0xA0, 0xB0, 0xC0, 0xD0]->[rand*4]; $c=int(rand*13); pack "H*" $s+$c
+$s=[0xA0, 0xB0, 0xC0, 0xD0]->[rand*4]; $c=int(rand*13); pack "H*", $s+$c
+$s=[0xA0, 0xB0, 0xC0, 0xD0]->[rand()*4]; $c=int(rand() *13); $s+$c
+$s=[0xA0, 0xB0, 0xC0, 0xD0]->[rand(4)]; $c=int(rand(13)); $s+$c
+$s=[0xA0, 0xB0, 0xC0, 0xD0]->[rand*4]; $c=int(rand*13);  $s+$c
+$s=[0xA0, 0xB0, 0xC0, 0xD0]->[rand*4]; $c=int(rand*13); $s+$c
+$s=[0xA0, 0xB0, 0xC0, 0xD0]->[rand*4]; $c=int(rand*13); unpack "H*", $s+$c
+$s=[0xA0, 0xB0, 0xC0, 0xD0]->(rand*4); $c=rand*13; unpack "H*", $s+$c
+$s=[0xA0, 0xB0, 0xC0, 0xD0]->[rand*4]; $c=rand*13; unpack "H*", $s+$c
+s/(A)/'lcfirst $1'/ee
+s/(A)/'lcfirst $1'/ee; $_
+say ⅔
+say "\002"
+say \002
+say "!(0 || 1 && (0 || 0)) && !(1 && 1)"
+say '4c6567f85f0980f30987b69b78767647c2165a26' =~ /^[[:hexdigit:]]{40}$/ ? 'y' : 'n'
+say '4c6567f85f0980f30987b69b78767647c2165a26' =~ /^[[:xdigit:]]{40}$/ ? 'y' : 'n'
+say '4c6567f85f0980f30987b69b78767647c2165a26' ? 'y' : 'n'
+say blahblah 
+say chr 0xFE86
+say chr 10689
+say for 0.. 0xFF
+say hex 42
+say hex 'FA'
+say length chr 0xFE86
+say length chr 10689
+say length q|0.99999999999992|
+say length quotemeta chr 0xFE86
+say length quotemeta chr 10689
+say length "ﺆ"
+say "\N{COMBINING ACCUTE ACCENT}y"
+say ord "\n"
+say q|{:amount($[4.95e0, 4.85e0, 2.4e0]), :description($["Hot beef burrito", "Mild fish taco", "Medium size orange juice"]), :name($["BUBH", "TAFM", "BEOM"]), :price($[4.95e0, 4.85e0, 1.2e0]), :quantity($[1, 1, 2])}| eq q|{:amount($[4.95e0, 4.85e0, 2.4e0]), :description($["Hot beef burrito", "Mild fish taco", "Medium size orange juice"]), :name($["BUBH", "TAFM", "BEOM"]), :price($[4.95e0, 4.85e0, 1.2e0]), :quantity($[1, 1, 2])}|
+say q|{:amount($[4.95e0, 4.85e0, 2.4e0]), :description($["Hot beef burrito", "Mild fish taco", "Medium size orange juice"]), :name($["BUBH", "TAFM", "BEOM"]), :price($[4.95e0, 4.85e0, 1.2e0]), :quantity($[1, 1, 2])}| eq q|{:amount($[4.95e0, 4.85e0, 2.4e0]), :description($["Hot beef burrito", "Mild fish taco", "Medium size orange juice"]), :name($["BUBH", "TAFM", "BEOM"]), :price($[4.95e0, 4.85e0, 1.2e0]), :quantity($[1, 1, 2])}| ? 's
+say ref $^O
+say ref $^V
+say sort { $|-- or -1 } 'ruJt tc,en hoetokarrasS h' =~ /./g
+say sprintf '%x', 100
+say sprintf '%x', 15
+say sprintf '%x', 16
+say sprintf '%x', 96
+say "$^V"
+say $^V
+say ⅔ * π
+[ scalar asdfadsf->import ]
+scalar grep $_, 1..5
+[ scalar keys \%INC ]
+$self->{messages} = [1,2,3]; $self->{messages}->[0] = "a"; $self->{messages}
+$_ = '@@@'; s'@'$'gr; 
+"\\" =~ s'\'\\'gsr;
+"\\" =~ s'\\'\\'gsr;
+s ❤‎ Happy Valentine's Day, #perl ❤‎ ❤‎ ❤‎r
+[shift]
+$SIG{__DIE__} = sub { say "42"; } '..'
+$SIG{__DIE__} = sub { say 42 };  die  
+-sin
+[ -(sin =>)  ]
+[ -sin =>  ]
+[ -sin  ]
+[ sin =>  ]
+"some text [3] some more text [4] even more text" =~ s/(?=\[\d+\])/\n/gr
+"some text [3] some more text [4] even more text" =~ s/(?=\[)/␤/gr
+"some text [3] some more text [4] even more text" =~ s/(?=[)/\n/gr
+"some text [3] some more text [4] even more text" =~ s/(?=\[)/\n/gr
+[sort { -1 } 5, 2, 3]
+[sort {--$|} a..'y']
+[sort {--$|} a..y]
+[sort {$|--} a..'y']
+[ sort { int(rand(3)) - 1 } 1..20 ]
+[sort { --$| or -1 } 'a'..'y']
+[sort { $|-- or -1 } 'a'..'y']
+sort { --$| or -1 } 'a'..'y'
+[ sort { rand(3) - 1 } 1..20 ]
+[ sort { rand() > .5 ? 1 : -1 } 1..20 ]
+[ sort { rand() - .5 } 1..20 ]
+[ split / /, "foo     bar" ]
+[[ split / /, "foo     bar" ], [ split ' ', "foo     bar" ]]
+[ split ' ', "foo  \n  bar\nmer\n  "]
+[ sprintf('%020b', 4), bin sprintf('%b', 4 << 1) ]
+[ sprintf('%020b', 4), oct '0b' .  sprintf('%b', 4 << 1) ]
+[ sprintf('%020b', 4), sprintf('%b', 4 << 1) ]
+[ sprintf '.0f%', 8.5 ]
+[ sprintf '%.0f', 8.5 ]
+sprintf '%1$s %1$s', 'foo'
+[ sprintf('%20b', 4), sprintf('%b', 4 << 1) ]
+[ sprintf('%2b', 4), sprintf('%b', 4 << 1) ]
+[ sprintf('%b', 3), sprintf('%b', 3 << 1) ]
+[ sprintf('b', 3), sprintf('b', 3 << 1) ]
+[ sprintf('%b', 4), sprintf('%b', 4 << 1) ]
+[ sprintf '%.f', 8.5 ]
+[ sprintf '%.f', 8.5, 11.5 ]
+$_ = '@@@'; s'@'$'r; 
+srand 42; my @o = chr(0x202d, 0x202e); print "$o[rand 2]$_" for 'a'..'z', '_';
+srand 42; my @o = ("\x202d", "\x202e"); print "$o[rand 2]$_" for 'a'..'z', '_';
+$_ = "stackoverflow"; reverse 'catsoverflow'
+$_ = "stackoverflow"; reverse 'wolfrevostac'
+state $x;
+state $x; ++$x
+$_ = "STDERR output success\nSTDERR output fsuccess\n";  /^STDERR output success(?=.(?!STDERR output success))/ ? 'y' : 'n'
+$_ = "STDERR output success\nSTDERR output success\n";  /^STD42ERR output success(?!STDERR output success)/ ? 'y' : 'n'
+$_ = "STDERR output success\nSTDERR output success\n";  /^STDERR output success(?=\nSTDERR output success)/ ? 'y' : 'n'
+$_ = "STDERR output success\nSTDERR output success\n";  /^STDERR output success(?!\nSTDERR output success)/ ? 'y' : 'n'
+$_ = "STDERR output success\nSTDERR output success\n";  /^STDERR output success(?!.*STDERR output success)/s ? 'y' : 'n'
+$_ = "STDERR output success\nSTDERR output success\n";  /^STDERR output success.*?(?!STDERR output success)/ ? 'y' : 'n'
+$_ = "STDERR output success\nSTDERR output success\n";  /^STDERR output success.*(?!STDERR output success)/ ? 'y' : 'n'
+$_ = "STDERR output success\nSTDERR output success\n";  /^STDERR output success(?=.(?!STDERR output success))/ ? 'y' : 'n'
+$_ = "STDERR output success\nSTDERR output success\n";  /^STDERR output success(?=.*(?!STDERR output success))/ ? 'y' : 'n'
+$_ = "STDERR output success\nSTDERR output success\n";  /^STDERR output success(?=STDERR output success)/ ? 'y' : 'n'
+$_ = "STDERR output success\nSTDERR output success\n";  /^STDERR output success(?!.*STDERR output success)/ ? 'y' : 'n'
+$_ = "STDERR output success\nSTDERR output success\n";  /^STDERR output success(?!.+STDERR output success)/ ? 'y' : 'n'
+$_ = "STDERR output success\nSTDERR output success\n";  /^STDERR output success(?!.+STDERR output success))/ ? 'y' : 'n'
+$_ = "STDERR output success\nSTDERR output success\n";  /^STDERR output success(?!STDERR output success)/ ? 'y' : 'n'
+$_ = "STDERR output success\nSTDERR output success\n";  /^STDERR output success(?.*(?!STDERR output success))/ ? 'y' : 'n'
+sub add ( $x = return 0, $y = return $x ) { return $x + $y }   [ add(), add(2), add(2,3), add(2,3,4) ]
+sub AUTOLOAD { print $AUTOLOAD =~ /::(.*)/ }; fizz(), buzz();
+sub AUTOLOAD { print $AUTOLOAD =~ /::(.*)/, " " }; for(1..100) { undef($f), fizz() if 2 == ++$f; undef($b), buzz() if 4 == ++$b; $f && $b || &{$_}() }
+sub AUTOLOAD { print $AUTOLOAD =~ /::(.*)/, " " }; for(1..100) { undef($f), fizz() if 2 == ++$f; undef($b), buzz() if 4 == ++$b; $f && $b && nope(); &{$_}() }
+sub AUTOLOAD { print $AUTOLOAD =~ /::(.*)/, " " }; for(1..100) { undef($f), fizz() if 2 == ++$f; undef($b), buzz() if 4 == ++$b; $f && $b or nope(); &{$_}() }
+sub AUTOLOAD { print $AUTOLOAD =~ /::(.*)/ }; for(1..100) { undef($f), fizz() if 3 == ++$f; undef($b), buzz() if 5 == ++$b; $f && $b || &{$_}() }
+sub AUTOLOAD { print $AUTOLOAD =~ /::(.*)/ }; for(1..100) { undef($f), fizz() if 3 == ++$f; undef($b), buzz() if 5 == ++$b; $f && $b && &{$_}(); &{" "}() }
+sub AUTOLOAD { print $AUTOLOAD =~ /::(.*)/ }; for(1..100) { undef($f), fizz() if 3 == ++$f; undef($b), buzz() if 5 == ++$b; $f && $b && &$_; &{" "} }
+sub AUTOLOAD { print $AUTOLOAD =~ /::(.*)/, " " }; for(1..100) { undef($f), fizz() if 3 == ++$f; undef($b), buzz() if 5 == ++$b; $f && $b || &{$_}() }
+sub AUTOLOAD { print $AUTOLOAD =~ /::(.*)/, " " }; for(1..100) { undef($f), fizz() if 3 == ++$f; undef($b), buzz() if 5 == ++$b; $f && $b && &{$_}() }
+sub AUTOLOAD { print $AUTOLOAD =~ /::(.*)/, " " }; for(1..100) { undef($f), fizz() if 3 == ++$f; undef($b), buzz() if 5 == ++$b; $f && $b && nope(); &{$_}() }
+sub AUTOLOAD { print "hi" } 'foo'->();
+sub AUTOLOAD { print "hi" } ${*foo}->();
+sub AUTOLOAD { print "hi" } foo();
+sub AUTOLOAD { print "hi" } main->foo();
+sub AUTOLOAD { print "hi" } $x=\*foo; (&$x)->();
+sub AUTOLOAD { print "hi" } $x=\*foo; $x->();
+sub AUTOLOAD { print "hi" } $x=\*foo; &$x->();
+sub AUTOLOAD { print "hi" } $x = *foo; $x->();
+sub AUTOLOAD { print "hi" } $x = *foo; &{$x}();
+sub AUTOLOAD { print "hi" } $x = \*foo; $x->();
+sub AUTOLOAD { print "hi" } $x = \*foo; *{$x}->();
+sub AUTOLOAD { print "hi" } $x = \*foo; &{$x}();
+sub AUTOLOAD { print "hi" } $x = \*foo; &{*$x}();
+sub AUTOLOAD { print "hi" } $x = *foo; *$x{CODE}->();
+sub AUTOLOAD { print "hi" } $x = \*foo; *$x{CODE}->();
+sub blah { !!@_ } [ blah, blah(1) ]
+sub bubsort { my $arr = shift; while( my ($i) = grep $arr->[$_-1] > $arr->[$_], 1 .. $#$arr ) { @$arr[$i, $i-1] = @$arr[$i-1, $i] } }
+sub bubsort { my $arr = shift; while( my ($i) = grep $arr->[$_-1] > $arr->[$_], 1 .. $#$arr ) { @$arr[$i, $i-1] = @$arr[$i-1, $i] }; $arr }; bubsort [ sort { rand(1) < .5 } 1..20 ]
+sub bubsort { my $arr = shift; while( my ($i) = grep $arr->[$_-1] > $arr->[$_], 1 .. $#$arr ) { @$arr[$i, $i-1] = @$arr[$i-1, $i] }; $arr }; bubsort [ sort { rand < .5 } 1..20 ]
+sub bubsort { my $arr = shift; while( my ($i) = grep $arr->[$_-1] > $arr->[$_], 1 .. $#$arr ) { @$arr[$i, $i-1] = @$arr[$i-1, $i] }; $arr }; [ sort { rand(1) < .5 } 1..20 ]
+sub Buffalo(;@) {return 1 if ($_[0] eq 'buffalo')}; sub buffalo {"buffalo"}; 
+sub Buffalo(;@) {return 1 if $_[0] eq 'buffalo'}; sub buffalo {"buffalo"}; 
+sub Buffalo(;@) {return 1;}; sub buffalo {"buffalo"}; 
+sub Buffalo(@) {return 1;}; sub buffalo {"buffalo"}; 
+sub chomp { 42 }; [chomp "x\n" ]
+sub chomp { "blah" }; [ chomp ]
+sub code; for \&code (sub { print 'ok' }) { say '[', code, ']' }
+sub *CORE::die { say "42"; } die  
+sub CORE::die { say "42"; } die  
+sub die { say "42"; } die  
+sub { 'FILE' = 42; } say $FILE;
+sub foo { [1..3], [a..c] }; my $x = foo;
+sub foo {} "->${ \\&foo }"
+sub foo { "foo [@_]" }; my @bar = ((bless []), 43); shift(@bar)->foo(@bar);
+sub foo {" Hello"}; undef &foo;
+sub foo {" Hello"}; undef &foo; foo()
+sub foo :lvalue { print "FOO!" }  undef &foo; foo()
+sub foo { }; my $stash = \%main:: ; [ $stash->{'foo'} ]
+sub foo { }; my $stash = \%main:: ; [ *{$stash->{'foo'}}{CODE} ]
+sub foo { }; my $stash = \%main:: ; [ *{$stash->{foo}}{CODE} ]
+sub foo { }; my $stash = \%main:: ; [ *{$stash->{temp}}{CODE} ]
+sub foo { my $x = 1; use constant FOO => \$x; 2 }; [ foo, FOO ];
+sub foo { my $x = 1; use constant FOO => \$x }; [ foo, FOO ];
+sub foo { my @xs = "a" .. "c"; return ("X", "Y", @xs); }  my $x = foo; $x
+sub foo { my $x = shift; use constant FOO => \$x; 42 }; [ foo(1) ];
+sub foo { my $x = shift; use constant FOO => \$x; 42 }; [ foo(1), ${ FOO() } ];
+sub foo { my $x = shift; use constant FOO => \$x; 42 }; [ foo(1), ${ FOO() }, foo(2) ];
+sub foo { my $x = shift; use constant FOO => \$x; 42 }; my @a = foo(1), @{FOO()}; my @b = foo(2), @{FOO()}; [ @a, @b ];
+sub foo { my $x = shift; use constant FOO => \$x; 42 }; my @a = foo(1), ${FOO()}; my @b = foo(2), ${FOO()}; [ @a, @b ];
+sub foo { my $x = shift; use constant FOO => \$x; () }; [ foo(1), ${ FOO() }, foo(2), ${ FOO() } ];
+sub foo { my $x = shift; use constant FOO => \$x; ${ &{'FOO'}() } }; [ foo(1), foo(2) ];
+sub foo { my $x = shift; use constant FOO => \$x; &{'FOO'}() }; [ foo(1), foo(2) ];
+sub foo { my @z = (1, 2, 3); my @y = qw<a b c>; return \@z, \@y; } my $x = foo(); $x
+sub foo { print "FOO!" }  foo()
+sub foo { print "FOO!" }  undef &foo; foo()
+sub foo (\@) { say @_ };
+sub foo (\@\@;\@\@\@\@\@\@\@\@\@\@\@\@\@\@\@\@\@\@\@\@\@\@\@\@\@\@\@\@\@\@) { say @_ };
+sub foo (\@) { say @_ }; foo +(split //, "foobar")
+sub foo (;$) { say "[@_]"; }; my %h = ( bar => foo(42), meow => 'moo' ); \%h
+sub foo { say "[@_]"; }; my %h = ( bar => foo(42), meow => 'moo' ); \%h
+sub foo(;$) { say "[@_]"; }; my %h = ( bar => foo 42, meow => 'moo' ); \%h
+sub foo(;$) { say "[@_]"; }; my %h = ( bar => foo(42), meow => 'moo' ); \%h
+sub foo($) { say "[@_]"; }; my %h = ( bar => foo(42), meow => 'moo' ); \%h
+sub foo { shift }; @_ = 'a'..'d'; &foo; [ @_ ]
+sub foo {shift} { foo => 'bar' }->${ \\&foo }
+sub foo { state $foo = time; $foo }; [ foo, foo, foo]
+sub foo { wantarray ? 'foos' : 'bars' }  [ () = foo ]
+sub j { !( $_[0] && $_[1] ) }  sub p { !($_[0] || $_[1]) } [ map [j($_->[0], $_->[1]), p($_->[0], $_->[1])], [0, 0], [1, 0], [1, 1], [0, 1] ]
+sub List::Util::0sum {"Hello World"};
+sub List::Util::0sum {"Hello World"}; List::Util::0sum()
+sub List::Util::0sum {my ($a, $b)=(0,0); $a+=$_, $b-=$_ for @_; ($a, $b)}; [List::Util::0sum(1,2,3,4,5)]
+sub o { (!$_[0]) && (!$_[1]) } sub j { !( $_[0] && $_[1] ) }  sub p { !($_[0] || $_[1]) } [ map [j($_->[0], $_->[1]), j($_->[0], $_->[1]), p($_->[0], $_->[1])], [0, 0], [1, 0], [1, 1], [0, 1] ]
+sub o { ((!$_[0]) && (!$_[1])) } sub j { !( ($_[0] && $_[1]) ) }  sub p { !($_[0] || $_[1]) } [ map [j($_->[0], $_->[1]), j($_->[0], $_->[1]), p($_->[0], $_->[1])], [0, 0], [1, 0], [1, 1], [0, 1] ]
+sub _ { print /::(.*)/ }; *AUTOLOAD = *_; for(1..100) { $f=0, fizz() if 3 == ++$f; $b=0, buzz() if 5 == ++$b; $f && $b && &$_; &{" "} }
+sub _ { print /::(.*)/ }; *_ = *AUTOLOAD; for(1..100) { undef($f), fizz() if 3 == ++$f; undef($b), buzz() if 5 == ++$b; $f && $b && &$_; &{" "} }
+sub _ { print /::(.*)/ }; *AUTOLOAD = *_; for(1..100) { undef($f), fizz() if 3 == ++$f; undef($b), buzz() if 5 == ++$b; $f && $b && &$_; &{" "} }
+sub _ { print /::(.*)/ }; *AUTOLOAD = *_; for(1..50) { $f=0, fizz() if 3 == ++$f; $b=0, buzz() if 5 == ++$b; $f && $b && &$_; &{" "} }
+sub _ { print /::(.*)/, ' ' }; *AUTOLOAD = *_; Just(), another(), Perl(), &{"hacker,"};
+sub proc ( $ & ) {}; [ proc 'foo', {; } ]
+sub proc ( $ & ) {}; [ proc 'foo', {;} ]
+sub proc ( $ & ) {}; [ proc 'foo', {} ]
+sub proc ( $ & ) {}; [ proc 'foo', +{} ]
+sub proc ( $ & ) {}; [ proc 'foo', { 42} ]
+sub proc ( $ & ) {}; [ proc 'foo', {; 42} ]
+sub proc ( $ & ) {}; [ proc 'foo', { 42; 45; } ]
+sub ps(&@) { my $c = shift; my $p = ''; while(1) { my $i = 0; 1 until ++vec $p, $i++, 8; return if vec $p, @_, 1; $c->(@_[grep vec $p, $_, 1], 0..$#_]) } }
+sub ps(&@) { my $c = shift; my $p = ''; while(1) { my $i = 0; 1 until ++vec $p, $i++, 8; return if vec $p, @_, 1; $c->(@_[grep vec($p, $_, 1), 0..$#_]) } }; my @a;ps { push @a, "@_" } 'a'..'c'; \@a
+sub ps(&@) { my $c = shift; my $p = ''; while(1) { my $i = 0; 1 until ++vec $p, $i++, 8; return if vec $p, @_, 1; $c->(@_[grep vec($p, $_, 1), 0..$#_]) } }; my @a;ps { push @a, "@_" } 'a'..'d'; \@a
+sub ps(&@) { my $c = shift; my $p = ''; while(1) { my $i = 0; 1 until ++vec $p, $i++, 8; return if vec $p, @_, 1; $c->(@_[grep vec $p, $_, 1], 0..$#_]) } }; my @a;ps { push @a, \@_ } 'a'..'e'; \@a
+sub ps(&@) { my $c = shift; my $p = ''; while(1) { my $i = 0; 1 until ++vec $p, $i++, 8; return if vec $p, @_, 1; $c->(@_[grep vec($p, $_, 1), 0..$#_]) } }; my @a;ps { push @a, "@_" } 'a'..'e'; \@a
+sub ps(&@) { my $c = shift; my $p = ''; while(1) { my $i = 0; 1 until ++vec $p, $i++, 8; return if vec $p, @_, 1; $c->(@_[grep vec($p, $_, 1), 0..$#_]) } }; my @a;ps { push @a, \@_ } 'a'..'e'; \@a
+sub { @_ = qw/foo bar baz/; } my @z = 1..10; sub @z; \@z
+substr 'foo', 0, -1
+substr 'foo', -1
+sub TIEHANDLE { [] }; sub AUTOLOAD { print "In autoload!"; 42 }; tie *FH, 'main'; [ scalar <FH> ];
+sub TIEHANDLE { [] }; sub READLINE { "asdf" }; sub AUTOLOAD { print "In autoload!"; 42 }; tie *FH, 'main'; [ scalar <FH> ];
+sub TIEHANDLE { [] }; sub READLINE { "asdf" }; sub AUTOLOAD { print "In autoload!"; 42 }; tie *FH, 'main'; [ scalar readline FH ];
+sub TIEHANDLE { [] }; sub READLINE; sub AUTOLOAD { print "In autoload!"; 42 }; tie *FH, 'main'; [ scalar <FH> ];
+sub TIEHANDLE { [] }; tie *FH, 'main'; [ print FH "foo" ];
+sub TIEHANDLE { [] }; tie *FH, 'main'; print FH "foo";
+sub TIEHANDLE { [] }; tie *FH, 'main'; [ scalar <FH> ];
+sub TIEHASH { bless [] }; sub FETCH { __FILE__ }; BEGIN { tie %INC, 'main' }; sub UNIVERSAL::import { print "import @_" }; use How::Strange;
+sub TIEHASH { bless [] }; sub FETCH { __FILE__ }; BEGIN { tie %INC, 'main' }; sub UNIVERSAL::import { print "@_" }; use How::Strange;
+sub TIEHASH { bless [] }; sub FETCH { __FILE__ }; BEGIN { tie %INC, 'main' }; use How::Strange;
+sub TIEHASH { bless [] }; sub FETCH { __FILE__ }; [ (tie %INC, 'main'), require WhatDoesThisDo ]
+sub UNIVERSAL::maybe {$class=shift; rand() > 0.5 ? $class->new() : undef}; package bar { sub new {"Hello World"};}; bar->maybe()
+sub UNIVERSAL::maybe {rand() > 0.5 ? __PACKAGE__->new() : undef}; package bar { sub new {"Hello World"};}; bar->maybe()
+sub use constant foo::bar => 42; foo::bar
+sub x { my $params ||= '0' || '0'; $params } [ x(42), x(43) ]
+sub x { my $params ||= '0' || 'b'; $params } [ x(42), x(43) ]
+sub x { my $params ||= '0' || undef; $params } [ x(42), x(43) ]
+sub x { my $params ||= 'a' || 'b'; $params } [ x(42), x(43) ]
+sub x { my $params ||= shift; $params } [ x(42), x(43) ]
+sub x { @_ = qw/foo bar baz/; } my @z = 1..10; x @z; \@z
+sub z { }  z('∴')
+sub z { }  z(∴)
+sub π { atan2(1,1) * 4; } say π
+'	' =~ /\t/
+"test"
+"test123Wow" =~ /^.*(\d+).*$/g; $1
+*{'$::test'} = sub { 1 }; [ '$'->test ]
+("the real life", "just fantasy")["is this"]
+[ time ]
+ 'trg uggc|||vtabenagqrfvtare.pbz|wncu.ugzy' =~ y☻n-za-m|☻a-z:/☻r 
+ 'trg uggc.||vtabenagqrfvtare.pbz|wncu.ugzy' =~ y☻n-za-m.|☻a-z:/☻r 
+'trg uggcX||vtabenagqrfvtare.pbz|wncu.ugzy //obql' =~ y☻n-za-mX|☻a-z:/☻r
+try {foo}
+try {print "hw"
+try {print "hw"}
+try {print "hw"} catch {die "foo"}
+($two4s, $delta, $secs)
+ 'uggc|||vtabenagqrfvtare.pbz|wncu.ugzy' =~ y☻n-za-m.|☻a-z:/☻r 
+ 'uggc.||vtabenagqrfvtare.pbz|wncu.ugzy' =~ y☻n-za-m.|☻a-z:/☻r 
+ 'uggcX||vtabenagqrfvtare.pbz|wncu.ugzy' =~ y☻n-za-mX|☻a-z:/☻r 
+undef < 0
+[\undef, \undef]
+UNITCHECK { print 'ok' }; 42;
+[UNIVERSAL->can('import')]
+unless( $a or $b ){}
+unless( a or b ){}
+[ unpack '(A3)*', 'abcdefghi' ]
+[unpack "a*", "Hello World"]
+unpack "b*",(pack "d", 0.1)
+[ unpack 'C3', 'abcdefghi' ]
+[unpack "c*", "Hello World"]
+[unpack "c*", "Hello World☃ "]
+[unpack "C*", "Hello World☃ "]
+unpack "d", "0.1"
+unpack "d", 0.1
+unpack "D", "0.1"
+unpack("H*", (4095 & 0xFF00) >> 8);
+unpack("H*", chr 4095);
+unpack("H*", pack("C*", 0xFA, 15, 255))
+unpack("H*", pack("C*", 0xFA, (3192 & 0x0F00) >> 8, 255))
+unpack "h*", pack "d", 0.1
+unpack "h*",(pack "d", 0.1)
+URI->new('/product/IDHEREFUCKER');
+use 10;
+use 5.008; You know what I like about perl? It's the fact that this English sentence is perfectly parsable!
+use 5.008; You know what I like about perl? It's the fact that this English sentence is perfectly parsable! Some may say: "no way", but I got deparse to prove it
+use 5.010; for( 1..3 ) { my $x = sub { state $x = 5; print $x++ }; $x->() for 1..4 }
+use 5.010; for( 1..3 ) { sub { state $x = 5; print $x++ }->() }
+use 5.010; my $x; sub foo { ++$foo }; [ foo, foo, foo ]
+use 5.010; my $x; sub foo :lvalue { ++$foo }; [ foo, foo, foo ]
+use 5.010; my $x; [ ++$x,++$x,++$x ]
+use 5.010; say `ls -a`;
+use 5.010; say sort { $|-- or -1 } 'ruJt tc,en hoetokarrasS h' =~ /./g
+use 5.010; sub foo :lvalue { state $foo = shift; @_ and $foo = shift;$foo }; [ foo(41), foo , foo(1), foo, foo, foo, foo(75), foo, foo("zof!"), foo, foo]
+use 5.010; sub foo { state $foo = do { print "TEST" }; @_ and $foo = shift; $foo }; [ foo, foo(41), foo , foo(1), foo, foo, foo, foo(75), foo, foo("zof!"), foo, foo]
+use 5.010; sub foo { ++state $foo }; [ foo, foo, foo ]
+use 5.010; sub foo { state $foo = shift; @_ and $foo = 42;$foo }; [ foo(41), , foo(1), foo]
+use 5.010; sub foo { state $foo = shift; @_ and $foo = 42;$foo }; [ foo(41), foo, foo]
+use 5.010; sub foo { state $foo = shift; @_ and $foo = 42;$foo }; [ foo(41), foo , foo(1), foo]
+use 5.010; sub foo { state $foo = shift; @_ and $foo = 42;$foo }; [ foo, foo, foo]
+use 5.010; sub foo { state $foo = shift; @_ and $foo = shift;$foo }; [ foo(41), foo , foo(1), foo]
+use 5.010; sub foo { state $foo = shift; @_ and $foo = shift;$foo }; [ foo(41), foo , foo(1), foo, foo, foo, foo(75), foo, foo("zof!"), foo, foo]
+use 5.010; sub foo { state $foo = shift; $foo = shift;$foo }; [ foo(41), foo , foo(1), foo, foo, foo, foo(75), foo, foo("zof!"), foo, foo]
+use 5.010; sub foo { state $foo = time; $foo }; [ foo, foo, foo]
+use 5.010; sub foo { state $foo = time; sleep 1;$foo }; [ foo, foo, foo]
+use 5.010; sub spin { state $t = time; my $c = 0; ++$c while $t >= time; ++$t; $c }; [ map spin, 1..10 ]
+use 5.010; sub spin { state $t = time; my $c = 0; ++$c while $t >= time; ++$t; $c }; [ map spin, 1..4 ]
+use 5.010; sub spin { state $t = time; my $c = 0; ++$c while $t >= time; ++$t; $c }; [ map spin, 1..6 ]
+use 5.010; sub spin { state $t = time; my $c = 0; ++$c while $t >= time; ++$t; $c }; [ spin, spin, spin ]
+use 5.010; sub spin { state $t = time; my $c = 0; ++$c while $t >= time; ++$t }; [ spin, spin, spin ]
+use 5.020; for ( [qw/foo bar/]->@* ) { print}
+use 5.020; for ( [qw/foo bar/]->*@ ) { print}
+use 5.020; my $x = \42; $x->$*
+use 5.020; sub add ($x = return 0, $y = return $x) { return $x + $y }   [ add(), add(2), add(2,3)  ]
+use 5.020; sub add ( $x = return 0, $y = return $x ) { return $x + $y }   [ add(), add(2), add(2,3), add(2,3,4) ]
+use 5.020; sub add ($x = return 0, $y = return $x) { return $x + $y }   [ add(), add(2), add(2,3), add(2,3,4) ]
+use 5.020; use feature 'postderef'; no warnings 'experimental::postderef'; for ( [qw/foo bar/]->@* ) { print}
+use 5.08; You know what I like about perl? It's the fact that this English sentence is perfectly parsable! Some may say: "no way", but I got deparse to prove it
+use 5.10; sub foo { state $foo = time; $foo }; [ foo, foo, foo]
+use 5.20; my $x = \42; $x->$*
+use 6;
+use 999;
+use bigint; 1e1000
+use Carp;
+use Carp 9;
+use Carp::croak("loaded")
+use charnames (); [ charnames::viacode 0x92 ]
+use constant ARRAY => [qw(one two three)]; [ $::{ARRAY} ]
+use constant ARRAY => [qw(one two three)]; $::{ARRAY}
+use constant ARRAY => [qw(one two three)]; ${$::{ARRAY}}
+use constant foo::bar => 42; foo::bar
+use constant FOO => 'BAR!'; BEGIN { say FOO }
+use constant FOO => 'BAR!'; BEGIN say { FOO }
+use constant FOO => 'BAR!'; our $dir = FOO; BEGIN { say FOO } say $dir
+use constant FOO => 'BAR!'; our $dir = FOO; BEGIN { say FOO } say "Moar $dir!"
+use constant foo => bar; package bar; sub baz { 'quux' }; package main; [ baz { foo } ];
+use constant foo => bar; package bar; sub baz { 'quux' }; package main; [ baz { foo() } ];
+use constant foo => bar; package bar; sub baz { 'quux' }; package main; [ baz foo ];
+use constant foo => bar; package bar; sub baz() { 'quux' }; package main; [ baz { foo } ];
+use constant foo => bar; package bar; sub baz() { 'quux' }; package main; [ baz { foo() } ];
+use constant foo => bar; package bar; sub baz() { 'quux' }; package main; [ baz foo ];
+use constant foo => 'ok'; *main::{foo};
+use constant list => qw(a b c); [list[2]]
+use constant list => qw(a b c); list->[2]
+use constant one => 1; BEGIN { &Internals::SvREADONLY(\one, 0); ++${ \one } }; say one;
+use Data::Dumper; my @a = ({foo => 1, bar => 2}, {problems => 99, bitches => 0}); for my \%hash (@a) {print Dumper(%hash);}
+use Devel::Peek qw,SvREFCNT,;
+use Encode;
+use Encode; [Encode->encodings()];
+use Encode; print encode 'utf8', 'get http://ignorantdesigner.com/japh.html' =~ y • a-z:/ • n-za-m☃ •r 
+use experimental 'postderef'; my $x; $x->$@
+use experimental 'postderef'; my $x;  @{ $x || [] }; $x->@*
+use experimental 'postderef'; my $x;  @{ $x || [] }; $x->$@
+use experimental 'postderef'; my @z = 1..10; $z->$#
+use experimental 'postderef'; my $z =[ 1..10]; $z->$*#
+use experimental 'postderef'; my $z =[ 1..10]; $z->$#
+use experimental 'postderef'; my $z =[ 1..10]; $z->$#*
+use experimental 'postderef'; undef->$@
+use feature ':all'; sub add (@) { __CODE__->(1,2) }   [ add(), add(2), add(2,3)  ]
+use feature ':all'; sub add (__CODE__->(2,2)) { }   [ add(), add(2), add(2,3)  ]
+use feature ':all'; sub add (@) { __SUB__->(1,2) }   [ add(), add(2), add(2,3)  ]
+use feature ':all'; sub add (__SUB__->(2,2)) { }   [ add(), add(2), add(2,3)  ]
+use feature ':all'; sub add ($x = return 0, $y = return $x) { return $x + $y }   [ add(), add(2), add(2,3)  ]
+use feature 'postderef'; \(42)->$*
+use feature 'postderef'; \42->$*
+use feature 'postderef'; for my $i (1..10) {push @a, [(1) x (1024*1024)]}; [scalar(@a), scalar($a[0]->@*)]
+use feature 'postderef'; for my $i (1..10) {push @a, [(1) x (1024*1024)]}; sleep 15; [scalar(@a), scalar($a[0]->@*)]
+use feature 'postderef'; for my $i (1..15) {push @a, [(1) x (1024*1024)]}; [scalar(@a), scalar($a[0]->@*)]
+use feature 'postderef'; for my $i (1..30) {push @a, [(1) x (1024*1024)]}; [scalar(@a), scalar($a[0]->@*)]
+use feature 'postderef'; for my $i (1..5) {push @a, [(1) x (1024*1024)]}; [scalar(@a), scalar($a[0]->@*)]
+use feature 'postderef'; my $a; ++$a->$ ;[ $a ]
+use feature 'postderef'; my $aref = \['x']; $$aref->[0]
+use feature q,postderef,; my $x = 42; my $y = \$x; [ \$x, \$y->$* ]
+use feature q,postderef,; my $x = 42; my $y = \$x; [ \$x, \++$y->$* ]
+use feature 'say'; say "!(0 || 1 && (0 || 0)) && !(1 && 1)"
+use feature 'signatures'; sub add (__SUB__->(2,2)) { }   [ add(), add(2), add(2,3)  ]
+use feature 'signatures'; sub add ($x = 0, $y = 0) { return $x + $y }   [ add(), add(2), add(2,3)  ]
+use feature 'signatures'; sub add ($x = return 0, $y = return $x) { return $x + $y }   [ add(), add(2), add(2,3)  ]
+use File::Basename;
+use File::Basename; [map +(fileparse $_)[1], "foo.jpg", "foo\nbar.pdf","foo.png.", ".vimrc","x.js.pl","README"]
+use File::Basename; [map +(fileparse $_)[2], "foo.jpg", "foo\nbar.pdf","foo.png.", ".vimrc","x.js.pl","README"]
+use File::Basename; [map +(fileparse $_, qr/(?<=.)[^.]+/)[1], "foo.jpg", "foo\nbar.pdf","foo.png.", ".vimrc","x.js.pl","README"]
+use File::Basename; [map +(fileparse $_, qr/(?<=\.)[^.]+/)[1], "foo.jpg", "foo\nbar.pdf","foo.png.", ".vimrc","x.js.pl","README"]
+use File::Basename; [map +(fileparse $_, qr/[^.]+/)[1], "foo.jpg", "foo\nbar.pdf","foo.png.", ".vimrc","x.js.pl","README"]
+use File::Basename; [map +(fileparse $_, qr/(?<=\.)[^.]+/)[2], "foo.jpg", "foo\nbar.pdf","foo.png.", ".vimrc","x.js.pl","README"]
+use File::Basename; [map +(fileparse $_, qr/[^.]+/)[2], "foo.jpg", "foo\nbar.pdf","foo.png.", ".vimrc","x.js.pl","README"]
+use File::Basename qw/fileparse/; [map +(basename $_)[2], "foo.jpg", "foo\nbar.pdf","foo.png.", ".vimrc","x.js.pl","README"]
+use File::Basename qw/fileparse/; [map +(basename$_)[2] "foo.jpg", "foo\nbar.pdf","foo.png.", ".vimrc","x.js.pl","README"]
+use File::Spec; 
+use File::Spec; use CGI
+use JSON;
+use JSON::MaybeXS;
+use JSON::MaybeXS; JSON
+use JSON::MaybeXS; [ JSON() ]
+use JSON::MaybeXS; JSON()
+use JSON::MaybeXS; [ *main::JSON{CODE} ]
+use JSON::PP; no JSON::XS; no Cpanel::JSON::XS; use JSON::MaybeXS; JSON(); # Don't think this will work
+use JSON::XS;
+use  JSON::XS; no Cpanel::JSON::XS; use JSON::MaybeXS; JSON(); # Don't think this will work
+use List::Util;
+use List::Util qw/reduce/; [ map { reduce {$a + $b} 1..$_ } 10, 20, 15, 16, 18, 17 ]
+use List::Util qw/reduce/; [ map { reduce {$a + $b} 1..$_ } sort 10, 20, 15..18 ]
+use List::Util qw/reduce/; reduce {$a + $b} 1..10
+use List::Util qw/reduce/; reduce {$a + $b} 1..15
+use List::Util qw/reduce/; reduce {$a + $b} 1..16
+use List::Util qw/reduce/; reduce {$a + $b} 1..17
+use List::Util qw/reduce/; reduce {$a + $b} 1..18
+use List::Util qw/reduce/; reduce {$a + $b} 1..20
+use List::Util qw(shufffle); [ shuffle 1..20 ]
+use List::Util qw(shuffle); [ shuffle 1..20 ]
+use List::Util qw(shuffle); sub bubsort { my $arr = shift; while( my ($i) = grep $arr->[$_-1] > $arr->[$_], 1 .. $#$arr ) { @$arr[$i, $i-1] = @$arr[$i-1, $i] }; $arr }; bubsort [ shuffle 1..20 ]
+use List::Util qw(shuffle); sub bubsort { my $arr = shift; while( my ($i) = grep $arr->[$_-1] > $arr->[$_], 1 .. $#$arr ) { @$arr[$i, $i-1] = @$arr[$i-1, $i]; &bubsort }; $arr }; bubsort [ shuffle 1..20 ]
+use List::Util qw(shuffle); sub bubsort { my ($arr) = @_; while( my ($i) = grep $arr->[$_-1] > $arr->[$_], 1 .. $#$arr ) { @$arr[$i, $i-1] = @$arr[$i-1, $i]; &bubsort }; $arr }; bubsort [ shuffle 1..100 ]
+use List::Util qw(shuffle); sub bubsort { my ($arr) = @_; while( my ($i) = grep $arr->[$_-1] > $arr->[$_], 1 .. $#$arr ) { @$arr[$i, $i-1] = @$arr[$i-1, $i]; &bubsort }; $arr }; bubsort [ shuffle 1..20 ]
+use Math::Complex; 
+use MIME::Base64;
+use MIME::Base64; decode_base64 'aHR0cDovL3NhZnIua2luZ2ZlYXR1cmVzLmNvbS9CZWV0bGVCYWlsZXkvMjAwNC8wNS9CZWV0bGVfQmFpbGV5LjIwMDQwNTIyXzkwMC5naWY='
+use MIME::Base64; use warnings; sub z { substr shift, 1, 1 }  z('∴')
+use overload
+use overload;
+use overload q|""| => sub { 42 }; my @a; $a[42] = 'forty two'; [ $a[bless 'main'] ]
+use overload q|""| => sub { 42 }; my @a; $a[42] = 'forty two'; [ $a[bless {}, 'main'] ]
+use overload qw,"",=> sub { die }; bless {}, bless []; 42;
+use overload qw,"",=> sub { die }; my $x = bless []; 42;
+use overload qw,"",=> sub { die }; my $x = bless []; bless {}, $x; 42;
+use overload '""' => sub { 'abcdef' }; '' . bless [];
+use overload '""' => sub { 'abcdef' }; ref bless [], bless [];
+use overload '""' => sub { die 'abcdef' }; ref bless [], bless [];
+use POSIX qw/ceil/; [ ceil(-2.20, int -2.2 ]
+use POSIX qw/ceil/; [ ceil -2.2, int(-2.2) ]
+use POSIX qw/ceil/; [ ceil(-2.2), int -2.2 ]
+use POSIX qw/strftime/; strftime "%Y-%m-%d", localtime 0;
+use Safe;
+use Scalar::Util qw/dualvar/; my $i = dualvar 1, 'forty two'; my @a = qw/one two/; [ $a[ $i ] ];
+use Scalar::Util qw/dualvar/; my $i = dualvar 1, 'forty two'; my @a = qw/one two/; [ $a[ $i ], $a[ "$i" ] ];
+use Scalar::Util qw/dualvar/; my $i = dualvar 1, 'forty two'; my @a = qw/one two/; [ $a[ $i ], $a[ $i+0 ] ];
+use Scalar::Util qw/dualvar/; my $x = dualvar(42,'foo'); [ $x+0, "$x" ]
+use Scalar::Util qw/dualvar/; my $x = dualvar('42','foo'); $x = 55; [ $x+0, "$x" ]
+use Scalar::Util qw/dualvar/; my $x = dualvar 42, 'forty two'; [$x+0, "$x"]
+use Scalar::Util qw/dualvar/; my $x = dualvar 42, 'forty two'; [$x, "$x"]
+use Scalar::Util qw/dualvar/; my $x = dualvar('NaN','foo'); [ $x+0, "$x" ]
+use Scalar::Util qw/dualvar/; $x = dualvar 42, 'foo'; [ $x.'', $x+0 ]
+use Scalar::Util qw/looks_like_a_number/; looks_like_a_number 'NaN'
+use Scalar::Util qw/looks_like_number/; [ looks_like_number 'iNan' ]
+use Scalar::Util qw/looks_like_number/; [ looks_like_number 'Nan' ]
+use Scalar::Util qw/looks_like_number/; [ looks_like_number 'NaN' ]
+use Scalar::Util qw/looks_like_number/; looks_like_number 'NaN'
+use Scalar::Util qw/looks_like_number/; [ looks_like_number 'sdss' ]
+use Scalar::Util qw/looks_like_number/; [ looks_like_number 'sNan' ]
+use Scalar::Util qw/looks_like_number/; [ looks_like_number 'sNaN' ]
+use Scalar::Util qw/looks_like_number/; [ looks_like_number 'wtfNan' ]
+use Scalar::Util qw/looks_like_number/; [ looks_like_number 'xsNan' ]
+use Scalar::Util qw/looks_like_number/; [ looks_like_number 'zNan' ]
+use Scalar::Utils qw/dualvar/; my $x = dualvar 42, 'forty two'; [$x, "$x"]
+use strict; *4 = sub { 'ok' }; *{ \4 };
+use strict; *4 = sub { 'ok' }; *{ 4 };
+use strict; *4 = sub { 'ok' }; &{ \4 };
+use strict; *4 = sub { 'ok' }; &{4};
+use strict; *4 = sub { 'ok' }; main->${ \4 };
+use strict; $a="foo bar"; *$a = sub {"baz"}; "foo bar"->()
+use strict;  BEGIN { *::foo = \$::foo; } $foo = 42;
+use strict; BEGIN { package Zomg; use strict; *::foo = \$::foo; }  $foo = 42;
+use strict; $fl = '+++????? random shit any user can send to the bot'; my @mem_list = grep { $_ =~ /^$fl/i} 42;
+use strict;  *::foo = \$::foo;  $foo = 42;
+use strict; inf
+use strict; "-inf"<0
+use strict; "inf"<0
+use strict; "inf">0
+use strict; "inf"+0
+use strict; my $x; if ( $x = "x\b" ) { print "_$x_" }
+use strict; use v5.21; use feature qw(refaliasing);use Data::Dumper; my @a = ({foo => 1, bar => 2}, {problems => 99, bitches => 0}); foreach \%hash (@a) {print Dumper(%hash);}
+use strict; use v5.21; use feature qw(refaliasing);use Data::Dumper; my @a = ({foo => 1, bar => 2}, {problems => 99, bitches => 0}); foreach my \%hash (@a) {print Dumper(%hash);}
+use strict; use v5.21; use feature qw(refaliasing);use Data::Dumper; my @a = ({foo => 1, bar => 2}, {problems => 99, bitches => 0}); my %hash; foreach \%hash (@a) {print Dumper(%hash);}
+use strict; use warnings; blasdsdasdsa->import
+use strict; use warnings; $_ = '@f@f@f'; s'@f'$b'gr; 
+use strict; use warnings; [ grep defined, @{+{a => "b", c => "d", e => "f"}}{qw/a b c/} ];
+use strict use warnings; h->{two}();  sub h { +{ one => sub { 1 }, two => sub { 2 } } }
+use strict; use warnings; h->{two}();  sub h { +{ one => sub { 1 }, two => sub { 2 } } }
+use strict; use warnings; h()->{two}();  sub h { +{ one => sub { 1 }, two => sub { 2 } } }
+use strict; use warnings; +Inf
+use strict; use warnings; [ "+inf" > 0 ]
+use strict; use warnings; "+Inf"+0
+use strict; use warnings; [ "-Inf" > 0 ]
+use strict; use warnings; [ "+Inf" > 0 ]
+use strict; use warnings; [ "+Inx" > 0 ]
+use strict; use warnings; my $a = 42; my $z = 42; [ sort { $z <=> $b } 42 ]
+use strict; use warnings; my $a = 42; [ sort ]
+use strict; use warnings; my $a = 42; sort 
+use strict; use warnings; my $a = 42; [ sort { $a <=> $b } 42 ]
+use strict; use warnings; my $a = 42; [ sort { $z <=> $b } 42 ]
+use strict; use warnings; my @a; $a[undef]
+use strict; use warnings; my $foo; if ( %$foo ) { 1; }
+use strict; use warnings; my $foo; if ( $foo and %$foo ) { 1; }
+use strict; use warnings; my $h = {a => "b", c => "d", e => "f"}; my $str = join ",", grep defined, @$h{qw/a b c/}; print $str;
+use strict; use warnings; my ( $linecount, $timestart) = (0,0); printf(".... %s ... ", int($linecount/(time()-$timestart+1)));
+use strict; use warnings; my $stash = \%main:: ; sub foo { 42 }; *foo = sub { 'bar' };
+use strict; use warnings; my $stash = \%main:: ; sub foo { 42 }; $stash->{foo} = sub { 'bar' };
+use strict; use warnings; my $stash = \%main:: ; sub foo { 42 }; $stash->{foo} = sub { 'bar' }; [ foo() ]
+use strict; use warnings; my $str = join ",", grep defined, @{+{a => "b", c => "d", e => "f"}}{qw/a b c/}; print $str;
+use strict; use warnings; my $x = 42; [ defined &$x ]
+use strict; use warnings; my $x; [ defined &$x ]
+use strict; use warnings; my $x; [ &$x ]
+use strict; use warnings; [ "nan" > 0 ]
+use strict; use warnings; [ "Nan" > 0 ]
+use strict; use warnings; [ "NaN" > 0 ]
+use strict; use warnings; [ "nann" > 0 ]
+use strict; use warnings; [ 'NaN' + 'sNaN' ]
+use strict; use warnings; [ 'NaN' + 'sNaN' + 55]
+use strict; use warnings; open( my($fh), "<", \"asdf" ); [ <$fh> ];
+use strict; use warnings; open( my($fh), "<", \"asdf" ); [ <$fh>, scalar <$fh> ];
+use strict; use warnings; open( my($fh), "<", \"asdf" ); [ <$fh>, scalar <$fh>, scalar <$fh> ];
+use strict; use warnings; our $a = -1; [ sort {  $b <=> $a } 1..10 ]
+use strict; use warnings; our $a = 42; [ sort {  $b <=> $a } 1..10 ]
+use strict; use warnings; our $VERSION = 'blah';
+use strict;  use warnings; sub bar { 42 } print "Return $foo" if my $foo = bar;
+use strict; use warnings; sub h { +{ one => sub { 1 }, two => sub { 2 } } }  h->{two}();  
+use strict; use warnings; sub int {} my ( $linecount, $timestart) = (0,0); printf(".... %s ... ", int($linecount/(time()-$timestart+1)));
+use strict; use warnings; sub TIEHANDLE { bless [] }; sub AUTOLOAD { print "In autoload!"; 42 }; tie *FH, 'main'; [ print FH 'adfasdf' ];
+use strict; use warnings; sub TIEHANDLE { bless [] }; sub AUTOLOAD { print "In autoload!"; 42 }; tie *FH, 'main'; [ scalar readline FH ];
+use strict; use warnings; sub TIEHANDLE { bless [] }; sub AUTOLOAD { print "In autoload! $AUTOLOAD"; 42 }; tie *FH, 'main'; [ print FH 'adfasdf' ];
+use strict; use warnings; sub TIEHANDLE { bless [] }; sub READLINE { "asdf" }; sub AUTOLOAD { print "In autoload!"; 42 }; tie *FH, 'main'; [ scalar readline FH ];
+use strict; use warnings; use autodie; open( my($fh), "<", \"asdf" ); [ <$fh> ];
+use strict; use warnings; $VERSION = 'blah';
+use Test::More
+use Text::Soundex;
+use Text::SoundEx;
+use Tie::Handle; tie *FH, 'Tie::Handle'; 
+use Try::Tiny; try {die "baz";} catch {die "foo"}; die "bar";
+use Try::Tiny; try {die "baz";} catch {die "foo"} finally { "bar"};
+use Try::Tiny; try {die "baz";} catch {die "foo"} finally { die "bar"};
+use Try::Tiny; try {die "baz";} catch {die "foo"} finally { print "hoyl shit that broke"};
+use URI::Encode qw/uri_encode/;
+use URI::Encode qw/uri_encode/; uri_encode "<arg>", {"encode_reserved", 1}; 
+use URI::Encode qw/uri_encode/; uri_encode "LWP::Authen::Digest"
+use URI::Encode; [ URI::Encode::uri_encode "test", {encode_reserved=>1} ];
+use URI; URI->new('/product/IDHEREFUCKER');
+use URI; URI->new("www.ebay.com");
+use utf8; - - '❧'
+use utf8; [ 'get http://ignorantdesigner.com/japh.html' =~ y • a-z: • n-za-m • r ]
+use utf8; [ 'get http://ignorantdesigner.com/japh.html' =~ y • a-z: • n-za-m •r ]
+use utf8; $l = "fooso"; [ $l & chr(0x80)x(length $l) ]
+use utf8; $l = "fooso"; [ $l =~tr/[\0-\127]//cdr  ]
+use utf8; $l = "fooso"; [ $l =~tr/[\0-\127]//dr  ]
+use utf8; $l = "fooso"; [ $l =~tr/\0-\127//dr  ]
+use utf8; $l = "fooso"; [ $l =~tr/[\0-\127]//r  ]
+use utf8; $l = "fooso"; [ $l =~tr/\0-\225//dr  ]
+use utf8; $l = "fooso"; [ $l =~tr/\0-\250//dr  ]
+use utf8; my $ a; print;
+use utf8; my $a; print;
+use utf8; print ’42’
+use utf8; q ❤‎ Happy Valentine's Day, #perl ❤‎ 
+use utf8; q ❤‎ Happy Valentine's Day, #perl ❤‎ ❤‎r
+use utf8; q ❤‎ Happy Valentine's Day, #perl ❤‎  s ❤ ❤‎r
+use utf8; q ❤‎ Happy Valentine's Day, #perl ❤‎  s ❤ ❤‎ ❤r
+use utf8; q ❤‎ Happy Valentine's Day, perl ❤ ;‎  s ❤ ❤‎ ❤r
+use utf8; q ❤‎ Happy Valentine's Day, perl ❤;‎  s ❤ ❤‎ ❤r
+use utf8; q ❤‎ Happy Valentine's Day, perl ❤‎  s ❤ ❤‎ ❤r
+use utf8; q 😁 ☺ Perl \o/ ☺  😁
+use utf8; quotemeta '÷'
+use utf8; quotemeta "ǁ"
+use utf8; say length "ﺆ"
+use utf8; "ǁ" =~ s/([^A-Za-z_0-9])/\\$1/gr
+use utf8; "ǁ" =~ s/([^A-Za-z_0-9])/\\$1/r
+use utf8; s ❤‎ Happy Valentine's Day, #perl ❤‎ ❤ ❤‎r
+use utf8; s ❤‎ Happy Valentine's Day, #perl ❤‎ ❤‎r
+use utf8; s ❤‎ Happy Valentine's Day, #perl ❤‎ ❤‎ ❤‎r
+use utf8; use Encode; my $z = '≅';  [ length($z), length(encode 'utf8', $z) ]
+use utf8; use warnings; sub z { print shift }  z('∴')
+use utf8; use warnings; sub z { substr shift, 1, 1 }  z('∴')
+use v5.21; 0.deadbeefp2
+use v5.21; $a = 0.deadbeefp2
+use v5.21; ($a, $b, (undef) x 3, $c) = (1..10); [$a, $b, $c]
+use v5.21; my ($a, $b, (undef) x 3, $c) = (1..10); [$a, $b, $c]
+use v5.21; use Data::Dumper; my @a = ({foo => 1, bar => 2}, {problems => 99, bitches => 0}); for my \%hash (@a) {print Dumper(%hash);}
+use v5.21; use feature qw(refaliasing);use Data::Dumper; my @a = ({foo => 1, bar => 2}, {problems => 99, bitches => 0}); foreach my \%hash (@a) {print Dumper(%hash);}
+use v5.21; use feature qw(refaliasing);use Data::Dumper; my @a = ({foo => 1, bar => 2}, {problems => 99, bitches => 0}); for \%hash (@a) {print Dumper(%hash);}
+use v5.21; use feature qw(refaliasing);use Data::Dumper; my @a = ({foo => 1, bar => 2}, {problems => 99, bitches => 0}); for my \%hash (@a) {print Dumper(%hash);}
+use v5.22; use Data::Dumper; my @a = ({foo => 1, bar => 2}, {problems => 99, bitches => 0}); for my \%hash (@a) {print Dumper(%hash);}
+use vars qw/@CARP_NOT/; Carp::croak("loaded");
+use warnings; $_ = '@f@f@f'; s'@f'$b'gr; 
+use warnings; foo(3); sub foo(@) { print @_ }
+use warnings; foo(3); sub foo($) { print @_ }
+use warnings; "foo" ~~ "Bar"
+use warnings; "foo" ~~ "Bar":
+use warnings; +{ foo => bar => 'ber' }
+use warnings; @hash{$key} = [ @list ];
+use warnings; my $foo = 1; my $foo_bar = 2; "$foo\_bar"
+use warnings; my $foo = 1; my $foobar = 2; "$foo\bar"
+use warnings; my ($foo) if 0;
+use warnings; my $j = 'Foo'; $j =~ tr/\x20-\xff/\xff10-\xffff/; binmode STDOUT; print $j;
+use warnings; my $j = 'Foo'; $j =~ tr/\x20-\xff/\xff30-\xffff/; binmode STDOUT; print $j;
+use warnings; my ($l, $r) = ('', ''); $l .= chr($_+0x20), $r .= chr($_+0xff00) for 0x00..0x50; binmode STDOUT; [ eval qq{ 'Just another Unicode hacker,' =~ tr[$l][$r]r } ];
+use warnings; my ($l, $r) = ('', ''); $l .= chr($_+0x20), $r .= chr($_+0xff00) for 0x00..0x50; binmode STDOUT; eval qq{ 'Just another Unicode hacker,' =~ tr[$l][$r]r };
+use warnings; my ($l, $r) = ('', ''); $l .= chr($_+0x20), $r .= chr($_+0xff00) for 0x00..0x50; binmode STDOUT; eval qq{ 'Just another Unicode hacker,' =~ tr[$l][$r]r }; $@
+use warnings; my ($l, $r) = ('', ''); $l .= chr($_+0x20), $r .= chr($_+0xff00) for 0x00..0x50; binmode STDOUT; eval qq{ 'Just another Unicode hacker,' =~ tr[\Q$l\E][\Q$r\E]r };
+use warnings; my ($l, $r) = ('', ''); $l .= chr($_+0x20), $r .= chr($_+0xff00) for 0x00..0x50; binmode STDOUT; eval qq{ 'Just another Unicode hacker,' =~ tr[\Q$l\E][\Q$r\E]r }; $@
+use warnings; my ($l, $r) = ('', ''); $l .= chr($_+0x20), $r .= chr($_+0xff00) for 0x00..0x50; binmode STDOUT; $l
+use warnings; my ($l, $r) = ('', ''); $l .= chr($_+0x20), $r .= chr($_0xff00) for 0x00..0x50; binmode STDOUT; $l
+use warnings; my ($l, $r) = ('', ''); $l .= chr($_+0x20), $r .= chr($_+0xff00) for 0x00..0x50; binmode STDOUT; $r
+use warnings; my $u = 'ABC'; say $u =~ s/./pos $u/ger;
+use warnings; my @x = (1...4); undef @x;
+use warnings; my $x; $x++;
+use warnings; my $x; ++$x;
+use warnings; my $x; $x -= 4;
+use warnings; my $x; $x .= 4;
+use warnings; my $x; $x += 4;
+use warnings; my $x; $x . 'foo'
+use warnings; my $x; $x = $x - 4;
+use warnings; our $foo; sub foo { my $x = shift; BEGIN { $foo = \$x }; $$foo }; [ foo(1), foo(2) ];
+use warnings; our $foo; sub foo { my $x = shift; BEGIN { $foo = \$x }; ${ &{'FOO'}() } }; [ foo(1), foo(2) ];
+use warnings; sub chomp { "blah" }; [ chomp ]
+use warnings; sub foo { my $x = shift; use constant FOO => \$x; ${ &{'FOO'}() } }; [ foo(1), foo(2) ];
+use warnings; sub TIEHANDLE { bless [] }; sub AUTOLOAD { print "In autoload! $AUTOLOAD"; 42 }; tie *FH, 'main'; [ print FH 'adfasdf' ];
+use warnings; sub z { print shift }  z('∴')
+use warnings; sub z { }  z('∴')
+use warnings; use experimental 'smartmatch'; "foo" ~~ "Bar"
+use warnings; use experimental 'smartmatch'; "foo" ~~ "Bar";
+use warnings; use experimental 'smartmatch'; "foo" ~~ "Bar"; "All ok"
+use warnings; use strict; use experimental 'postderef'; my $x; my @z = @{ $x || [] }; $x->@*
+use warnings; use strict; use experimental 'postderef'; my $x;  @{ $x || [] }; $x->@*
+use warnngs; my $foo = 1; my $foo_bar = 2; "$foo\_bar"
+; ;;;;;;;;;;;;;;;;;;v
+"$^V";
+$V
+$^V
+$^V;
+"".(v0.01)
+v0.01
+v0.1
+$^V^2
+v.255
+v3232.95.3232
+v5
+v5 ^ 2
+[values %DB:: ]
+$VERSION = 'blah';
+$w = 3; $h = 4; @out = ( (0) x $w ) x $h; 
+$w = 3; $h = 4; @out = ( (0) x $w ) x $h; \@out
+"W\x{200d}⚓"
+- - 'x'
+$x = 0; for (1..1000) {$x += 0.01;}; for (1..2000) {$x -= 0.005}; $x
+@x = (1, 1, 1); delete @x[@x]; \@x
+$x = (1, (2, 3), 5); 
+@x = (1, 2, 3); delete @x[@x]; \@x
+"\x{1f31b}\x{200D}\x{1f31c}"
+"\x{1f31b}\x{200D}\x{1f51c}\x{200D}\x{1f31c}"
+"\x{1f31c}\x{200D}\x{1f31b}"
+"\x{1F466}\x{200D}\x{2764}\x{FE0F}\x{200D}\x{1F48B}\x{200D}\x{1F468}"
+"\x{1F468}\x{200D}\x{2764}\x{FE0F}\x{200D}\x{1F48B}\x{200D}\x{1F469}"
+"\x{1F469}\x{200D}\x{2764}\x{FE0F}\x{200D}\x{1F48B}\x{200D}\x{1F468}"
+"\x{1F469}\x{200D}\x{2764}\x{FE0F}\x{200D}\x{1F48B}\x{200D}\x{1F469}"
+"\x{1F478}\x{200D}\x{1f31b}"
+"\x{1F478}\x{200D}\x{2764}\x{FE0F}\x{200D}\x{1F48B}\x{200D}\x{1F438}"
+"\x{1f4a9}"
+["\x{1f4a9}"]
+"\x{1f51c}"
+@x = (2, 1, 2); delete @x[2, 1, 2]; 
+@x = (2, 1, 2); delete @x[2, 1, 2]; \@a
+@x = (2, 1, 2); delete @x[2, 1, 2]; \@x
+@x = (2, 1, 2); delete @x[2, 2, 1]; \@x
+@x = (2, 1, 2); delete @x[@x];
+@x = (2, 1, 2); delete @x[~~@x]; \@x
+@x = (2, 1, 2); delete @x[@x]; \@x
+@x = (4, 5, 6); delete @x[@x]; \@x
+"\x{749}"
+$x = []; bless $x, []; ref $x
+"\x{D000}"
+[ 'X' =~ /(?i)x/]
+$_ = 'XMLParser'; join('_', map {lc} grep {length} split /([A-Z]{1}(?![A-Z])/)
+$_ = 'XMLParser'; join('_', map {lc} grep {length} split /([A-Z]{1}(?![A-Z]))/)
+$_ = 'XMLParser'; join('_', map {lc} grep {length} split /([A-Z]{1}(?![A-Z]*))/)
+$_ = 'XMLParser'; join('_', map {lc} grep {length} split /([A-Z]{1}[^A-Z]*)/)
+$_ = 'XMLParser'; join('_', map {lc} grep {length} split /([A-Z]+(?=[^A-Z]*)/)
+$_ = 'XMLParser'; join('_', map {lc} grep {length} split /([A-Z]+(?=[^A-Z]*))/)
+$_ = 'XMLParser'; join('_', map {lc} grep {length} split /([A-Z]+[^A-Z]*)/)
+$_ = 'XMLParser'; [split /([A-Z]{1}(?![A-Z]))/)]
+$_ = 'XMLParser'; [split /([A-Z]{1}(?![A-Z]))/]
+$_ = 'XMLParser'; [split /([A-Z]*[^A-Z]*)/]
+[ 'XX' =~ /(?i)xx/]
+[ 'XX' =~ /((?i)x)x/]
+'XYXYXYXY foos' =~ s/(XY)*.+
+'XYXYXYXY foos' =~ s/(XY)+?\1.+/$1/r
+'XYXYXYXY foos' =~ s/(XY)+\1.+/$1/r
+'XYXYXYXY foos' =~ s/(XY)+?\1.+//r
+'XYXYXYXY foos' =~ s/(XY)+\1.+//r
+'XYXYXYXY foos' =~ s/(XY)+\K\1.+/$1/r
+'XYXYXYXY foos' =~ s/(?:XY)+\K\1.+//r
+'XYXYXYXY foos' =~ s/((?:XY))+\K\1.+//r
+'XYXYXYXY foos' =~ s/((?:XY)+)\K\1.+//r
+'XYXYXYXY foos' =~ s/(XY)*XY.+
+$x * $y // $z
+You know what I like about perl? It's the fact that this English sentence is perfectly parsable! Some may say: "no way", but I got deparse to prove it
+$π = 42; say $π
