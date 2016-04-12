@@ -12,6 +12,9 @@ use IPC::Run qw/run timeout/;
 
 my %tests;
 
+$ENV{PERL_HASH_SEED}=0xB075;
+$ENV{PERL_PERTURB_KEYS}=0;
+
 open(my $test_out, ">t/defs.json") or die "$!: defs.json";
 
 for my $fn (glob('evals/*.lst')) {
