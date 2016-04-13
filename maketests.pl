@@ -14,9 +14,6 @@ use open ':utf8';
 my %tests;
 binmode \*STDOUT, ":encoding(utf8)";
 
-$ENV{PERL_HASH_SEED}=0xB075;
-$ENV{PERL_PERTURB_KEYS}=0;
-
 open(my $test_out, ">t/defs.json") or die "$!: defs.json";
 binmode($test_out, ":encoding(utf8)");
 
@@ -28,7 +25,7 @@ for my $fn (glob('evals/*.lst')) {
 
         my $c_in = "perl $code";
 
-        my $cmd = ['sudo', '/home/ryan/perl5/perlbrew/perls/perlbot-blead-intest/bin/perl', '/home/ryan/bots/perlbuut/lib/eval.pl'];
+        my $cmd = ['sudo', './runeval.sh'];
         $c++;
         
         print "${fn}[$c]: $code";

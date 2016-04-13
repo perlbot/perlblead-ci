@@ -5,20 +5,23 @@ use feature qw/postderef/;
 
 use strict;
 use warnings;
+no warnings 'experimental';
 
 use Data::Dumper;
 use JSON::MaybeXS;
 use IPC::Run qw/run timeout/;
 use utf8;
 use open ':encoding(utf8)';
-
-$ENV{PERL_HASH_SEED}=0xB075;
-$ENV{PERL_PERTURB_KEYS}=0;
+use Test::More;
+binmode STDOUT, ":utf8";
+binmode STDERR, ":utf8";
 
 my $tests = do {local $/; open(my $fh, "<t/filtered.json"); decode_json <$fh>};
 
 for my $fn (keys $tests->%*) {
-    for my $tn (0..10) {
+    my $size = $tests->{$fn}->@*;
+    my $pct = $size * 0.10;
+    for my $tn (0..$pct) {
         my ($c_out, $c_err);
         my $rand = rand()*($tests->{$fn}->@*);
         my $test = $tests->{$fn}[$rand];
@@ -26,24 +29,18 @@ for my $fn (keys $tests->%*) {
 
         my $c_in = "perl $code";
 
-        my $cmd = ['sudo', '/home/ryan/perl5/perlbrew/perls/perlbot-blead-intest/bin/perl', '/home/ryan/bots/perlbuut/lib/eval.pl'];
+        my $cmd = ['sudo', './runeval.sh'];
         
-        print "${fn}[$rand]: $code";
+#        print STDERR "${fn}[$rand]: $code";
         eval {run $cmd, \$c_in, \$c_out, \$c_err, timeout(30);};
 
         unless ($@) {
-            if ($test->{err} eq $c_err) {
-                print "ok\n";
-            } else {
-                print "not ok # expected '",$test->{err},"' got '",$c_err,"'\n";
-            }
-            if ($test->{out} eq $c_out) {
-                print "ok\n";
-            } else {
-                print "not ok # expected '",$test->{out},"' got '",$c_out,"'\n";
-            }
+            is($c_err, $test->{err}, "STDERR for ${fn}[$rand]: $code");
+            is($c_out, $test->{out}, "STDOUT for ${fn}[$rand]: $code");
         } else {
-            print "not ok # failed to eval $@\n";
+            diag "Eval failed, $@";
         }
     }
 }
+
+done_testing();
