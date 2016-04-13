@@ -13,10 +13,21 @@ my $data = decode_json $json;
 my ($dc, $lc, $ic);
 
 for my $f (keys $data->%*) {
-    my $grepsub = sub {(length($_->{err} . $_->{out}) < 1024) && !($_->{code} =~ /(ENV|%::|%main|->now|time|\$\^V|\$\^T|version|rand)/) && !($_->{err} =~ /Unrecognized character/) };
+    my $grepsub = sub {
+           (length($_->{err} . $_->{out}) < 1024) # Ignore long outputs, they're unlikely to be stable (likely %INC and such)
+        && !($_->{code} =~ /(ENV|%::|%main|->now|time|\$\^V|\$\^T|version|rand|Time::Piece|[@%]INC)/) 
+        && !($_->{err} =~ /Unrecognized character/)
+        && !($_->{out} =~ /(HASH|SCALAR|REF|ARRAY)\(0/) # ignore stuff with refs in output
+    };
+
+    my $mapsub = sub {
+        $_->{err} =~ s/\(eval \d+\)/(eval 1)/g;
+        $_->{out} =~ s/\(eval \d+\)/(eval 1)/g;
+        $_
+    };
 
     my @filtered = grep {!$grepsub->()} $data->{$f}->@*; 
-    $data->{$f} = [grep {$grepsub->()} $data->{$f}->@* ];
+    $data->{$f} = [map {$mapsub->()} grep {$grepsub->()} $data->{$f}->@* ];
 }
 
 open(my $fh, ">", "t/filtered.json");

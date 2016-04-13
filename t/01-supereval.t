@@ -24,7 +24,7 @@ plan tests => reduce {$a + $b} map {int ($tests->{$_}->@* * 0.10)} keys $tests->
 
 for my $fn (keys $tests->%*) {
     my $size = $tests->{$fn}->@*;
-    my $pct = $size * 0.10;
+    my $pct = $size * 0.05;
     for my $tn (0..$pct) {
         my ($c_out, $c_err);
         my $rand = rand()*($tests->{$fn}->@*);
@@ -38,6 +38,12 @@ for my $fn (keys $tests->%*) {
 #        print STDERR "${fn}[$rand]: $code";
         eval {run $cmd, \$c_in, \$c_out, \$c_err, timeout(30);};
 
+        my $mapsub = sub {
+            $c_err =~ s/\(eval \d+\)/(eval 1)/g;
+            $c_out =~ s/\(eval \d+\)/(eval 1)/g;
+        };
+        $mapsub->();
+
         unless ($@) {
             is($c_err, $test->{err}, "STDERR for ${fn}[$rand]: $code");
             is($c_out, $test->{out}, "STDOUT for ${fn}[$rand]: $code");
@@ -47,4 +53,4 @@ for my $fn (keys $tests->%*) {
     }
 }
 
-done_testing();
+#done_testing();
