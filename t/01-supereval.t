@@ -15,8 +15,12 @@ use open ':encoding(utf8)';
 use Test::More;
 binmode STDOUT, ":utf8";
 binmode STDERR, ":utf8";
+use List::Util qw/reduce/;
+
 
 my $tests = do {local $/; open(my $fh, "<t/filtered.json"); decode_json <$fh>};
+
+plan tests => reduce {$a + $b} map {int ($tests->{$_}->@* * 0.10)} keys $tests->%*;
 
 for my $fn (keys $tests->%*) {
     my $size = $tests->{$fn}->@*;
