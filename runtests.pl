@@ -1,4 +1,3 @@
-
 #!/usr/bin/env perl
 
 use v5.20;
@@ -10,6 +9,11 @@ use warnings;
 use Data::Dumper;
 use JSON::MaybeXS;
 use IPC::Run qw/run timeout/;
+use utf8;
+use open ':encoding(utf8)';
+
+$ENV{PERL_HASH_SEED}=0xB075;
+$ENV{PERL_PERTURB_KEYS}=0;
 
 my $tests = do {local $/; open(my $fh, "<t/filtered.json"); decode_json <$fh>};
 

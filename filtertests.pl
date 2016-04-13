@@ -4,6 +4,8 @@ use feature 'postderef';
 
 use JSON::MaybeXS;
 use Data::Dumper;
+    use open ':encoding(utf8)';
+    use utf8;
 
 my $json = do {local $/; open(my $fh, "<", "t/defs.json"); <$fh>};
 my $data = decode_json $json;
