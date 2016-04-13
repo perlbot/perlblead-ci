@@ -15,20 +15,20 @@ use open ':encoding(utf8)';
 use Test::More;
 binmode STDOUT, ":encoding(utf8)";
 binmode STDERR, ":encoding(utf8)";
-use List::Util qw/reduce/;
+use List::Util qw/reduce shuffle/;
 
 
 my $tests = do {local $/; open(my $fh, "<t/filtered.json"); decode_json <$fh>};
 my $fulltests = reduce {[@$a, @$b]} map {$tests->{$_}} keys $tests->%*;
 
 my $numtests = int(0.10 * @$fulltests);
+my @testindexes = (shuffle (0..$#$fulltests))[1..$numtests];
 
 plan tests => 2*$numtests;
 
-    for my $tn (1..$numtests) {
+    for my $tn (@testindexes) {
         my ($c_out, $c_err);
-        my $rand = rand()*($numtests);
-        my $test = $fulltests->[$rand];
+        my $test = $fulltests->[$tn];
         my $code = $test->{code};
 
         my $c_in = "perl $code";
