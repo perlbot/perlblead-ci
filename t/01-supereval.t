@@ -13,22 +13,22 @@ use IPC::Run qw/run timeout/;
 use utf8;
 use open ':encoding(utf8)';
 use Test::More;
-binmode STDOUT, ":utf8";
-binmode STDERR, ":utf8";
+binmode STDOUT, ":encoding(utf8)";
+binmode STDERR, ":encoding(utf8)";
 use List::Util qw/reduce/;
 
 
 my $tests = do {local $/; open(my $fh, "<t/filtered.json"); decode_json <$fh>};
+my $fulltests = reduce {[@$a, @$b]} map {$tests->{$_}} keys $tests->%*;
 
-plan tests => reduce {$a + $b} map {int ($tests->{$_}->@* * 0.10)} keys $tests->%*;
+my $numtests = int(0.10 * @$fulltests);
 
-for my $fn (keys $tests->%*) {
-    my $size = $tests->{$fn}->@*;
-    my $pct = $size * 0.05;
-    for my $tn (0..$pct) {
+plan tests => 2*$numtests;
+
+    for my $tn (1..$numtests) {
         my ($c_out, $c_err);
-        my $rand = rand()*($tests->{$fn}->@*);
-        my $test = $tests->{$fn}[$rand];
+        my $rand = rand()*($numtests);
+        my $test = $fulltests->[$rand];
         my $code = $test->{code};
 
         my $c_in = "perl $code";
@@ -45,12 +45,11 @@ for my $fn (keys $tests->%*) {
         $mapsub->();
 
         unless ($@) {
-            is($c_err, $test->{err}, "STDERR for ${fn}[$rand]: $code");
-            is($c_out, $test->{out}, "STDOUT for ${fn}[$rand]: $code");
+            is($c_err, $test->{err}, "STDERR for: $code");
+            is($c_out, $test->{out}, "STDOUT for: $code");
         } else {
             diag "Eval failed, $@";
         }
     }
-}
 
 #done_testing();

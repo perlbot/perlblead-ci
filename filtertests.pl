@@ -15,9 +15,12 @@ my ($dc, $lc, $ic);
 for my $f (keys $data->%*) {
     my $grepsub = sub {
            (length($_->{err} . $_->{out}) < 1024) # Ignore long outputs, they're unlikely to be stable (likely %INC and such)
-        && !($_->{code} =~ /(ENV|%::|%main|->now|time|\$\^V|\$\^T|version|rand|Time::Piece|[@%]INC)/) 
+        && !($_->{code} =~ /(ENV|%::|%main|->now|time|\$\^V|\$\^T|\$\^O|version|rand|Time::Piece|[@%]INC|\$\$\W)/) 
         && !($_->{err} =~ /Unrecognized character/)
-        && !($_->{out} =~ /(HASH|SCALAR|REF|ARRAY)\(0/) # ignore stuff with refs in output
+        && !($_->{out} =~ /(CODE|HASH|SCALAR|REF|ARRAY)\(0/) # ignore stuff with refs in output
+        && !($_->{err} =~ /Killed/
+           ||$_->{out} =~ /Killed/)
+        && !($_->{code} =~ /(0\s*[+*\-]\s*)?(\[\]|{})(\s*[+*\-]\s*0)/)
     };
 
     my $mapsub = sub {
