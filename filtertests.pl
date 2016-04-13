@@ -13,7 +13,7 @@ my $data = decode_json $json;
 my ($dc, $lc, $ic);
 
 for my $f (keys $data->%*) {
-    $data->{$f} = [grep {!($_->{err} && $_->{out}) && (length($_->{err} . $_->{out}) < 1024) && !($_->{code} =~ /ENV|%::|%main|->now|time|\$^V/) && !($_->{err} =~ /Unrecognized character/) } $data->{$f}->@* ];
+    $data->{$f} = [grep {(length($_->{err} . $_->{out}) < 1024) && !($_->{code} =~ /ENV|%::|%main|->now|time|\$^V/) && !($_->{err} =~ /Unrecognized character/) } $data->{$f}->@* ];
 }
 
 open(my $fh, ">", "t/filtered.json");
