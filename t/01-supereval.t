@@ -11,10 +11,8 @@ use Data::Dumper;
 use JSON::MaybeXS;
 use IPC::Run qw/run timeout/;
 use utf8;
-use open ':encoding(utf8)';
+use open ':std', ':encoding(utf8)';
 use Test::More;
-binmode STDOUT, ":encoding(utf8)";
-binmode STDERR, ":encoding(utf8)";
 use List::Util qw/reduce shuffle/;
 
 
