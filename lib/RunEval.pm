@@ -28,7 +28,7 @@ sub run_eval {
     my $res = eval {run $cmd, \$c_in, \$c_out, \$c_err, timeout(30);};
    
     $c_out = common_transforms $c_out;
-    $c_err = common_transofrms $c_err;
+    $c_err = common_transforms $c_err;
 
     return {code => $code, out => $c_out, err => $c_err};
 }
