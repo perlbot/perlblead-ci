@@ -24,8 +24,8 @@ fi
 
 ./build_blead.sh
 ./install_cpan.sh
-rm -f $PERLBREW_ROOT/perls/perlbot-blead-intest
-ln -s $PERLBREW_ROOT/perls/$IDENT $PERLBREW_ROOT/perls/perlbot-blead-intest
+rm -f $PERLBREW_ROOT/perls/perlbot-intest
+ln -s $PERLBREW_ROOT/perls/$IDENT $PERLBREW_ROOT/perls/perlbot-intest
 prove
 touch $PERLBREW_ROOT/perls/$IDENT/.perlbot_known_good
 rm -f $PERLBREW_ROOT/perls/perlbot-evalperl
