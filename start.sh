@@ -9,23 +9,25 @@ set -e
 
 
 FREE=`df -k / | tail -n 1 | awk '{print $4}'`
-IDENT="perlbot-blead-`date --iso-8601`"
+IDENT=${IDENT:-"perlbot-blead-`date --iso-8601`"}
 MINSPACE=$(( 1024*1024 ))
+REALPERL=${REALPERL:-"perl-blead"}
 
+export REALPERL
 export IDENT
-echo Building blead as \'$IDENT\'
+echo Building $REALPERL as \'$IDENT\'
 
 if [ $FREE -lt $MINSPACE ]; then
   echo "FAILED:  not enough free space. $FREE < $MINSPACE"
   exit 1
 fi
 
-timeout -k 1.1h 1h ./build_blead.sh
-timeout -k 31m 30m ./install_cpan.sh
+./build_blead.sh
+./install_cpan.sh
 rm -f $PERLBREW_ROOT/perls/perlbot-blead-intest
-ln -s $PERLBREW_ROOT/perls/$IDENT PERLBREW_ROOT/perls/perlbot-blead-intest
-timeout -k 45m 40m prove
+ln -s $PERLBREW_ROOT/perls/$IDENT $PERLBREW_ROOT/perls/perlbot-blead-intest
+prove
 touch $PERLBREW_ROOT/perls/$IDENT/.perlbot_known_good
 rm -f $PERLBREW_ROOT/perls/perlbot-evalperl
-ln -s $PERLBREW_ROOT/perls/$IDENT PERLBREW_ROOT/perls/perlbot-evalperl
+ln -s $PERLBREW_ROOT/perls/$IDENT $PERLBREW_ROOT/perls/perlbot-evalperl
 # systemctl restart perlbot-evalserver # restart the eval server

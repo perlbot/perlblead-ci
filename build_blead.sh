@@ -1,10 +1,12 @@
 #!/bin/bash
 
+set -u
 echo ident: $IDENT
 
 # Remove old blead tarball.  full clean might lose data we want to keep for now
 rm -f /home/ryan/perl5/perlbrew/dists/blead.tar.gz
+echo Uninstalling any previous perl as $IDENT
 perlbrew uninstall $IDENT
 #ls ~/perl5/perlbrew/dists
 
-perlbrew install blead --as $IDENT
+perlbrew install $REALPERL --as $IDENT
