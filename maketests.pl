@@ -13,30 +13,44 @@ use utf8;
 use open ':utf8';
 use RunEval;
 
-my %tests;
+use IO::Async::Function;
+use IO::Async::Loop;
+
 binmode \*STDOUT, ":encoding(utf8)";
 
-open(my $test_out, ">t/defs.json") or die "$!: defs.json";
-binmode($test_out, ":encoding(utf8)");
+print "Loading code\n";
+my @code;
 
 for my $fn (glob('evals/*.lst')) {
     open(my $fh, "<", $fn) or die "$!: $fn";
-    my $c = 0;
-    while (my $code = <$fh>) {
-        $c++;
-        
-        print "${fn}[$c]: $code";
+    push @code, <$fh>; # just slurp it!
+    close($fh);
+}
+
+my $loop = IO::Async::Loop->new();
+
+my $func = IO::Async::Function->new(code => sub {
+        my ($code, $count) = @_;
+        print "[$count]: $code";
 
         my $res = RunEval::make_result($code);
 
         if ($res->{code}) {
-            push $tests{$fn}->@*, $res;
+            return $res;
         } else {
             print "FAILED TO EVAL!\n";
+            return;
         }
-    }
-    close($fh);
-}
+});
 
-print $test_out encode_json(\%tests);
+$loop->add($function);
+
+# Make a future for everything! then go ahead and coallesce them.
+my $counter = 0;
+my @futures = map {$function->call(args => [$_, $counter++])} @code;
+my @tests = map {$_->get} @futures; 
+
+open(my $test_out, ">t/defs.json") or die "$!: defs.json";
+binmode($test_out, ":encoding(utf8)");
+print $test_out encode_json({tests => \@tests});
 close($test_out);
