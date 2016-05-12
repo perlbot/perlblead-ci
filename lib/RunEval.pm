@@ -6,6 +6,17 @@ use warnings;
 use IPC::Run qw/run timeout/;
 use utf8;
 
+sub common_transforms {
+   my $input = shift;
+  
+   # Pretend every (eval \d+) is eval 1.  might cause it to miss some things but nothing important
+   $input =~ s/\(eval \d+\)/(eval 1)/g;
+
+   # TODO recorgnize paths to perlbrew/perl here and turn them all into PERLBREW_ROOT/perls/PERL_VERSION/...
+
+   return $input;
+}
+
 sub run_eval {
     my ($code) = @_;
     my ($c_out, $c_err);
@@ -15,7 +26,10 @@ sub run_eval {
     my $cmd = ['sudo', './runeval.sh'];
     
     my $res = eval {run $cmd, \$c_in, \$c_out, \$c_err, timeout(30);};
-    
+   
+    $c_out = common_transforms $c_out;
+    $c_err = common_transofrms $c_err;
+
     return {code => $code, out => $c_out, err => $c_err};
 }
 

@@ -9,7 +9,9 @@ no warnings 'experimental';
 
 use Data::Dumper;
 use JSON::MaybeXS;
-use IPC::Run qw/run timeout/;
+use lib './lib';
+use RunEval;
+
 use utf8;
 use open ':std', ':encoding(utf8)';
 use Test::More;
@@ -29,22 +31,24 @@ plan tests => 2*$numtests;
         my $test = $fulltests->[$tn];
         my $code = $test->{code};
 
-        my $c_in = "perl $code";
-
-        my $cmd = ['sudo', './runeval.sh'];
-        
 #        print STDERR "${fn}[$rand]: $code";
-        eval {run $cmd, \$c_in, \$c_out, \$c_err, timeout(30);};
+        my $res = RunEval::run_eval($code);
 
-        my $mapsub = sub {
-            $c_err =~ s/\(eval \d+\)/(eval 1)/g;
-            $c_out =~ s/\(eval \d+\)/(eval 1)/g;
-        };
-        $mapsub->();
+        if ($res) {
+            my ($c_out, $c_err, $t_out, $t_err) = ($res->{out}, $res->{err}, $test->{out}, $test->{err});
+            my ($out_mask, $err_mask) = ($test->{out_mask}, $test->{err_mask});
 
-        unless ($@) {
-            is($c_err, $test->{err}, "STDERR for: $code");
-            is($c_out, $test->{out}, "STDOUT for: $code");
+            if ($out_mask) {
+                $c_out &= $out_mask;
+                $t_out &= $out_mask;
+            }
+            if ($err_mask) {
+                $c_err &= $err_mask;
+                $t_err &= $err_mask;
+            }
+
+            is($c_err, $t_err, "STDERR for: $code");
+            is($c_out, $t_out, "STDOUT for: $code");
         } else {
             diag "Eval failed, $@";
         }
