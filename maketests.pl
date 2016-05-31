@@ -29,28 +29,22 @@ for my $fn (glob('evals/*.lst')) {
 
 my $loop = IO::Async::Loop->new();
 
-my $func = IO::Async::Function->new(code => sub {
-        my ($code, $count) = @_;
-        print "[$count]: $code";
-
-        my $res = RunEval::make_result($code);
-
-        if ($res->{code}) {
-            return $res;
-        } else {
-            print "FAILED TO EVAL!\n";
-            return;
-        }
-});
-
-$loop->add($function);
 
 # Make a future for everything! then go ahead and coallesce them.
 my $counter = 0;
-my @futures = map {$function->call(args => [$_, $counter++])} @code;
-my @tests = map {$_->get} @futures; 
 
-open(my $test_out, ">t/defs.json") or die "$!: defs.json";
-binmode($test_out, ":encoding(utf8)");
-print $test_out encode_json({tests => \@tests});
-close($test_out);
+for my $c (@code[0..3]) {
+    print "Running $c\n";
+    my $fut = RunEval::make_async($c, $loop);
+
+    while(!$fut->is_ready) {sleep 1};
+
+    print "Ran $c!\n\t" . Dumper($fut->get);
+}
+
+#my @tests = map {$_->get} @futures; 
+
+#open(my $test_out, ">t/defs.json") or die "$!: defs.json";
+#binmode($test_out, ":encoding(utf8)");
+#print $test_out encode_json({tests => \@tests});
+#close($test_out);
