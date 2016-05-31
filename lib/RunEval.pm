@@ -26,19 +26,30 @@ sub compare_res {
 
     if ((length $res1->{out} == length $res2->{out}) &&
         (length $res1->{err} == length $res2->{err})) {
+
+        debug "RES1 OUT: ", $res1->{out};
+        debug "RES2 OUT: ", $res2->{out};
+
+        debug "RES1 ERR: ", $res1->{err};
+        debug "RES2 ERR: ", $res2->{err};
+
         my $stderr_mask = $res1->{err} ^ $res2->{err};
         my $stdout_mask = $res1->{out} ^ $res2->{out};
 
         # turn everything except \0 into \xFF and anythign else into \0.
-        $stderr_mask =~ s/(.)/$1 eq "\0" ? "\xFF" : "\0"/eg;
-        $stdout_mask =~ s/(.)/$1 eq "\0" ? "\xFF" : "\0"/eg;
+        $stderr_mask =~ s/(.)/$1 eq "\0" ? "\xFF" : "\0"/egsi;
+        $stdout_mask =~ s/(.)/$1 eq "\0" ? "\xFF" : "\0"/egsi;
 
         # blob close matches together, likely the same digit in the same place kind of thing, we should try to compensate
-        $stderr_mask =~ s/\xFF\0\xFF/\xFF\xFF\xFF/g;
-        $stderr_mask =~ s/\xFF\0\0\xFF/\xFF\xFF\xFF\xFF/g;
+        $stderr_mask =~ s/\x00\xFF\x00/\x00\x00\x00/g;
+        $stderr_mask =~ s/\x00\xFF\xFF\x00/\x00\x00\x00\x00/g;
+        $stderr_mask =~ s/\x00\x00\xFF$/\x00\x00\x00/; # take care of a trailing digit usually
+        $stderr_mask =~ s/^\xFF\x00\x00/\x00\x00\x00/; # similarly take care of leading digits
 
-        $stdout_mask =~ s/\xFF\0\xFF/\xFF\xFF\xFF/g;
-        $stdout_mask =~ s/\xFF\0\0\xFF/\xFF\xFF\xFF\xFF/g;
+        $stdout_mask =~ s/\x00\xFF\x00/\x00\x00\x00/g;
+        $stdout_mask =~ s/\x00\xFF\xFF\x00/\x00\x00\x00\x00/g;
+        $stdout_mask =~ s/\x00\x00\xFF$/\x00\x00\x00/; # take care of a trailing digit usually
+        $stdout_mask =~ s/^\xFF\x00\x00/\x00\x00\x00/; # similarly take care of leading digits
 
         return {
             code => $code,
