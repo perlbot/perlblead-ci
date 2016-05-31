@@ -16,6 +16,8 @@ use RunEval;
 use IO::Async::Function;
 use IO::Async::Loop;
 
+sub debug {say @_ if $ENV{DEBUG}};
+
 binmode \*STDOUT, ":encoding(utf8)";
 
 print "Loading code\n";
@@ -34,12 +36,20 @@ my $loop = IO::Async::Loop->new();
 my $counter = 0;
 
 for my $c (@code[0..3]) {
+    $c = "while(1) {}";
     print "Running $c\n";
+
     my $fut = RunEval::make_async($c, $loop);
 
-    while(!$fut->is_ready) {sleep 1};
+    debug "Got future, waiting on it";
 
-    print "Ran $c!\n\t" . Dumper($fut->get);
+    while(!$fut->is_ready) {sleep 1; $loop->loop_once(); debug "waiting ", $fut->is_ready;};
+
+    debug "Future is done!";
+
+    my $res = RunEval::future_to_result($fut);
+
+    print "Ran $c!\n\t" . Dumper($res);
 }
 
 #my @tests = map {$_->get} @futures; 

@@ -1,11 +1,13 @@
 package RunEval;
-
+use v5.20;
 use strict;
 use warnings;
 
 use IPC::Run qw/run timeout/;
 use Future;
 use utf8;
+
+sub debug {say @_ if $ENV{DEBUG}};
 
 sub common_transforms {
    my $input = shift;
@@ -55,12 +57,17 @@ sub compare_res {
 sub make_async {
     my ($code, $loop) = @_;
 
+    debug "Making Async";
+
     my $first_future  = runner_async($code, $loop);
     my $second_future = runner_async($code, $loop);
 
-    my $final_future = Future->needs_all($first_future, $last_future);
+    debug "Spawned procs, creating Future->needs_all";
 
-    $final_future->on_ready(\&future_to_result);
+    my $final_future = Future->needs_all($first_future, $second_future);
+
+    debug "Returning";
+#    $final_future->on_ready(\&future_to_result);
 
     return $final_future;
 }
@@ -83,7 +90,10 @@ sub runner_async {
     my $c_in = "perl $code";
 
     my $cmd = ['sudo', './runeval.sh'];
-  
+ 
+    debug "Code out is << $c_in >>";
+    debug "cmd is", @$cmd;
+
     my $proc_future = $loop->new_future();
     my $child_pid = $loop->run_child(command => $cmd, stdin => $c_in, on_finish => sub {
             my ($pid, $exitcode, $stdout, $stderr) = @_;
@@ -94,14 +104,20 @@ sub runner_async {
             $proc_future->done({code => $code, out => $stdout, err => $stderr});
         });
 
+    debug "Child pid is $child_pid";
+
     my $killmepls = sub {
             kill 9, $child_pid; # Attempt to kill off the child, might need to do weird shit with root for this to work.
     };
     $proc_future->on_cancel($killmepls);
-    $proc_future->on_failure($killmepls);
+    $proc_future->on_fail($killmepls);
+
+    debug "Procfuture filled out";
 
     my $timeout_future = $loop->timeout_future(after => 30);
-    $timeout_future->on_failure(sub {$proc_future->cancel}); # make sure we cancel the proc future.
+    $timeout_future->on_fail(sub {$proc_future->cancel}); # make sure we cancel the proc future.
+
+    debug "timeout filled out";
 
     return Future->wait_any($proc_future, $timeout_future);
 }
