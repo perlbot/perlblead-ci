@@ -34,10 +34,13 @@ my $loop = IO::Async::Loop->new();
 
 # Make a future for everything! then go ahead and coallesce them.
 my $counter = 0;
+my @tests;
+my $cs = @code;
 
-for my $c (@code[0..3]) {
-    $c = '"ARR! " . (0+[])';
-    print "Running $c\n";
+for my $c (@code) {
+    chomp $c;
+    my $p = sprintf "%0.02f%%", ($counter++)/($cs);
+    say "Running $counter/$cs [$p] $c";
 
     my $fut = RunEval::make_async($c, $loop);
 
@@ -49,15 +52,15 @@ for my $c (@code[0..3]) {
 
     my $res = RunEval::future_to_result($fut);
 
-    print "Ran $c!\n\t" . Dumper($res);
+    debug "Ran $c!\n\t" . Dumper($res);
     debug "Masks out: ";
     debug unpack("H*", $res->{out_mask});
     debug unpack("H*", $res->{err_mask});
+
+    push @tests, $res if $res->{code};
 }
 
-#my @tests = map {$_->get} @futures; 
-
-#open(my $test_out, ">t/defs.json") or die "$!: defs.json";
-#binmode($test_out, ":encoding(utf8)");
-#print $test_out encode_json({tests => \@tests});
-#close($test_out);
+open(my $test_out, ">t/defs.json") or die "$!: defs.json";
+binmode($test_out, ":encoding(utf8)");
+print $test_out encode_json({tests => \@tests});
+close($test_out);
