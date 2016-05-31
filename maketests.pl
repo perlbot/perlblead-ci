@@ -36,7 +36,7 @@ my $loop = IO::Async::Loop->new();
 my $counter = 0;
 
 for my $c (@code[0..3]) {
-    $c = "while(1) {}";
+    $c = '"ARR! " . (0+[])';
     print "Running $c\n";
 
     my $fut = RunEval::make_async($c, $loop);
@@ -50,6 +50,9 @@ for my $c (@code[0..3]) {
     my $res = RunEval::future_to_result($fut);
 
     print "Ran $c!\n\t" . Dumper($res);
+    debug "Masks out: ";
+    debug unpack("H*", $res->{out_mask});
+    debug unpack("H*", $res->{err_mask});
 }
 
 #my @tests = map {$_->get} @futures; 
