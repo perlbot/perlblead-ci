@@ -2,710 +2,80 @@
    "tests" : [
       {
          "err_mask" : "",
-         "code" : "\"0.0\"+0 ? 1 : 0",
+         "err" : "",
+         "code" : "1/0",
+         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+         "out" : "ERROR: Illegal division by zero at (eval 1) line 1, <STDIN> line 1.\n"
+      },
+      {
+         "code" : "1.0 == 3.0/2.999999999999999999999999999999999999999999999",
+         "err" : "",
+         "err_mask" : "",
+         "out" : "1",
+         "out_mask" : "ff"
+      },
+      {
          "out_mask" : "ff",
-         "out" : "0",
-         "err" : ""
+         "out" : "1",
+         "err" : "",
+         "err_mask" : "",
+         "code" : "\"1\""
       },
       {
          "err_mask" : "",
-         "out" : "1",
+         "err" : "",
+         "code" : "1",
          "out_mask" : "ff",
-         "code" : "\"0.0\" ? 1 : 0",
-         "err" : ""
+         "out" : "1"
+      },
+      {
+         "out_mask" : "ff",
+         "out" : "1",
+         "err_mask" : "",
+         "err" : "",
+         "code" : "0xffff == 0b1111111111111111"
+      },
+      {
+         "code" : "0e0 ? 1 : 0",
+         "err" : "",
+         "err_mask" : "",
+         "out" : "0",
+         "out_mask" : "ff"
       },
       {
          "err" : "",
          "err_mask" : "",
+         "code" : "\"0e0\" ? 1 : 0",
+         "out_mask" : "ff",
+         "out" : "1"
+      },
+      {
+         "code" : "\"0e0\"+\"0e0\" ? 1 : 0",
+         "err" : "",
+         "err_mask" : "",
+         "out" : "0",
+         "out_mask" : "ff"
+      },
+      {
+         "out" : "0",
          "out_mask" : "ff",
          "code" : "0.0 ? 1 : 0",
-         "out" : "0"
-      },
-      {
-         "err" : "",
          "err_mask" : "",
-         "code" : "\"0e0\"+\"0e0\" ? 1 : 0",
-         "out_mask" : "ff",
-         "out" : "0"
-      },
-      {
-         "err" : "",
-         "out_mask" : "ff",
-         "code" : "\"0e0\" ? 1 : 0",
-         "out" : "1",
-         "err_mask" : ""
+         "err" : ""
       },
       {
          "err_mask" : "",
+         "err" : "",
+         "code" : "\"0.0\" ? 1 : 0",
+         "out_mask" : "ff",
+         "out" : "1"
+      },
+      {
          "out_mask" : "ff",
          "out" : "0",
-         "code" : "0e0 ? 1 : 0",
-         "err" : ""
-      },
-      {
-         "err_mask" : "",
-         "code" : "0xffff == 0b1111111111111111",
-         "out_mask" : "ff",
-         "out" : "1",
-         "err" : ""
-      },
-      {
          "err" : "",
          "err_mask" : "",
-         "out" : "1",
-         "out_mask" : "ff",
-         "code" : "1"
-      },
-      {
-         "err" : "",
-         "code" : "\"1\"",
-         "out_mask" : "ff",
-         "out" : "1",
-         "err_mask" : ""
-      },
-      {
-         "err" : "",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-         "code" : "1/0",
-         "out" : "ERROR: Illegal division by zero at (eval 1) line 1, <STDIN> line 1.\n",
-         "err_mask" : ""
-      },
-      {
-         "err" : "",
-         "out_mask" : "ff",
-         "code" : "1.0 == 3.0/2.999999999999999999999999999999999999999999999",
-         "out" : "1",
-         "err_mask" : ""
-      },
-      {
-         "err" : "",
-         "err_mask" : "",
-         "out_mask" : "ff",
-         "out" : "1",
-         "code" : "1.0 == 3.0/3.0"
-      },
-      {
-         "err" : "",
-         "err_mask" : "",
-         "out_mask" : "ffffffff",
-         "code" : "[20+4]",
-         "out" : "[24]"
-      },
-      {
-         "err" : "",
-         "out_mask" : "ffff",
-         "code" : "BEGIN { package v5::Please; $INC{'v5/Please.pm'} = 1; sub import { print q[OK] } }; use v5::Please;",
-         "out" : "OK",
-         "err_mask" : ""
-      },
-      {
-         "err_mask" : "",
-         "out" : "",
-         "out_mask" : "",
-         "code" : "BEGIN { package v5::Please; $INC{'v5/Please.pm'} = 1; sub import { q[OK] } }; use v5::Please;",
-         "err" : ""
-      },
-      {
-         "err" : "",
-         "code" : "{foo => 1, foo => 2}",
-         "out_mask" : "ffffffffffffffffffff",
-         "out" : "{foo => 2}",
-         "err_mask" : ""
-      },
-      {
-         "code" : "gmtime",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-         "out" : "bless( [7,46,19,1,5,116,3,152,0,1464810367,0], 'Time::Piece' )",
-         "err_mask" : "",
-         "err" : ""
-      },
-      {
-         "err" : "",
-         "err_mask" : "",
-         "code" : "\"\".gmtime",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffff",
-         "out" : "Wed Jun  1 19:46:08 2016"
-      },
-      {
-         "err" : "",
-         "err_mask" : "",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffff",
-         "code" : "gmtime.\"\"",
-         "out" : "Wed Jun  1 19:46:09 2016"
-      },
-      {
-         "err" : "",
-         "err_mask" : "",
-         "out_mask" : "ff",
-         "out" : "3",
-         "code" : "($inf, $neginf, $nan) = (9**9**9, -9**9**9, -sin(9**9**9))"
-      },
-      {
-         "err_mask" : "",
-         "out" : "NaN",
-         "out_mask" : "ffffff",
-         "code" : "($inf, $neginf, $nan) = (9**9**9, -9**9**9, -sin(9**9**9)); $nan",
-         "err" : ""
-      },
-      {
-         "code" : "($inf, $neginf, $nan) = (9**9**9, -9**9**9, -sin(9**9**9)); use List::Util qw/max/; max(1.0, $nan)",
-         "out_mask" : "ffffff",
-         "out" : "NaN",
-         "err_mask" : "",
-         "err" : ""
-      },
-      {
-         "err" : "",
-         "err_mask" : "",
-         "out_mask" : "ff",
-         "out" : "1",
-         "code" : "($inf, $neginf, $nan) = (9**9**9, -9**9**9, -sin(9**9**9)); use List::Util qw/max/; max($nan, 1.0)"
-      },
-      {
-         "err_mask" : "",
-         "out_mask" : "ffff",
-         "out" : "30",
-         "code" : "length \"America/Argentina/Buenos_Aires\"",
-         "err" : ""
-      },
-      {
-         "err" : "",
-         "out_mask" : "ffff",
-         "out" : "47",
-         "code" : "length qq{{\"customer_id\":114631,\"survey_id\":485,\"ttl\":10}};",
-         "err_mask" : ""
-      },
-      {
-         "err" : "",
-         "err_mask" : "",
-         "out" : "46",
-         "out_mask" : "ffff",
-         "code" : "length \"\\t->alloc called: 12345678 12345678 12345 12345\""
-      },
-      {
-         "err_mask" : "",
-         "out" : "bless( [21,46,19,1,5,116,3,152,0,1464810381,1], 'Time::Piece' )",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-         "code" : "localtime",
-         "err" : ""
-      },
-      {
-         "err" : "",
-         "err_mask" : "",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffff",
-         "code" : "localtime . \"\"",
-         "out" : "Wed Jun  1 19:46:22 2016"
-      },
-      {
-         "err" : "",
-         "err_mask" : "",
-         "out_mask" : "ffff",
-         "code" : "my $a = [0]; sub foo {my $b = shift; return \\$b->[0]}; foo $a",
-         "out" : "\\0"
-      },
-      {
-         "err_mask" : "",
-         "out" : "[1]",
-         "out_mask" : "ffffff",
-         "code" : "my $a = [0]; sub foo {my $b = shift; return \\$b->[0]}; ${foo $a} = 1; $a",
-         "err" : ""
-      },
-      {
-         "err" : "",
-         "out" : "ERROR: Modification of a read-only value attempted at (eval 1) line 1, <STDIN> line 1.\n",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-         "code" : "my @a = qw/a 1 b 2 c 3/; ${@a}->{a};",
-         "err_mask" : ""
-      },
-      {
-         "err" : "",
-         "err_mask" : "",
-         "out" : "ERROR: syntax error at (eval 1) line 1, near \"}->\"\n",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-         "code" : "my @a = qw/a 1 b 2 c 3/; {@A}->{a}"
-      },
-      {
-         "err" : "",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-         "code" : "my @a = qw/a 1 b 2 c 3/; {+@A}->{a}",
-         "out" : "ERROR: syntax error at (eval 1) line 1, near \"}->\"\n",
-         "err_mask" : ""
-      },
-      {
-         "err" : "",
-         "out_mask" : "",
-         "out" : "",
-         "code" : "my @a = qw/a 1 b 2 c 3/; ${+@A}{a}",
-         "err_mask" : ""
-      },
-      {
-         "err" : "",
-         "code" : "my @a = qw/a 1 b 2 c 3/; my $h = {@a}; $h",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffff",
-         "out" : "{b => 2,c => 3,a => 1}",
-         "err_mask" : ""
-      },
-      {
-         "out_mask" : "ffff",
-         "code" : "my @a = qw/a 1 b 2 c 3/; my $h = {@A}; $h",
-         "out" : "{}",
-         "err_mask" : "",
-         "err" : ""
-      },
-      {
-         "err" : "",
-         "code" : "my $b = []; $a = \\$b;  $$a = []; $a = $$a; $a = []; $b",
-         "out_mask" : "ffff",
-         "out" : "[]",
-         "err_mask" : ""
-      },
-      {
-         "err" : "",
-         "err_mask" : "",
-         "out" : "Just another Perl hacker\n",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffff",
-         "code" : "my($this)=qw(viogel$pviT$vilxsre$xwyN); my(@arr)=split(//,$this);  foreach(reverse(@arr)){ print(chr(ord($_)-(1<<2))); } print \"\\n\";"
-      },
-      {
-         "err" : "",
-         "code" : "\"\\N{NEL}\"",
-         "out_mask" : "ffffff",
-         "out" : "�",
-         "err_mask" : ""
-      },
-      {
-         "err" : "",
-         "out_mask" : "ffffffff",
-         "out" : "💩",
-         "code" : "\"\\N{PILE OF POO}\"",
-         "err_mask" : ""
-      },
-      {
-         "err_mask" : "",
-         "out" : "☃",
-         "out_mask" : "ffffff",
-         "code" : "\"\\N{SNOWMAN}\"",
-         "err" : ""
-      },
-      {
-         "err_mask" : "",
-         "out" : "pi",
-         "out_mask" : "ffff",
-         "code" : "pi",
-         "err" : ""
-      },
-      {
-         "err" : "",
-         "err_mask" : "",
-         "out" : "foo",
-         "out_mask" : "ffffff",
-         "code" : "print \"foo\" if (+{});"
-      },
-      {
-         "err" : "",
-         "out" : "0",
-         "out_mask" : "ff",
-         "code" : "print \"foo\" if (keys %{+{}});",
-         "err_mask" : ""
-      },
-      {
-         "err" : "",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-         "code" : "print q;This is a test;;",
-         "out" : "ERROR: Can't find string terminator \"�\" anywhere before EOF at (eval 1) line 1, <STDIN> line 1.\n",
-         "err_mask" : ""
-      },
-      {
-         "err" : "",
-         "err_mask" : "",
-         "out_mask" : "ffffffffffffffff",
-         "code" : "[quotemeta \"\\n\"]",
-         "out" : "[\"\\\\\\n\"]"
-      },
-      {
-         "out_mask" : "ffff",
-         "out" : "\\\n",
-         "code" : "quotemeta \"\\n\"",
-         "err_mask" : "",
-         "err" : ""
-      },
-      {
-         "err" : "",
-         "err_mask" : "",
-         "out_mask" : "ffffffffffffffff",
-         "out" : "[\"\\\\\\n\"]",
-         "code" : "[quotemeta \"\\n\" =~ s/\\\\\\n/\\n/gr]"
-      },
-      {
-         "out_mask" : "ffffffffffffffff",
-         "out" : "00001101",
-         "code" : "sprintf \"%08b\", 015  # dick",
-         "err_mask" : "",
-         "err" : ""
-      },
-      {
-         "err_mask" : "",
-         "out_mask" : "ffffffffffff",
-         "out" : "0xffff",
-         "code" : "sprintf('0x%x', 0b1111111111111111)",
-         "err" : ""
-      },
-      {
-         "code" : "sprintf \"%8b\", 015",
-         "out_mask" : "ffffffffffffffff",
-         "out" : "    1101",
-         "err_mask" : "",
-         "err" : ""
-      },
-      {
-         "err_mask" : "",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-         "out" : "$VAR1 = [\n          'main'\n        ];\n$VAR2 = 'main::boo';\n",
-         "code" : "sub AUTOLOAD {Dumper(\\@_, $AUTOLOAD)}; my $foo = \"boo\"; __PACKAGE__->$foo",
-         "err" : ""
-      },
-      {
-         "err" : "",
-         "out" : "ERROR: syntax error at (eval 1) line 1, at EOF\n",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-         "code" : "sub AUTOLOAD {Dumper(\\@_, $AUTOLOAD}; my $foo = \"boo\"; __PACKAGE__->$foo",
-         "err_mask" : ""
-      },
-      {
-         "err_mask" : "",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-         "code" : "sub AUTOLOAD {Dumper(\\@_, $AUTOLOAD)}; my $foo = \"\"; __PACKAGE__->\"\"",
-         "out" : "ERROR: syntax error at (eval 1) line 1, near \"->\"\"\"\n",
-         "err" : ""
-      },
-      {
-         "err_mask" : "",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-         "out" : "$VAR1 = [\n          'foo'\n        ];\n$VAR2 = 'main::main';\n",
-         "code" : "sub AUTOLOAD {Dumper(\\@_, $AUTOLOAD)}; my $foo = \"\"; __PACKAGE__->(\"foo\")",
-         "err" : ""
-      },
-      {
-         "err_mask" : "",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-         "code" : "sub AUTOLOAD {Dumper(\\@_, $AUTOLOAD)}; my $foo = \"\"; __PACKAGE__->$foo",
-         "out" : "$VAR1 = [\n          'main'\n        ];\n$VAR2 = 'main::';\n",
-         "err" : ""
-      },
-      {
-         "err" : "",
-         "err_mask" : "",
-         "out_mask" : "ffffffffffffffffffffffffffffffff",
-         "code" : "sub AUTOLOAD {Dumper@_}; my $foo = \"boo\"; __PACKAGE__->$foo",
-         "out" : "$VAR1 = 'main';\n"
-      },
-      {
-         "err" : "",
-         "out" : "$VAR1 = 'main';\n",
-         "out_mask" : "ffffffffffffffffffffffffffffffff",
-         "code" : "sub AUTOLOAD {Dumper@_}; my $foo = \"\"; __PACKAGE__->$foo",
-         "err_mask" : ""
-      },
-      {
-         "err" : "",
-         "err_mask" : "",
-         "out_mask" : "ffffffffffffffffffff",
-         "out" : "1464810419",
-         "code" : "$^T"
-      },
-      {
-         "err_mask" : "",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffff",
-         "out" : "[1464810421,1464810422]",
-         "code" : "[$^T, time]",
-         "err" : ""
-      },
-      {
-         "err" : "",
-         "out" : "ERROR: Can't locate CGI.pm:   (null): Too many open files at (eval 1) line 1, <STDIN> line 1.\nBEGIN failed--compilation aborted at (eval 1) line 1, <STDIN> line 1.\n",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-         "code" : "use CGI;",
-         "err_mask" : ""
-      },
-      {
-         "err" : "",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-         "code" : "use experimental 'signature';",
-         "out" : "ERROR: Can't enable unknown feature signature at (eval 1) line 1.\nBEGIN failed--compilation aborted at (eval 1) line 1, <STDIN> line 1.\n",
-         "err_mask" : ""
-      },
-      {
-         "err_mask" : "",
-         "out" : "",
-         "out_mask" : "",
-         "code" : "use experimental 'signatures';",
-         "err" : ""
-      },
-      {
-         "err" : "",
-         "out" : "hola hoops hola hoops ",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffff",
-         "code" : "use experimental 'signatures'; sub foo($bar) {print $bar, $bar}; foo(\"hola hoops \");",
-         "err_mask" : ""
-      },
-      {
-         "err_mask" : "",
-         "out" : "ERROR: object is not of type Cpanel::JSON::XS at (eval 1) line 1, <STDIN> line 1.\n",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-         "code" : "use JSON::MaybeXS; JSON->decode(q/{\"foo\": undefined, \"bar\": null}/)",
-         "err" : ""
-      },
-      {
-         "err" : "",
-         "out" : "ERROR: malformed JSON string, neither tag, array, object, number, string or atom, at character offset 8 (before \"undefined, \"bar\": nu...\") at (eval 1) line 1, <STDIN> line 1.\n",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-         "code" : "use JSON::MaybeXS; JSON->new()->decode(q/{\"foo\": undefined, \"bar\": null}/)",
-         "err_mask" : ""
-      },
-      {
-         "out_mask" : "",
-         "code" : "use strict; my @foo; my $x = $foo[1];",
-         "out" : "",
-         "err_mask" : "",
-         "err" : ""
-      },
-      {
-         "err_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-         "code" : "use strict; use warnings; my @x; $x['bar'] = 1; [@x]",
-         "out_mask" : "ffffff",
-         "out" : "[1]",
-         "err" : "Argument \"bar\" isn't numeric in array element at (eval 1) line 1, <STDIN> line 1.\n"
-      },
-      {
-         "err" : "",
-         "err_mask" : "",
-         "code" : "use utf8; *\";\" = {\"Hello World\"};",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-         "out" : "ERROR: Unrecognized character \\x{37e}; marked by <-- HERE after e utf8; *\"<-- HERE near column 103 at (eval 1) line 1, <STDIN> line 1.\n"
-      },
-      {
-         "err" : "",
-         "code" : "use utf8; my $😫=\"hi\";",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-         "out" : "ERROR: Unrecognized character \\x{1f62b}; marked by <-- HERE after utf8; my $<-- HERE near column 105 at (eval 1) line 1, <STDIN> line 1.\n",
-         "err_mask" : ""
-      },
-      {
-         "err" : "",
-         "err_mask" : "",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-         "out" : "ERROR: Can't find string terminator \"�\" anywhere before EOF at (eval 1) line 1, <STDIN> line 1.\n",
-         "code" : "use utf8; print q;This is a test;;"
-      },
-      {
-         "code" : "use utf8; *; = sub {\"Hello World\"};",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-         "out" : "ERROR: Unrecognized character \\x{37e}; marked by <-- HERE after se utf8; *<-- HERE near column 102 at (eval 1) line 1, <STDIN> line 1.\n",
-         "err_mask" : "",
-         "err" : ""
-      },
-      {
-         "err" : "",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-         "code" : "use utf8; sub ; {\"Hello World\"};",
-         "out" : "ERROR: Illegal declaration of anonymous subroutine at (eval 1) line 1, <STDIN> line 1.\n",
-         "err_mask" : ""
-      },
-      {
-         "err" : "",
-         "err_mask" : "",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-         "code" : "$^V",
-         "out" : "bless( {qv => 1,original => \"v5.24.0\",version => [5,24,0]}, 'version' )"
-      },
-      {
-         "err" : "",
-         "err_mask" : "",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-         "out" : "ERROR: operation not supported with version object at (eval 1) line 1, <STDIN> line 1.\n",
-         "code" : "$^V - 10"
-      },
-      {
-         "err_mask" : "",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-         "code" : "\"√-\\x{0305}1 2³ ∑π and it was really strange\"",
-         "out" : "â-̅1 2Â³ âÏ and it was really strange",
-         "err" : ""
-      },
-      {
-         "err" : "",
-         "err_mask" : "",
-         "out" : "â-̅1̅ 2Â³ âÏ and it was really strange",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-         "code" : "\"√-\\x{0305}1\\x{0305} 2³ ∑π and it was really strange\""
-      },
-      {
-         "err" : "",
-         "out" : "â-͞1 2Â³ âÏ and it was really strange",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-         "code" : "\"√-\\x{035E}1 2³ ∑π and it was really strange\"",
-         "err_mask" : ""
-      },
-      {
-         "err" : "",
-         "out" : "√-\u00035E1 2³ ∑π and it was really strange",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-         "code" : "\"√-\\x035E1 2³ ∑π and it was really strange\"",
-         "err_mask" : ""
-      },
-      {
-         "err" : "",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-         "out" : "â-‾1 2Â³ âÏ and it was really strange",
-         "code" : "\"√-\\x{203E}1 2³ ∑π and it was really strange\"",
-         "err_mask" : ""
-      },
-      {
-         "out" : "â−̅1̅ 2Â³ âÏ and it was really strange",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-         "code" : "\"√\\x{2212}\\x{0305}1\\x{0305} 2³ ∑π and it was really strange\"",
-         "err_mask" : "",
-         "err" : ""
-      },
-      {
-         "out" : "�",
-         "out_mask" : "ffffff",
-         "code" : "\"\\x85\"",
-         "err_mask" : "",
-         "err" : ""
-      },
-      {
-         "err" : "",
-         "err_mask" : "",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffff",
-         "code" : "~-~()",
-         "out" : "18446744073709551615"
-      },
-      {
-         "err" : "",
-         "err_mask" : "",
-         "out" : "[1]",
-         "out_mask" : "ffffff",
-         "code" : " [ \"(\" =~ /[(]/ ]"
-      },
-      {
-         "err" : "",
-         "err_mask" : "",
-         "out" : "[1]",
-         "out_mask" : "ffffff",
-         "code" : " [ \"]\" =~ /[\\]]/ ]"
-      },
-      {
-         "err" : "",
-         "err_mask" : "",
-         "out_mask" : "ffff",
-         "out" : "+_",
-         "code" : "- - _"
-      },
-      {
-         "err_mask" : "",
-         "out_mask" : "ff",
-         "out" : "+",
-         "code" : "- '-'",
-         "err" : ""
-      },
-      {
-         "err" : "",
-         "code" : "-(''.{})",
-         "out_mask" : "ffffffffffffffffff000000ffffffff",
-         "out" : "-HASH(0x3662b88)",
-         "err_mask" : ""
-      },
-      {
-         "err_mask" : "",
-         "code" : "-{}",
-         "out_mask" : "000000000000000000",
-         "out" : "-81361800",
-         "err" : ""
-      },
-      {
-         "err" : "",
-         "out_mask" : "",
-         "code" : ";;",
-         "out" : "",
-         "err_mask" : ""
-      },
-      {
-         "err" : "",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-         "code" : ":)",
-         "out" : "ERROR: syntax error at (eval 1) line 1, near \"; :\"\n",
-         "err_mask" : ""
-      },
-      {
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-         "out" : "ERROR: syntax error at (eval 1) line 1, near \"; ?\"\n",
-         "code" : "?",
-         "err_mask" : "",
-         "err" : ""
-      },
-      {
-         "err" : "",
-         "err_mask" : "",
-         "out" : "ERROR: syntax error at (eval 1) line 1, near \"; ?\"\n",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-         "code" : "?^?"
-      },
-      {
-         "err" : "",
-         "err_mask" : "",
-         "out_mask" : "ff",
-         "out" : "1",
-         "code" : "/^+/"
-      },
-      {
-         "err" : "",
-         "out" : "",
-         "out_mask" : "",
-         "code" : "/[^]]/",
-         "err_mask" : ""
-      },
-      {
-         "err" : "",
-         "out" : "ERROR: Unmatched [ in regex; marked by <-- HERE in m/[ <-- HERE / at (eval 1) line 1, <STDIN> line 1.\n",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-         "code" : "/[/",
-         "err_mask" : ""
-      },
-      {
-         "err" : "",
-         "out_mask" : "ff",
-         "out" : "1",
-         "code" : "/${#}/",
-         "err_mask" : ""
-      },
-      {
-         "err" : "",
-         "code" : "/$#/",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-         "out" : "ERROR: syntax error at (eval 1) line 1, near \"; /$#/\"\n",
-         "err_mask" : ""
-      },
-      {
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-         "code" : "/$#//",
-         "out" : "ERROR: syntax error at (eval 1) line 1, near \"; /$#/\"\n",
-         "err_mask" : "",
-         "err" : ""
-      },
-      {
-         "err" : "",
-         "err_mask" : "",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-         "code" : "/**/",
-         "out" : "ERROR: Quantifier follows nothing in regex; marked by <-- HERE in m/* <-- HERE */ at (eval 1) line 1, <STDIN> line 1.\n"
-      },
-      {
-         "out" : "ERROR: Unimplemented at (eval 1) line 1, <STDIN> line 1.\n",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-         "code" : "...",
-         "err_mask" : "",
-         "err" : ""
+         "code" : "\"0.0\"+0 ? 1 : 0"
       }
    ]
 }
