@@ -39,7 +39,7 @@ my $cs = @code;
 
 for my $c (@code) {
     chomp $c;
-    my $p = sprintf "%0.02f%%", ($counter++)/($cs);
+    my $p = sprintf "%0.02f%%", (100*$counter++)/($cs);
     say "Running $counter/$cs [$p] $c";
 
     my $fut = RunEval::make_async($c, $loop);

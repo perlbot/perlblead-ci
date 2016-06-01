@@ -102,7 +102,7 @@ sub runner_async {
 
     my $c_in = "perl $code";
 
-    $c_int = encode("utf8", $c_in); # we need to treat it as a raw byte stream because of a bug
+    $c_in = encode("utf8", $c_in); # we need to treat it as a raw byte stream because of a bug
 
     my $cmd = ['sudo', './runeval.sh'];
  
