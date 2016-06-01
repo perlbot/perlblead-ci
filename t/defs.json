@@ -1,81 +1,352 @@
 {
    "tests" : [
       {
+         "code" : "\"Zoffix\" =~ m ☃zof☃i ? 'yes' : 'nope'",
+         "out" : "ERROR: Unrecognized character \\x98; marked by <-- HERE after  m ☃zof�<-- HERE near column 112 at (eval 1) line 1, <STDIN> line 1.\n",
          "err_mask" : "",
-         "err" : "",
-         "code" : "1/0",
-         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-         "out" : "ERROR: Illegal division by zero at (eval 1) line 1, <STDIN> line 1.\n"
+         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+         "err" : ""
       },
       {
-         "code" : "1.0 == 3.0/2.999999999999999999999999999999999999999999999",
+         "out_mask" : "ffff",
          "err" : "",
+         "code" : "$z='a'; my( $fh ) =  $z =~/^(\\d+)$/  ||  (wantarray?'YES':'NO'); print $fh;",
+         "err_mask" : "",
+         "out" : "NO"
+      },
+      {
+         "err_mask" : "",
+         "out" : "YES",
+         "code" : "$z='a'; my( $fh ) =  $z =~/^(\\d+)$/  ||  sub {wantarray?'YES':'NO'}->(); print $fh;",
+         "err" : "",
+         "out_mask" : "ffffff"
+      },
+      {
+         "err" : "",
+         "out_mask" : "ff",
          "err_mask" : "",
          "out" : "1",
+         "code" : "$z=7; ( $fh ) =  $z =~/^(\\d+)$/  ||  $fh; print $fh;"
+      },
+      {
+         "out" : "1",
+         "err_mask" : "",
+         "code" : "$z=0; ( $fh ) =  $z =~/^(\\d+)$/  ||  $fh; print $fh;",
+         "err" : "",
          "out_mask" : "ff"
       },
       {
+         "out" : "[\"+\",\"-\",\"+\",\"+\",\"-\"]",
+         "err_mask" : "",
+         "code" : "[ '+-++-X' =~ /([+\\-](?=[+\\-]*X))/g ]",
+         "err" : "",
+         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffff"
+      },
+      {
+         "code" : "\"\\x{a9}\\x{263a}\\x{2665}\"",
+         "err_mask" : "",
+         "out" : "©☺♥",
+         "out_mask" : "ffffffffffffffff",
+         "err" : ""
+      },
+      {
+         "out_mask" : "ffffffffff",
+         "err" : "",
+         "code" : "$x = 99; $x =~ s/([0-9])/${1}00/; say $x",
+         "err_mask" : "",
+         "out" : "9009\n"
+      },
+      {
+         "code" : "$x = 99; $x =~ s/([0-9])/${1}00/g; say $x",
+         "out" : "900900\n",
+         "err_mask" : "",
+         "out_mask" : "ffffffffffffff",
+         "err" : ""
+      },
+      {
+         "out_mask" : "ffffff",
+         "err" : "",
+         "code" : "\"\\x7f\" =~ /[[:cntrl:]]/ ? \"yes\" : \"no\"",
+         "out" : "yes",
+         "err_mask" : ""
+      },
+      {
          "out_mask" : "ff",
-         "out" : "1",
          "err" : "",
-         "err_mask" : "",
-         "code" : "\"1\""
-      },
-      {
-         "err_mask" : "",
-         "err" : "",
-         "code" : "1",
-         "out_mask" : "ff",
-         "out" : "1"
-      },
-      {
-         "out_mask" : "ff",
-         "out" : "1",
-         "err_mask" : "",
-         "err" : "",
-         "code" : "0xffff == 0b1111111111111111"
-      },
-      {
-         "code" : "0e0 ? 1 : 0",
-         "err" : "",
-         "err_mask" : "",
-         "out" : "0",
-         "out_mask" : "ff"
+         "code" : "%x = ( 1 => \"a\", b => 3 ); $str = \"ab\"; print $x{ $str =~ /(.)$/ }",
+         "out" : "a",
+         "err_mask" : ""
       },
       {
          "err" : "",
+         "out_mask" : "",
          "err_mask" : "",
-         "code" : "\"0e0\" ? 1 : 0",
-         "out_mask" : "ff",
-         "out" : "1"
+         "out" : "",
+         "code" : "\"\\x{02}\" =~ /\\s/"
       },
       {
-         "code" : "\"0e0\"+\"0e0\" ? 1 : 0",
          "err" : "",
+         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
          "err_mask" : "",
-         "out" : "0",
-         "out_mask" : "ff"
+         "out" : "/home/ryan/perl5/perlbrew/perls/perlbot-5.24.0/bin/perl",
+         "code" : "$^X"
       },
       {
-         "out" : "0",
-         "out_mask" : "ff",
-         "code" : "0.0 ? 1 : 0",
          "err_mask" : "",
+         "out" : "ERROR: Undefined format \"$stdh\" called at (eval 1) line 1, <STDIN> line 1.\n",
+         "code" : "write select",
+         "err" : "",
+         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+      },
+      {
+         "err_mask" : "",
+         "out" : "Just another perl hacker",
+         "code" : "$_=\"Whfg nabgure crey unpxre\"; tr/A-Zn-za-m/N-ZA-Ma-z/r;",
+         "err" : "",
+         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffff"
+      },
+      {
+         "err" : "",
+         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffff",
+         "err_mask" : "",
+         "out" : "Just another perl hacker",
+         "code" : "$_=\"Whfg nabgure crey unpxre\"; tr/A-Za-z/N-ZA-Mn-za-m/r; "
+      },
+      {
+         "out_mask" : "ffff",
+         "err" : "",
+         "code" : "$_=\"Whfg nabgure crey unpxre\"; tr/A-Za-z/N-ZA-Mn-za-m/ * 2; ",
+         "out" : "42",
+         "err_mask" : ""
+      },
+      {
+         "err_mask" : "",
+         "out" : "21",
+         "code" : "$_=\"Whfg nabgure crey unpxre\"; tr/A-Za-z/N-ZA-Mn-za-m/;",
+         "err" : "",
+         "out_mask" : "ffff"
+      },
+      {
+         "err" : "",
+         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+         "err_mask" : "",
+         "out" : "ERROR: Can't locate object method \"hey\" via package \"wtf\" (perhaps you forgot to load \"wtf\"?) at (eval 1) line 1, <STDIN> line 1.\n",
+         "code" : "warn hey { \"wtf\" }"
+      },
+      {
+         "err" : "",
+         "code" : "[$^V,$^O, log(~0+1)/log(2)]",
+         "out" : "[bless( {qv => 1,original => \"v5.24.0\",version => [5,24,0]}, 'version' ),\"posix-bc\",64]"
+      },
+      {
+         "err" : "",
+         "out_mask" : "ffffffffffffff",
+         "err_mask" : "",
+         "out" : "ಠ_ಠ",
+         "code" : "v3232.95.3232;  # This looks like à ² _ à ² "
+      },
+      {
+         "code" : "v3232.95.3232",
+         "err_mask" : "",
+         "out" : "ಠ_ಠ",
+         "out_mask" : "ffffffffffffff",
          "err" : ""
       },
       {
          "err_mask" : "",
+         "out" : "bless( {qv => 1,original => \"v5.24.0\",version => [5,24,0]}, 'version' )",
+         "code" : "$^V",
          "err" : "",
-         "code" : "\"0.0\" ? 1 : 0",
-         "out_mask" : "ff",
-         "out" : "1"
+         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
       },
       {
-         "out_mask" : "ff",
-         "out" : "0",
-         "err" : "",
+         "out" : "[bless( {qv => 1,original => \"v5.24.0\",version => [5,24,0]}, 'version' )]",
          "err_mask" : "",
-         "code" : "\"0.0\"+0 ? 1 : 0"
+         "code" : "[$^V]",
+         "err" : "",
+         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+      },
+      {
+         "code" : "use warnings; use strict; my $x; for $x (1 .. 10) { last if $x % 2 == 0; } [ $x ]",
+         "out" : "[undef]",
+         "err_mask" : "",
+         "out_mask" : "ffffffffffffff",
+         "err" : ""
+      },
+      {
+         "err_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+         "out" : "ok",
+         "code" : "use warnings; use feature 'switch'; given (1) { when (1) { print \"ok\"; } }",
+         "err" : "given is experimental at (eval 1) line 1, <STDIN> line 1.\nwhen is experimental at (eval 1) line 1, <STDIN> line 1.\n",
+         "out_mask" : "ffff"
+      },
+      {
+         "out" : "ok",
+         "err_mask" : "",
+         "code" : "use warnings; use experimental 'switch'; given (1) { when (1) { print \"ok\"; } }",
+         "err" : "",
+         "out_mask" : "ffff"
+      },
+      {
+         "code" : "use warnings; package Foo; sub index :method { ... }  index('aaaao', 'o');",
+         "out" : "4",
+         "err_mask" : "",
+         "out_mask" : "ff",
+         "err" : ""
+      },
+      {
+         "code" : "use warnings; package Foo; sub index { ... }  index('aaaao', 'o');",
+         "err_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+         "out" : "4",
+         "out_mask" : "ff",
+         "err" : "Ambiguous call resolved as CORE::index(), qualify as such or use & at (eval 1) line 1, <STDIN> line 1.\n"
+      },
+      {
+         "code" : "use warnings; my @foo = qw/bar/; print @foo[0] # Perl911 yours will warn I expect",
+         "out" : "bar",
+         "err_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+         "out_mask" : "ffffff",
+         "err" : "Scalar value @foo[0] better written as $foo[0] at (eval 1) line 1, <STDIN> line 1.\n"
+      },
+      {
+         "code" : "use warnings; my @foo = 0..10; print \"this matches\" if \"0 but true\" ~~ @foo; # thanks, pink_mist++  ",
+         "out" : "this matches",
+         "err_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+         "out_mask" : "ffffffffffffffffffffffff",
+         "err" : "Smartmatch is experimental at (eval 1) line 1, <STDIN> line 1.\n"
+      },
+      {
+         "err_mask" : "",
+         "out" : "[\\42,0,\"\\34\",\"\"]",
+         "code" : "use warnings; $^I = 42; [ \\$^I, 0, eval(\"\\$\\t;\"), $@ ]",
+         "err" : "",
+         "out_mask" : "ffffffffffffffffffffffffffffffff"
+      },
+      {
+         "code" : "use v5.20; say \"hi\"; state $your_business;",
+         "out" : "hi\n",
+         "err_mask" : "",
+         "out_mask" : "ffffff",
+         "err" : ""
+      },
+      {
+         "code" : "use utf8; sub 您好 { say \"您好\" }; 您好",
+         "err_mask" : "",
+         "out" : "您好\n",
+         "out_mask" : "ffffffffffffff",
+         "err" : ""
+      },
+      {
+         "code" : "use utf8; say ༡ + ༢",
+         "out" : "ERROR: Unrecognized character \\x{f21}; marked by <-- HERE after utf8; say <-- HERE near column 105 at (eval 1) line 1, <STDIN> line 1.\n",
+         "err_mask" : "",
+         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+         "err" : ""
+      },
+      {
+         "err_mask" : "",
+         "out" : "yo",
+         "code" : "use utf8; qw ́yó",
+         "err" : "",
+         "out_mask" : "ffff"
+      },
+      {
+         "code" : "use utf8; package テスト; sub モー { say \"モー\" }; package main; テスト->new->モー",
+         "out" : "ERROR: Can't locate object method \"new\" via package \"テスト\" at (eval 1) line 1, <STDIN> line 1.\n",
+         "err_mask" : "",
+         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+         "err" : ""
+      },
+      {
+         "err" : "",
+         "out_mask" : "ffffffffffffff",
+         "out" : "モー\n",
+         "err_mask" : "",
+         "code" : "use utf8; package テスト; sub new { bless {}, shift} sub モー { say \"モー\" }; package main; テスト->new->モー"
+      },
+      {
+         "out" : "❥",
+         "err_mask" : "",
+         "code" : "use utf8; ${\"☺\"} = \"❤\"; binmode STDOUT; chr 1 + ord ${\"☺\"}",
+         "err" : "",
+         "out_mask" : "ffffff"
+      },
+      {
+         "err_mask" : "",
+         "out" : "ERROR: Can't locate ut8.pm:   (null): Too many open files at (eval 1) line 1, <STDIN> line 1.\nBEGIN failed--compilation aborted at (eval 1) line 1, <STDIN> line 1.\n",
+         "code" : "use ut8; sub 您好 { say \"您好\" }; 您好",
+         "err" : "",
+         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+      },
+      {
+         "err_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+         "out" : "[undef]",
+         "code" : "use strict; use warnings; sub TIEHANDLE { [] }; sub READLINE { \"asdf\" }; sub AUTOLOAD { print \"In autoload!\"; 42 }; tie *FH, 'main'; [ scalar readline FH ];",
+         "err" : "readline() on unopened filehandle FH at (eval 1) line 1.\n",
+         "out_mask" : "ffffffffffffff"
+      },
+      {
+         "err_mask" : "",
+         "out" : "[\"asdf\"]In autoload!",
+         "code" : "use strict; use warnings; sub TIEHANDLE { bless [] }; sub READLINE { \"asdf\" }; sub AUTOLOAD { print \"In autoload!\"; 42 }; tie *FH, 'main'; [ scalar readline FH ];",
+         "err" : "",
+         "out_mask" : "ffffffffffffffffffffffffffffffffffffffff"
+      },
+      {
+         "err" : "",
+         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+         "err_mask" : "",
+         "out" : "ERROR: Not an ARRAY reference at (eval 1) line 1, <STDIN> line 1.\n",
+         "code" : "use strict; use warnings; my $h = {\"foo\" => 5, \"bar\" => 6, \"baz\" => 2}; print Dumper(@{$h}->{qw/foo bar baz/});"
+      },
+      {
+         "out" : "ERROR: Global symbol \"$fh\" requires explicit package name (did you forget to declare \"my $fh\"?) at (eval 1) line 1, <STDIN> line 1.\n",
+         "err_mask" : "",
+         "code" : "use strict; my $z=7; my ( $fh ) =  $z =~/^(\\d+)$/  ||  $fh; print $fh;",
+         "err" : "",
+         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+      },
+      {
+         "out" : "ERROR: Global symbol \"$end\" requires explicit package name (did you forget to declare \"my $end\"?) at (eval 1) line 1, <STDIN> line 1.\n",
+         "err_mask" : "",
+         "code" : "use strict; my $w = 'The'; my @r = \"The\\nend\" =~ /$w$end/msg; \\@r",
+         "err" : "",
+         "out_mask" : "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+      },
+      {
+         "err_mask" : "",
+         "out" : "[]",
+         "code" : "use strict; my $w = 'The'; my @r = \"The\\nend\" =~ /$w$(?:)end/msg; \\@r",
+         "err" : "",
+         "out_mask" : "ffff"
+      },
+      {
+         "code" : "use strict; my( $foo  ) = my( $bar ) = 3; say $foo;",
+         "err_mask" : "",
+         "out" : "3\n",
+         "out_mask" : "ffff",
+         "err" : ""
+      },
+      {
+         "err" : "",
+         "out_mask" : "ffff",
+         "err_mask" : "",
+         "out" : "1\n",
+         "code" : "use strict; my $foo  = my( $bar ) = 3; say $foo;"
+      },
+      {
+         "out_mask" : "ffff",
+         "err" : "",
+         "code" : "use strict; my $foo = my $bar = 3; say $foo;",
+         "err_mask" : "",
+         "out" : "3\n"
+      },
+      {
+         "out_mask" : "ffff",
+         "err" : "",
+         "code" : "use strict; my $foo = my $bar = 3; say $bar;",
+         "out" : "3\n",
+         "err_mask" : ""
       }
    ]
 }

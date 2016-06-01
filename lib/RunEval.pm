@@ -11,14 +11,17 @@ use utf8;
 sub debug {say @_ if $ENV{DEBUG}};
 
 sub common_transforms {
-   my $input = shift;
+    my $input = "".shift();
   
-   # Pretend every (eval \d+) is eval 1.  might cause it to miss some things but nothing important
-   $input =~ s/\(eval \d+\)/(eval 1)/g;
+    # If this dies on decoding, it means that things went differently in the eval and it's already decoded.  some weird evals do that, so handle this non-fatally
+    Encode::_utf8_on($input);
+    $input = eval {decode("utf8", $input)} // $input;
+    # Pretend every (eval \d+) is eval 1.  might cause it to miss some things but nothing important
+    $input =~ s/\(eval \d+\)/(eval 1)/g;
 
-   # TODO recorgnize paths to perlbrew/perl here and turn them all into PERLBREW_ROOT/perls/PERL_VERSION/...
+    # TODO recorgnize paths to perlbrew/perl here and turn them all into PERLBREW_ROOT/perls/PERL_VERSION/...
 
-   return $input;
+    return $input;
 }
 
 sub compare_res {
@@ -113,11 +116,6 @@ sub runner_async {
     my $child_pid = $loop->run_child(command => $cmd, stdin => $c_in, on_finish => sub {
             my ($pid, $exitcode, $stdout, $stderr) = @_;
 
-            Encode::_utf8_on($stdout);
-            Encode::_utf8_on($stderr);
-            $stdout = decode("utf8", $stdout);
-            $stderr = decode("utf8", $stderr);
-
             $stdout = common_transforms $stdout;
             $stderr = common_transforms $stderr;
 
@@ -152,11 +150,6 @@ sub runner_ipc {
     my $cmd = ['sudo', './runeval.sh'];
     
     my $res = eval {run $cmd, \$c_in, \$c_out, \$c_err, timeout(30);};
-   
-    Encode::_utf8_on($c_out);
-    Encode::_utf8_on($c_err);
-    $c_out = decode("utf8", $c_out);
-    $c_err = decode("utf8", $c_err);
 
     $c_out = common_transforms $c_out;
     $c_err = common_transforms $c_err;
