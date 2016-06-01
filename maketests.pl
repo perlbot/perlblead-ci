@@ -37,7 +37,7 @@ my $counter = 0;
 my @tests;
 my $cs = @code;
 
-for my $c (@code[0..100]) {
+for my $c (@code) {
     chomp $c;
     my $p = sprintf "%0.02f%%", (100*$counter++)/($cs);
     say "Running $counter/$cs [$p] $c";
