@@ -5,7 +5,7 @@ use warnings;
 
 use IPC::Run qw/run timeout/;
 use Future;
-use Encode;
+use Encode qw/encode decode/;
 use utf8;
 
 sub debug {say @_ if $ENV{DEBUG}};
@@ -34,8 +34,9 @@ sub compare_res {
         debug "RES1 ERR: ", $res1->{err};
         debug "RES2 ERR: ", $res2->{err};
 
-        my $stderr_mask = $res1->{err} ^ $res2->{err};
-        my $stdout_mask = $res1->{out} ^ $res2->{out};
+        # We need to decode these, so that ^ works properly on them in perl 5.24+
+        my $stderr_mask = encode("utf8", $res1->{err}) ^ encode("utf8", $res2->{err});
+        my $stdout_mask = encode("utf8", $res1->{out}) ^ encode("utf8", $res2->{out});
 
         # turn everything except \0 into \xFF and anythign else into \0.
         $stderr_mask =~ s/(.)/$1 eq "\0" ? "\xFF" : "\0"/egsi;
@@ -101,7 +102,7 @@ sub runner_async {
 
     my $c_in = "perl $code";
 
-    Encode::_utf8_off($c_in); # we need to treat it as a raw byte stream because of a bug
+    $c_int = encode("utf8", $c_in); # we need to treat it as a raw byte stream because of a bug
 
     my $cmd = ['sudo', './runeval.sh'];
  
@@ -112,8 +113,8 @@ sub runner_async {
     my $child_pid = $loop->run_child(command => $cmd, stdin => $c_in, on_finish => sub {
             my ($pid, $exitcode, $stdout, $stderr) = @_;
 
-            Encode::_utf8_on($stdout);
-            Encode::_utf8_on($stderr);
+            $stdout = decode("utf8", $stdout);
+            $stderr = decode("utf8", $stderr);
 
             $stdout = common_transforms $stdout;
             $stderr = common_transforms $stderr;
