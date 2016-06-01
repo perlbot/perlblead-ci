@@ -5,6 +5,7 @@ use warnings;
 
 use IPC::Run qw/run timeout/;
 use Future;
+use Encode;
 use utf8;
 
 sub debug {say @_ if $ENV{DEBUG}};
@@ -99,6 +100,8 @@ sub runner_async {
     my ($code, $loop) = @_;
 
     my $c_in = "perl $code";
+
+    Encode::_utf8_off($c_in); # we need to treat it as a raw byte stream because of a bug
 
     my $cmd = ['sudo', './runeval.sh'];
  
