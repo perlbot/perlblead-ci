@@ -17,10 +17,8 @@ for my $f (keys $data->%*) {
            (length($_->{err} . $_->{out}) < 1024) # Ignore long outputs, they're unlikely to be stable (likely %INC and such)
         && !($_->{code} =~ /(ENV|%::|%main|->now|time|\$\^V|\$\^T|\$\^O|\$\^X|version|rand|Time::Piece|[@%]INC|\$\$\W|\$\]|\$code|Carp)/) 
         && !($_->{err} =~ /Unrecognized character/)
-        && !($_->{out} =~ /(CODE|HASH|SCALAR|REF|ARRAY)\(0/) # ignore stuff with refs in output
         && !($_->{err} =~ /Killed/
            ||$_->{out} =~ /Killed/)
-        && !($_->{code} =~ /(\s*[+*\-]\s*)?(\[\]|{})(\s*[+*\-]\s*)/)
     };
 
     my $mapsub = sub {

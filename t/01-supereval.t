@@ -32,7 +32,7 @@ plan tests => 2*$numtests;
         my $code = $test->{code};
 
 #        print STDERR "${fn}[$rand]: $code";
-        my $res = RunEval::run_eval($code);
+        my $res = RunEval::runner_ipc($code);
 
         if ($res) {
             my ($c_out, $c_err, $t_out, $t_err) = ($res->{out}, $res->{err}, $test->{out}, $test->{err});
