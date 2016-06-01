@@ -17,8 +17,9 @@ use open ':std', ':encoding(utf8)';
 use Test::More;
 use List::Util qw/reduce shuffle/;
 
+use Encode qw/encode_utf8 decode_utf8/;
 
-my $tests = do {local $/; open(my $fh, "<t/filtered.json"); decode_json <$fh>};
+my $tests = do {local $/; open(my $fh, "<:raw","t/filtered.json"); decode_json <$fh>};
 my $fulltests = reduce {[@$a, @$b]} map {$tests->{$_}} keys $tests->%*;
 
 my $numtests = int(0.10 * @$fulltests);
@@ -31,6 +32,7 @@ plan tests => 2*$numtests;
         my $test = $fulltests->[$tn];
         my $code = $test->{code};
 
+        print Dumper($test);
 #        print STDERR "${fn}[$rand]: $code";
         my $res = RunEval::runner_ipc($code);
 

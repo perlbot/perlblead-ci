@@ -7,8 +7,10 @@ use Data::Dumper;
     use open ':encoding(utf8)';
     use utf8;
 
+use Encode qw/encode_utf8/;
+
 my $json = do {local $/; open(my $fh, "<", "t/defs.json"); <$fh>};
-my $data = decode_json $json;
+my $data = decode_json(encode_utf8($json));
 
 my ($dc, $lc, $ic);
 
@@ -31,6 +33,8 @@ for my $f (keys $data->%*) {
     $data->{$f} = [map {$mapsub->()} grep {$grepsub->()} $data->{$f}->@* ];
 }
 
+my $json = JSON::MaybeXS->new(pretty => 1);
+
 open(my $fh, ">", "t/filtered.json");
-print $fh encode_json($data);
+print $fh $json->encode($data);
 close($fh);

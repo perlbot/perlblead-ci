@@ -37,7 +37,7 @@ my $counter = 0;
 my @tests;
 my $cs = @code;
 
-for my $c (@code) {
+for my $c (@code[0..100]) {
     chomp $c;
     my $p = sprintf "%0.02f%%", (100*$counter++)/($cs);
     say "Running $counter/$cs [$p] $c";
@@ -53,14 +53,19 @@ for my $c (@code) {
     my $res = RunEval::future_to_result($fut);
 
     debug "Ran $c!\n\t" . Dumper($res);
-    debug "Masks out: ";
-    debug unpack("H*", $res->{out_mask});
-    debug unpack("H*", $res->{err_mask});
+    #debug "Masks out: ";
+    #debug unpack("H*", $res->{out_mask});
+    #debug unpack("H*", $res->{err_mask});
+
+    $res->{code} = $c if $res->{code};
 
     push @tests, $res if $res->{code};
 }
 
+my $json = JSON::MaybeXS->new(utf8 => 0, pretty => 1);
+
+
 open(my $test_out, ">t/defs.json") or die "$!: defs.json";
-binmode($test_out, ":encoding(utf8)");
-print $test_out encode_json({tests => \@tests});
+#binmode($test_out, ":encoding(utf8)");
+print $test_out $json->encode({tests => \@tests});
 close($test_out);

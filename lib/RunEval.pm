@@ -57,8 +57,8 @@ sub compare_res {
             code => $code,
             out => $res1->{out},
             err => $res1->{err},
-            out_mask => $stdout_mask,
-            err_mask => $stderr_mask,
+            out_mask => unpack("H*", $stdout_mask),
+            err_mask => unpack("H*", $stderr_mask),
         }
     } else {
        print "^^^ VOLATILE TEST!\n";
@@ -113,6 +113,8 @@ sub runner_async {
     my $child_pid = $loop->run_child(command => $cmd, stdin => $c_in, on_finish => sub {
             my ($pid, $exitcode, $stdout, $stderr) = @_;
 
+            Encode::_utf8_on($stdout);
+            Encode::_utf8_on($stderr);
             $stdout = decode("utf8", $stdout);
             $stderr = decode("utf8", $stderr);
 
@@ -146,10 +148,16 @@ sub runner_ipc {
 
     my $c_in = "perl $code";
 
+    $c_in = encode("utf8", $c_in); # we need to treat it as a raw byte stream because of a bug
     my $cmd = ['sudo', './runeval.sh'];
     
     my $res = eval {run $cmd, \$c_in, \$c_out, \$c_err, timeout(30);};
    
+    Encode::_utf8_on($c_out);
+    Encode::_utf8_on($c_err);
+    $c_out = decode("utf8", $c_out);
+    $c_err = decode("utf8", $c_err);
+
     $c_out = common_transforms $c_out;
     $c_err = common_transforms $c_err;
 
