@@ -7,6 +7,7 @@ use IPC::Run qw/run timeout/;
 use Future;
 use Encode qw/encode decode/;
 use utf8;
+use Data::Dumper;
 
 sub debug {say @_ if $ENV{DEBUG}};
 
@@ -27,6 +28,11 @@ sub common_transforms {
 sub compare_res {
     my ($res1, $res2) = @_;
     my $code = $res1->{code};
+
+    # This test likely timed out in one or both branches, dump it
+    if (grep {!defined} map {($_->{code}, $_->{out}, $_->{err})} ($res1, $res2)) {
+        return {};
+    }
 
     if ((length $res1->{out} == length $res2->{out}) &&
         (length $res1->{err} == length $res2->{err})) {
