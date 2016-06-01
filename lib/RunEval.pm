@@ -112,6 +112,9 @@ sub runner_async {
     my $child_pid = $loop->run_child(command => $cmd, stdin => $c_in, on_finish => sub {
             my ($pid, $exitcode, $stdout, $stderr) = @_;
 
+            Encode::_utf8_on($stdout);
+            Encode::_utf8_on($stderr);
+
             $stdout = common_transforms $stdout;
             $stderr = common_transforms $stderr;
 
