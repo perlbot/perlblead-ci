@@ -59,7 +59,7 @@ sub make_new_future {
         push @tests, $res if $res->{code};
     }
 
-    if ($code && $counter < 2000) {
+    if ($code) {
         # Replace ourselves with a new future
         my $p = sprintf "%0.02f%%", (100*$counter++)/($cs);
         say "Running $counter/$cs [$p] $code";
