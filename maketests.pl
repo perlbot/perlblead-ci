@@ -35,6 +35,8 @@ for my $fn (glob('evals/*.lst')) {
 
 my $loop = IO::Async::Loop->new();
 
+# Filter out code that will have changing lengths, or other weird things that i just can't count on being stable in any way
+@code = grep {$_ !~ /(ENV|%::|%main|->now|time|\$\^V|\$\^T|\$\^O|\$\^X|version|rand|Time::Piece|[@%]INC|\$\$\W|\$\]|\$code|Carp)/} @code;
 
 # Make a future for everything! then go ahead and coallesce them.
 my $counter = 0;
@@ -79,6 +81,16 @@ for (1..3) {
     make_new_future();
 }
 $loop->run;
+
+# Filter out some most likely unstable outputs that i don't want to test
+my $grepsub = sub {
+       (length($_->{err} . $_->{out}) < 1024) # Ignore long outputs, they're unlikely to be stable (likely %INC and such)
+    && !($_->{err} =~ /Unrecognized character/)
+    && !($_->{err} =~ /Killed/
+       ||$_->{out} =~ /Killed/)
+};
+
+@tests = grep {$grepsub->($_)} @tests;
 
 store {tests => \@tests}, 't/defs.stor';
 
