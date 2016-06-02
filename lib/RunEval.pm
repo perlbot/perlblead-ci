@@ -21,9 +21,6 @@ sub common_transforms {
     # Pretend every (eval \d+) is eval 1.  might cause it to miss some things but nothing important
     $input =~ s/\(eval \d+\)/(eval 1)/g;
 
-    # Who the fuck did this?  I want to kill them.
-    $input =~ s/[\x{D800}-\x{DFFF}]/\x{FFFD}/g;
-
     # TODO recorgnize paths to perlbrew/perl here and turn them all into PERLBREW_ROOT/perls/PERL_VERSION/...
 
     return $input;

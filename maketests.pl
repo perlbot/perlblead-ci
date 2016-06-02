@@ -8,10 +8,10 @@ use warnings;
 use lib './lib';
 
 use Data::Dumper;
-use JSON::MaybeXS;
 use utf8;
 use open ':utf8';
 use RunEval;
+use Storable qw/store/;
 
 use IO::Async::Function;
 use IO::Async::Loop;
@@ -80,10 +80,5 @@ for (1..3) {
 }
 $loop->run;
 
-my $json = JSON::MaybeXS->new(utf8 => 0, pretty => 1);
+store {tests => \@tests}, 't/defs.stor';
 
-
-open(my $test_out, ">t/defs.json") or die "$!: defs.json";
-binmode($test_out, ":encoding(utf8)");
-print $test_out $json->encode({tests => \@tests});
-close($test_out);
