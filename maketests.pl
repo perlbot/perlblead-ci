@@ -39,6 +39,9 @@ my $loop = IO::Async::Loop->new();
 # Make a future for everything! then go ahead and coallesce them.
 my $counter = 0;
 my @tests;
+
+#@code = (q{binmode STDOUT; 'Just another Unicode hacker,' =~ tr[\x20-\x7f][\xff30-\xff5f]r;}, q{print q;This is a test;;});
+
 my $cs = @code;
 
 my %active_futures;
@@ -56,7 +59,7 @@ sub make_new_future {
         push @tests, $res if $res->{code};
     }
 
-    if ($code) {
+    if ($code && $counter < 2000) {
         # Replace ourselves with a new future
         my $p = sprintf "%0.02f%%", (100*$counter++)/($cs);
         say "Running $counter/$cs [$p] $code";
@@ -72,7 +75,7 @@ sub make_new_future {
     }
 }
 
-for (1..4) {
+for (1..3) {
     make_new_future();
 }
 $loop->run;

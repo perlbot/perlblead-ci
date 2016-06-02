@@ -15,8 +15,9 @@ sub common_transforms {
     my $input = "".shift();
   
     # If this dies on decoding, it means that things went differently in the eval and it's already decoded.  some weird evals do that, so handle this non-fatally
-    Encode::_utf8_on($input);
-    $input = eval {decode("utf8", $input)} // $input;
+    my $uinput = "$input"; # make a copy...
+    Encode::_utf8_on($uinput);
+    $input = eval {decode("utf8", $uinput)} // $input;
     # Pretend every (eval \d+) is eval 1.  might cause it to miss some things but nothing important
     $input =~ s/\(eval \d+\)/(eval 1)/g;
 
@@ -70,7 +71,7 @@ sub compare_res {
             err_mask => unpack("H*", $stderr_mask),
         }
     } else {
-       print "^^^ VOLATILE TEST!\n";
+        $res1->{volatile} = 1;
         return $res1;
     }
 }
