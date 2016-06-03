@@ -114,7 +114,7 @@ sub runner_async {
 
     $c_in = encode("utf8", $c_in); # we need to treat it as a raw byte stream because of a bug
 
-    my $cmd = ['sudo', './runeval.sh'];
+    my $cmd = ['sudo', './runeval'];
  
     debug "Code out is << $c_in >>";
     debug "cmd is", @$cmd;
@@ -154,7 +154,7 @@ sub runner_ipc {
     my $c_in = "perl $code";
 
     $c_in = encode("utf8", $c_in); # we need to treat it as a raw byte stream because of a bug
-    my $cmd = ['sudo', './runeval.sh'];
+    my $cmd = ['sudo', './runeval'];
     
     my $res = eval {run $cmd, \$c_in, \$c_out, \$c_err, timeout(30);};
 
