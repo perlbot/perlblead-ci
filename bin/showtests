@@ -1,0 +1,12 @@
+#!/usr/bin/env perl
+
+use v5.20;
+use feature qw/postderef/;
+
+use strict;
+use warnings;
+
+use Data::Dumper;
+use Storable;
+
+print Dumper(retrieve('t/defs.stor'));

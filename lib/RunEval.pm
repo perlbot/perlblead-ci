@@ -10,6 +10,34 @@ use utf8;
 use Data::Dumper;
 use FindBin;
 
+my %options;
+my %replacements;
+my $replacement_re;
+sub init {
+    # Get the version of the perl in test, v5.25.2
+    my ($version_raw, undef) = _run_eval_ipc('"$^V"');
+    my $version_str = $version_raw =~ s/^v//ir;
+    my (@version_parts) = $version_raw =~ /v(\d+)\.(\d+)\.(\d+)/g;
+
+    my $perlbrewroot = $ENV{PERLBREW_ROOT};
+    my $perl_identity = $ENV{IDENT} // 'perl-blead';
+    my $script_dir = $ENV{SCRIPTDIR} // '/home/ryan/workspace/perlblead-ci/bin';
+
+    %options = (
+        version_str => $version_str,
+        version_commas => join(',', @version_parts),
+        version_raw => $version_raw,
+        perlbrew_root => $perlbrewroot,
+        perl_ident => $perl_identity,
+        script_dir => $script_dir,
+        perl_intest => 'perlbot-intest',
+    );
+    %replacements = map { ($options{$_} => "%%".uc($_)."%%") } keys %options;
+    my $restring = "(" . join('|', map {"\Q$_\E"} sort {length $b <=> length $a} keys %replacements). ")";
+    $replacement_re = qr/$restring/;
+}
+init();
+
 sub debug {say @_ if $ENV{DEBUG}};
 
 sub common_transforms {
@@ -22,7 +50,11 @@ sub common_transforms {
     # Pretend every (eval \d+) is eval 1.  might cause it to miss some things but nothing important
     $input =~ s/\(eval \d+\)/(eval 1)/g;
 
-    # TODO recorgnize paths to perlbrew/perl here and turn them all into PERLBREW_ROOT/perls/PERL_VERSION/...
+    #recorgnize paths to perlbrew/perl here and turn them all into PERLBREW_ROOT/perls/PERL_VERSION/...
+    $input =~ s/$replacement_re/$replacements{$1}/eg;
+
+    #          got: '/home/ryan/workspace/perlblead-ci/bin/runeval: line 5:   473 Terminated              /home/ryan/perl5/perlbrew/perls/perlbot-intest/bin/perl /home/ryan/bots/perlbuut/lib/eval.pl
+    $input =~ s/line\s+\d+:\s+\d+\s+(Killed|Terminated)\s+/line N: PID $1 /g;
 
     return $input;
 }
@@ -56,11 +88,16 @@ sub compare_res {
         # blob close matches together, likely the same digit in the same place kind of thing, we should try to compensate
         $stderr_mask =~ s/\x00\xFF\x00/\x00\x00\x00/g;
         $stderr_mask =~ s/\x00\xFF\xFF\x00/\x00\x00\x00\x00/g;
+
+        $stderr_mask =~ s/\x00\x00\xFF\xFF\xFF/\x00\x00\x00\x00\x00\x00/; # take care of the last 12 bits being stable in ASLR but not between versions
+        $stderr_mask =~ s/\xFF\x00\x00/\x00\x00\x00/; # Take care of a leading address digit in ASLR configs
         $stderr_mask =~ s/\x00\x00\xFF$/\x00\x00\x00/; # take care of a trailing digit usually
         $stderr_mask =~ s/^\xFF\x00\x00/\x00\x00\x00/; # similarly take care of leading digits
 
         $stdout_mask =~ s/\x00\xFF\x00/\x00\x00\x00/g;
         $stdout_mask =~ s/\x00\xFF\xFF\x00/\x00\x00\x00\x00/g;
+        $stdout_mask =~ s/\x00\x00\xFF\xFF\xFF/\x00\x00\x00\x00\x00\x00/; # take care of the last 12 bits being stable in ASLR but not between versions
+        $stdout_mask =~ s/\xFF\x00\x00/\x00\x00\x00/; # Take care of a leading address digit in ASLR configs
         $stdout_mask =~ s/\x00\x00\xFF$/\x00\x00\x00/; # take care of a trailing digit usually
         $stdout_mask =~ s/^\xFF\x00\x00/\x00\x00\x00/; # similarly take care of leading digits
 
@@ -148,7 +185,8 @@ sub runner_async {
     return Future->wait_any($proc_future, $timeout_future);
 }
 
-sub runner_ipc {
+# Seperate sub that doesn't do any transforms, used for init
+sub _run_eval_ipc {
     my ($code) = @_;
     my ($c_out, $c_err);
 
@@ -158,6 +196,14 @@ sub runner_ipc {
     my $cmd = ['sudo', $FindBin::Bin . '/../bin/runeval'];
     
     my $res = eval {run $cmd, \$c_in, \$c_out, \$c_err, timeout(30);};
+
+    return ($c_out, $c_err);
+}
+
+sub runner_ipc {
+    my ($code) = @_;
+    
+    my ($c_out, $c_err) = _run_eval_ipc($code);
 
     $c_out = common_transforms $c_out;
     $c_err = common_transforms $c_err;

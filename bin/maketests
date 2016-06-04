@@ -42,8 +42,6 @@ my $loop = IO::Async::Loop->new();
 my $counter = 0;
 my @tests;
 
-#@code = (q{binmode STDOUT; 'Just another Unicode hacker,' =~ tr[\x20-\x7f][\xff30-\xff5f]r;}, q{print q;This is a test;;});
-
 my $cs = @code;
 
 my %active_futures;
