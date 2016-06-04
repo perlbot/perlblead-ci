@@ -28,7 +28,13 @@ $SCRIPTDIR/build-blead
 $SCRIPTDIR/install-cpan-deps
 rm -f $PERLBREW_ROOT/perls/perlbot-intest
 ln -s $PERLBREW_ROOT/perls/$IDENT $PERLBREW_ROOT/perls/perlbot-intest
+unset -e
 prove $SCRIPTDIR/../t/
+FAILED=$?
+if [ $FAILED > 10 ]; then
+	exit 1;
+fi
+set -e
 touch $PERLBREW_ROOT/perls/$IDENT/.perlbot_known_good
 rm -f $PERLBREW_ROOT/perls/perlbot-evalperl
 ln -s $PERLBREW_ROOT/perls/$IDENT $PERLBREW_ROOT/perls/perlbot-evalperl
