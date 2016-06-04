@@ -88,16 +88,15 @@ sub compare_res {
         # blob close matches together, likely the same digit in the same place kind of thing, we should try to compensate
         $stderr_mask =~ s/\x00\xFF\x00/\x00\x00\x00/g;
         $stderr_mask =~ s/\x00\xFF\xFF\x00/\x00\x00\x00\x00/g;
-
-        $stderr_mask =~ s/\x00\x00\xFF\xFF\xFF/\x00\x00\x00\x00\x00\x00/; # take care of the last 12 bits being stable in ASLR but not between versions
-        $stderr_mask =~ s/\xFF\x00\x00/\x00\x00\x00/; # Take care of a leading address digit in ASLR configs
+        $stderr_mask =~ s/\x00\x00\xFF\xFF\xFF/\x00\x00\x00\x00\x00\x00/g; # take care of the last 12 bits being stable in ASLR but not between versions
+        $stderr_mask =~ s/\xFF\x00\x00/\x00\x00\x00/g; # Take care of a leading address digit in ASLR configs
         $stderr_mask =~ s/\x00\x00\xFF$/\x00\x00\x00/; # take care of a trailing digit usually
         $stderr_mask =~ s/^\xFF\x00\x00/\x00\x00\x00/; # similarly take care of leading digits
 
         $stdout_mask =~ s/\x00\xFF\x00/\x00\x00\x00/g;
         $stdout_mask =~ s/\x00\xFF\xFF\x00/\x00\x00\x00\x00/g;
-        $stdout_mask =~ s/\x00\x00\xFF\xFF\xFF/\x00\x00\x00\x00\x00\x00/; # take care of the last 12 bits being stable in ASLR but not between versions
-        $stdout_mask =~ s/\xFF\x00\x00/\x00\x00\x00/; # Take care of a leading address digit in ASLR configs
+        $stdout_mask =~ s/\x00\x00\xFF\xFF\xFF/\x00\x00\x00\x00\x00\x00/g; # take care of the last 12 bits being stable in ASLR but not between versions
+        $stdout_mask =~ s/\xFF\x00\x00/\x00\x00\x00/g; # Take care of a leading address digit in ASLR configs
         $stdout_mask =~ s/\x00\x00\xFF$/\x00\x00\x00/; # take care of a trailing digit usually
         $stdout_mask =~ s/^\xFF\x00\x00/\x00\x00\x00/; # similarly take care of leading digits
 
