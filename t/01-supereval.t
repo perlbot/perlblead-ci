@@ -85,8 +85,6 @@ sub run_test {
     
     my $code = $test->{code};
 
-    print Dumper($test);
-#        print STDERR "${fn}[$rand]: $code";
     my $res = RunEval::runner_ipc($code);
 
     test_res($res, $test); # check it with normal display if it fails
