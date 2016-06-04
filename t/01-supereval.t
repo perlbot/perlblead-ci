@@ -9,7 +9,9 @@ no warnings 'experimental';
 
 use Data::Dumper;
 use JSON::MaybeXS;
-use lib './lib';
+use FindBin;
+use lib "$FindBin::Bin/../lib";
+
 use RunEval;
 
 use utf8;
@@ -92,7 +94,7 @@ sub run_test {
 
 #my $tests = do {local $/; open(my $fh, "<:raw","t/filtered.json"); decode_json <$fh>};
 #my $fulltests = reduce {[@$a, @$b]} map {$tests->{$_}} keys $tests->%*;
-my $tests = retrieve 't/defs.stor';
+my $tests = retrieve "$FindBin::Bin/../t/defs.stor";
 my $fulltests = $tests->{tests};
 
 my $numtests = int(0.10 * @$fulltests);
