@@ -10,7 +10,7 @@ set -u
 set -e
 
 FREE=`df -k / | tail -n 1 | awk '{print $4}'`
-IDENT=${IDENT:-"perlbot-blead-`date --iso-8601`"}
+IDENT=${IDENT:-"perlbot-blead-`date --iso-8601`_$BASHPID"}
 MINSPACE=$(( 1024*1024 ))
 REALPERL=${REALPERL:-"perl-blead"}
 
