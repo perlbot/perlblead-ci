@@ -56,6 +56,21 @@ sub common_transforms {
     #          got: '/home/ryan/workspace/perlblead-ci/bin/runeval: line 5:   473 Terminated              /home/ryan/perl5/perlbrew/perls/perlbot-intest/bin/perl /home/ryan/bots/perlbuut/lib/eval.pl
     $input =~ s/line\s+\d+:\s+\d+\s+(Killed|Terminated)\s+/line N: PID $1 /g;
 
+# not ok 85 - STDERR for: system "perl -v"
+#   Failed test 'STDERR for: system "perl -v"'
+#   at t/01-supereval.t line 75.
+#          got: '%%SCRIPT_DIR%%/runeval: line 6: 21024 Bad system call         %%PERLBREW_ROOT%%/perls/%%PERL_INTEST%%/bin/perl /home/ryan/bots/perlbuut/lib/eval.pl
+# '
+#     expected: '%%SCRIPT_DIR%%/runeval: line 6: 10845 Bad system call         %%PERLBREW_ROOT%%/perls/%%PERL_INTEST%%/bin/perl /home/ryan/bots/perlbuut/lib/eval.pl
+# '
+#         MASK: '1111111111111111111111111111111111110111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111'
+#          got: '%%SCRIPT_DIR%%/runeval: line 6: 2102^@ Bad system call         %%PERLBREW_ROOT%%/perls/%%PERL_INTEST%%/bin/perl /home/ryan/bots/perlbuut/lib/eval.pl
+# '
+#     expected: '%%SCRIPT_DIR%%/runeval: line 6: 1084^@ Bad system call         %%PERLBREW_ROOT%%/perls/%%PERL_INTEST%%/bin/perl /home/ryan/bots/perlbuut/lib/eval.pl
+# '
+
+    $input =~ s|line\s+6:\s+(\d+)|line 1: 1|g;
+
     return $input;
 }
 
