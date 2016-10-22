@@ -15,7 +15,8 @@ my %replacements;
 my $replacement_re;
 sub init {
     # Get the version of the perl in test, v5.25.2
-    my ($version_raw, undef) = _run_eval_ipc('"$^V"');
+    my ($version_raw, $err) = _run_eval_ipc('"$^V"');
+    die "$err" if $err;
     my $version_str = $version_raw =~ s/^v//ir;
     my (@version_parts) = $version_raw =~ /v(\d+)\.(\d+)\.(\d+)/g;
 
