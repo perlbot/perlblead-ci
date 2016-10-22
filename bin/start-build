@@ -28,6 +28,7 @@ $SCRIPTDIR/build-blead
 $SCRIPTDIR/install-cpan-deps
 rm -f $PERLBREW_ROOT/perls/perlbot-intest
 ln -s $PERLBREW_ROOT/perls/$IDENT $PERLBREW_ROOT/perls/perlbot-intest
+sudo setcap cap_sys_chroot+ep `readlink -f $PERLBREW_ROOT/perls/$IDENT/bin/perl`
 set +o errexit
 perl $SCRIPTDIR/../t/01-supereval.t
 FAILED=$?
@@ -36,7 +37,5 @@ if (( $FAILED > 10 )); then
 	exit 1;
 fi
 set -e
-touch $PERLBREW_ROOT/perls/$IDENT/.perlbot_known_good
-rm -f $PERLBREW_ROOT/perls/perlbot-inuse
-ln -s $PERLBREW_ROOT/perls/$IDENT $PERLBREW_ROOT/perls/perlbot-inuse
-sudo systemctl restart evalserver # restart the eval server
+
+$SCRIPTDIR/promote-intest
