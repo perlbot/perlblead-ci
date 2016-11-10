@@ -10,4 +10,4 @@ echo Uninstalling any previous perl as $IDENT
 perlbrew uninstall $IDENT
 #ls ~/perl5/perlbrew/dists
 
-perlbrew install $REALPERL --as $IDENT $PERLBREWOPTS
+perlbrew install $REALPERL --as $IDENT -Dccflags="-fpie -fPIC -march=native -fstack-protector-all -pie -D_FORTIFY_SOURCE=2" -Dldflags="-Wl,-z,now -Wl,-zrelro" $PERLBREWOPTS
