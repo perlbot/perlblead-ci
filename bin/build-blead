@@ -1,13 +1,16 @@
 #!/bin/bash
 
-set -u
+set -ue
 echo ident: $IDENT
 
 PERLBREWOPTS=${PERLBREWOPTS:-""}
 # Remove old blead tarball.  full clean might lose data we want to keep for now
 rm -f $PERLBREW_ROOT/dists/blead.tar.gz
 echo Uninstalling any previous perl as $IDENT
-perlbrew uninstall $IDENT
+perlbrew uninstall $IDENT || echo "No perl found"
 #ls ~/perl5/perlbrew/dists
 
-perlbrew install $REALPERL --as $IDENT -Dccflags="-fpie -fPIC -march=native -fstack-protector-all -pie -D_FORTIFY_SOURCE=2" -Dldflags="-Wl,-z,now -Wl,-zrelro" $PERLBREWOPTS
+cd /home/ryan/workspace/perl/
+git pull
+
+perlbrew install /home/ryan/workspace/perl --as $IDENT -Dccflags="-fpie -fPIC -march=native -fstack-protector-all -pie -D_FORTIFY_SOURCE=2" -Dldflags="-Wl,-z,now -Wl,-zrelro" $PERLBREWOPTS
