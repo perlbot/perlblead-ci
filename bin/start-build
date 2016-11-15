@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Make sure we have perlbrew env vars
+rm -f $PERLBREW_ROOT/perls/perlbot-intest # Remove old potentially broken -intest perl
 source ~/perl5/perlbrew/etc/bashrc
 
 SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -26,16 +27,17 @@ fi
 
 $SCRIPTDIR/build-blead
 $SCRIPTDIR/install-cpan-deps
-rm -f $PERLBREW_ROOT/perls/perlbot-intest
-ln -s $PERLBREW_ROOT/perls/$IDENT $PERLBREW_ROOT/perls/perlbot-intest
-sudo setcap cap_sys_chroot+ep `readlink -f $PERLBREW_ROOT/perls/$IDENT/bin/perl`
-set +o errexit
-perl $SCRIPTDIR/../t/01-supereval.t
-FAILED=$?
-if (( $FAILED > 10 )); then
-	echo Failed too many tests.  Not switching perls
-	exit 1;
-fi
-set -e
+if [[ -d $PERLBREW_ROOT/perls/$IDENT ]]; then
+	ln -s $PERLBREW_ROOT/perls/$IDENT $PERLBREW_ROOT/perls/perlbot-intest
+	sudo setcap cap_sys_chroot+ep `readlink -f $PERLBREW_ROOT/perls/$IDENT/bin/perl`
+	set +o errexit
+	perl $SCRIPTDIR/../t/01-supereval.t
+	FAILED=$?
+	if (( $FAILED > 10 )); then
+		echo Failed too many tests.  Not switching perls
+		exit 1;
+	fi
+	set -e
 
-$SCRIPTDIR/promote-intest
+	$SCRIPTDIR/promote-intest
+fi
