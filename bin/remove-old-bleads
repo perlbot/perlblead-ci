@@ -1,0 +1,72 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+
+use Data::Dumper;
+use File::Path;
+
+my $PERLPATH = $ENV{HOME}."/perl5/perlbrew/perls/";
+
+sub get_perls {
+    opendir(my $dh, $PERLPATH);
+
+    my @ret = sort grep {/^perlbot-/} readdir($dh);
+    close($dh);
+    return @ret;
+}
+
+sub get_bleads {
+    return grep {/blead/} get_perls;
+}
+
+sub get_in_link {
+    my $link = shift;
+    my $path = readlink $PERLPATH.$link;
+    my ($val) = $path =~ s|$PERLPATH||r;
+    return $val;
+}
+
+sub get_inuse {
+    return get_in_link("perlbot-inuse");
+}
+
+sub get_intest {
+    return get_in_link("perlbot-intest");
+}
+
+sub check_valid {
+   my $perl = shift;
+   return !!(-e $PERLPATH.$perl.'/.perlbot_known_good');
+}
+
+sub remove_perl {
+    my $perl = shift;
+    my $path = $PERLPATH.$perl;
+
+    print "Removing $path\n";
+    File::Path::remove_tree($path);
+#    system(qw[perlbrew uninstall], $perl);
+}
+
+sub remove_invalid {
+    my @perls = get_bleads();
+    my @invalid = grep {!check_valid($_)} @perls;
+
+    remove_perl($_) for @invalid;
+}
+
+sub remove_old_perls {
+    my @perls = get_bleads();
+    my $inuse = get_inuse();
+    my @not_inuse = grep {$_ ne $inuse} @perls;
+
+    pop @not_inuse for 1..5; # remove top 5, so we don't get rid of them
+
+    remove_perl($_) for @not_inuse;
+}
+
+remove_invalid();
+remove_old_perls();
+
+#print Dumper([map {+{$_ => check_valid($_)}} get_bleads()]);
