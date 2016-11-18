@@ -31,6 +31,10 @@ sub get_inuse {
     return get_in_link("perlbot-inuse");
 }
 
+sub get_mainbot {
+    return get_in_link("perlbot-mainbot");
+}
+
 sub get_intest {
     return get_in_link("perlbot-intest");
 }
@@ -59,7 +63,8 @@ sub remove_invalid {
 sub remove_old_perls {
     my @perls = get_bleads();
     my $inuse = get_inuse();
-    my @not_inuse = grep {$_ ne $inuse} @perls;
+    my $mainbot = get_mainbot();
+    my @not_inuse = grep {$_ ne $inuse && $_ ne $mainbot} @perls;
 
     pop @not_inuse for 1..5; # remove top 5, so we don't get rid of them
 
