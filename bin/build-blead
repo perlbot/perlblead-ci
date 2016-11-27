@@ -16,6 +16,6 @@ cd /home/ryan/workspace/perl/
 make clean || echo already clean
 git reset --hard HEAD
 git clean -fd
-git pull
+git pull --no-edit
 
 perlbrew install /home/ryan/workspace/perl --as $IDENT -Dccflags="-fpie -fPIC -march=native -fstack-protector-all -pie -D_FORTIFY_SOURCE=2" -Dldflags="-Wl,-z,now -Wl,-zrelro" $PERLBREWOPTS
