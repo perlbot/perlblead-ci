@@ -1,0 +1,12 @@
+#!/bin/bash
+
+PERLDIR=$(readlink -f /home/ryan/perl5/perlbrew/perls/perlbot-inuse)
+IDENT=$(readlink -f $PERLDIR/bin/perl | perl -pe '$_=s|/home/ryan/perl5/perlbrew/perls/([^/]+)/.*?$|$1|r')
+PERL=$(readlink -f /home/ryan/perl5/perlbrew/perls/perlbot-mainbot/bin/perl)
+
+echo $PERLDIR
+
+rm -f /home/ryan/perl5/perlbrew/perls/perlbot-intest
+ln -s $PERLDIR /home/ryan/perl5/perlbrew/perls/perlbot-intest
+export IDENT
+schedtool -B -n20 -e $PERL /home/ryan/workspace/perlblead-ci/bin/maketests

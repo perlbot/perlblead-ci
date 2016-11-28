@@ -20,6 +20,7 @@ sub debug {say @_ if $ENV{DEBUG}};
 
 binmode \*STDOUT, ":encoding(utf8)";
 
+print "Running for IDENT=".$ENV{IDENT}."\n";
 print "Loading code\n";
 my @code;
 
