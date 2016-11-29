@@ -1,5 +1,11 @@
 #!/bin/bash
 
+echo Started building on $(date)
+function cleanup {
+  echo Build finished on $(date)
+}
+trap cleanup EXIT
+
 # Make sure we have perlbrew env vars
 rm -f $PERLBREW_ROOT/perls/perlbot-intest # Remove old potentially broken -intest perl
 source ~/perl5/perlbrew/etc/bashrc
@@ -28,6 +34,7 @@ fi
 $SCRIPTDIR/build-blead
 $SCRIPTDIR/install-cpan-deps
 if [[ -d $PERLBREW_ROOT/perls/$IDENT ]]; then
+	rm -f $PERLBREW_ROOT/perls/perlbot-intest
 	ln -s $PERLBREW_ROOT/perls/$IDENT $PERLBREW_ROOT/perls/perlbot-intest
 	sudo setcap cap_sys_chroot+ep `readlink -f $PERLBREW_ROOT/perls/$IDENT/bin/perl`
 	set +o errexit

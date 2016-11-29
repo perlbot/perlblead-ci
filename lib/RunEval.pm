@@ -21,8 +21,11 @@ sub init {
     my (@version_parts) = $version_raw =~ /v(\d+)\.(\d+)\.(\d+)/g;
 
     my $perlbrewroot = $ENV{PERLBREW_ROOT};
-    my $perl_identity = $ENV{IDENT} // 'perl-blead';
     my $script_dir = $ENV{SCRIPTDIR} // '/home/ryan/workspace/perlblead-ci/bin';
+    my $perl_interp = readlink($ENV{PERLBREW_ROOT}.'/perls/perlbot-intest/bin/perl');
+    my ($detect_perl_ident) = ($perl_interp =~ m|^$ENV{PERLBREW_ROOT}/perls/([^/]+)/.*$|);
+
+    my $perl_identity = $ENV{IDENT} // $detect_perl_ident // 'perlbot-blead';
 
     %options = (
         version_str => $version_str,
@@ -51,9 +54,13 @@ sub common_transforms {
     # Pretend every (eval \d+) is eval 1.  might cause it to miss some things but nothing important
     $input =~ s/\(eval \d+\)/(eval 1)/g;
 
+#     use Data::Dumper;
+#     warn "REGEX => $replacement_re\n";
+#     warn "REPLACEMENTS => " . Dumper(\%replacements);
+#     warn "BEFORE REPLACE => $input\n";
     #recorgnize paths to perlbrew/perl here and turn them all into PERLBREW_ROOT/perls/PERL_VERSION/...
     $input =~ s/$replacement_re/$replacements{$1}/eg;
-
+#    warn "AFTER REPLACE  => $input\n";
     #          got: '/home/ryan/workspace/perlblead-ci/bin/runeval: line 5:   473 Terminated              /home/ryan/perl5/perlbrew/perls/perlbot-intest/bin/perl /home/ryan/bots/perlbuut/lib/eval.pl
     $input =~ s/line\s+\d+:\s+\d+\s+(Killed|Terminated)\s+/line N: PID $1 /g;
 
