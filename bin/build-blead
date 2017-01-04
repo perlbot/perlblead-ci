@@ -5,7 +5,7 @@ set -ue
 IDENT=${IDENT:-"perlbot-tmp"}
 echo ident: $IDENT
 
-PERLBREWOPTS=${PERLBREWOPTS:-""}
+PERLBREWOPTS=${PERLBREWOPTS:-"--verbose"}
 # Remove old blead tarball.  full clean might lose data we want to keep for now
 #rm -f $PERLBREW_ROOT/dists/blead.tar.gz
 echo Uninstalling any previous perl as $IDENT

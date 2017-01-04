@@ -2,5 +2,6 @@
 
 set -u
 set -e
+
 # Try twice, as I've been getting weird results lately
 perlbrew exec --with $IDENT cpanm --verbose --installdeps /home/ryan/bots/perlbuut || perlbrew exec --with $IDENT cpanm --verbose --installdeps /home/ryan/bots/perlbuut
