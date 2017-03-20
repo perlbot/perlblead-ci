@@ -3,6 +3,6 @@
 set -u
 set -e
 
-export PERL_USE_UNSAFE_INC=1
 # Try twice, as I've been getting weird results lately
+#perlbrew exec --with $IDENT cpanm --verbose file://$SCRIPTDIR/modules/Clone-0.38_patched.tar.gz # install patched version for @INC misisng .
 perlbrew exec --with $IDENT cpanm --verbose --installdeps /home/ryan/bots/perlbuut

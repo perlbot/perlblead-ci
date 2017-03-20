@@ -14,8 +14,10 @@ perlbrew uninstall $IDENT || echo "No perl found"
 
 cd /home/ryan/workspace/perl/
 make clean || echo already clean
+rm -f /home/ryan/workspace/perl/dist/Time-HiRes/xdefine # clean up xdefine, not sure why it isn't done already, maybe from failed builds before
 git reset --hard HEAD
 git clean -fd
 git pull --no-edit
+git stash apply
 
 perlbrew install /home/ryan/workspace/perl --as $IDENT -Dccflags="-fpie -fPIC -march=native -fstack-protector-all -pie -D_FORTIFY_SOURCE=2" -Dldflags="-Wl,-z,now -Wl,-zrelro" $PERLBREWOPTS
