@@ -8,3 +8,4 @@ touch $PERLBREW_ROOT/perls/$IDENT/.perlbot_known_good
 rm -f $PERLBREW_ROOT/perls/perlbot-inuse
 ln -s `readlink -f $PERLBREW_ROOT/perls/$IDENT` $PERLBREW_ROOT/perls/perlbot-inuse
 sudo systemctl restart evalserver # restart the eval server
+sudo systemctl restart evalserver2 # restart the eval server

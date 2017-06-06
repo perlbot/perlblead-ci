@@ -6,4 +6,4 @@ set -e
 export PERL_USE_UNSAFE_INC=1
 perlbrew exec --with $IDENT cpanm --force --verbose Class::Load Class::Load::XS
 # Try twice, as I've been getting weird results lately
-perlbrew exec --with $IDENT cpanm --verbose --installdeps /home/ryan/bots/perlbuut
+perlbrew exec --with $IDENT cpanm --verbose --installdeps /home/ryan/bots/perlbuut || perlbrew exec --with $IDENT cpanm --verbose --installdeps /home/ryan/bots/perlbuut
