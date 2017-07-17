@@ -1,0 +1,18 @@
+#!/usr/bin/env perl
+
+use strict;
+use FindBin;
+use lib $FindBin::Bin.'/../lib';
+use App::EvalServerAdvanced::Sandbox;
+use App::EvalServerAdvanced::Config;
+$App::EvalServerAdvanced::Config::config_dir = "/home/ryan/evalserver/sandbox/etc";
+
+config();
+use Sereal qw/decode_sereal/;
+use Data::Dumper;
+
+my $input = do {local $/; <STDIN>};
+my $obj = decode_sereal $input;
+
+App::EvalServerAdvanced::Sandbox::run_eval(@$obj);
+1;

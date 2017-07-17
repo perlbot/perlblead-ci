@@ -9,6 +9,7 @@ use Encode qw/encode decode/;
 use utf8;
 use Data::Dumper;
 use FindBin;
+use Sereal qw/encode_sereal/;
 
 my %options;
 my %replacements;
@@ -170,9 +171,9 @@ sub future_to_result {
 sub runner_async {
     my ($code, $loop) = @_;
 
-    my $c_in = "perl $code";
+    my $c_in = encode_sereal([$code, "perl"]);
 
-    $c_in = encode("utf8", $c_in); # we need to treat it as a raw byte stream because of a bug
+    #$c_in = encode("utf8", $c_in); # we need to treat it as a raw byte stream because of a bug
 
     my $cmd = ['sudo', $FindBin::Bin . '/../bin/runeval'];
  
@@ -212,9 +213,9 @@ sub _run_eval_ipc {
     my ($code) = @_;
     my ($c_out, $c_err);
 
-    my $c_in = "perl $code";
+    my $c_in = encode_sereal([$code, "perl"]);
 
-    $c_in = encode("utf8", $c_in); # we need to treat it as a raw byte stream because of a bug
+    #$c_in = encode("utf8", $c_in); # we need to treat it as a raw byte stream because of a bug
     my $cmd = ['sudo', $FindBin::Bin . '/../bin/runeval'];
     
     my $res = eval {run $cmd, \$c_in, \$c_out, \$c_err, timeout(30);};
