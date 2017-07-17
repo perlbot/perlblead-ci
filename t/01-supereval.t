@@ -20,15 +20,15 @@ use Test::More;
 use List::Util qw/reduce shuffle/;
 use Storable;
 
-use Encode qw/encode_utf8 decode_utf8/;
+use Encode qw/encode_utf8 decode_utf8 encode/;
 
 my $builder = Test::More->builder;
 
 sub is_eq_mask {
     my($got, $expect, $masq, $name ) = @_;
  
-    my $expect_masq = "$expect"; #encode_utf8($expect);
-    my $got_masq = "$got"; #encode_utf8($got);
+    my $expect_masq = encode("utf8", "$expect"); #encode_utf8($expect);
+    my $got_masq = encode("utf8", "$got"); #encode_utf8($got);
 
     my $rmasq = pack("H*", $masq);
 
