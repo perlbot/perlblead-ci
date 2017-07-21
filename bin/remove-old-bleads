@@ -64,7 +64,8 @@ sub remove_old_perls {
     my @perls = get_bleads();
     my $inuse = get_inuse();
     my $mainbot = get_mainbot();
-    my @not_inuse = grep {$_ ne $inuse && $_ ne $mainbot} @perls;
+    my $intest = get_intest();
+    my @not_inuse = grep {$_ ne $inuse && $_ ne $mainbot && $_ ne $intest} @perls;
 
     pop @not_inuse for 1..5; # remove top 5, so we don't get rid of them
 
