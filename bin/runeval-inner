@@ -8,11 +8,12 @@ use App::EvalServerAdvanced::Config;
 $App::EvalServerAdvanced::Config::config_dir = "/home/ryan/evalserver/sandbox/etc";
 
 config();
-use Sereal qw/decode_sereal/;
+#use Sereal qw/decode_sereal/;
+use JSON;
 use Data::Dumper;
 
 my $input = do {local $/; <STDIN>};
-my $obj = decode_sereal $input;
+my $obj = decode_json $input;
 
 App::EvalServerAdvanced::Sandbox::run_eval(@$obj);
 1;
