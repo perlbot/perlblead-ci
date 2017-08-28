@@ -3,8 +3,16 @@
 set -u
 set -e
 
+function call_cpanm() {
+  perlbrew exec --with $IDENT cpanm --verbose $@
+}
+
 # export PERL_USE_UNSAFE_INC=1
 # perlbrew exec --with $IDENT cpanm --force --verbose Class::Load Class::Load::XS
-perlbrew exec --with $IDENT cpanm --verbose B::Debug
-# Try twice, as I've been getting weird results lately
-perlbrew exec --with $IDENT cpanm --verbose --installdeps /home/ryan/bots/perlbuut || perlbrew exec --with $IDENT cpanm --verbose --installdeps /home/ryan/bots/perlbuut
+call_cpanm B::Debug
+call_cpanm List::MoreUtils::XS # TODO find out wtf this is all about
+call_cpanm --installdeps /home/ryan/bots/perlbuut || call_cpanm --installdeps /home/bots/perlbuut
+# perlbrew exec --with $IDENT cpanm --verbose B::Debug
+# perlbrew exec --with $IDENT cpanm --verbose
+# # Try twice, as I've been getting weird results lately
+# perlbrew exec --with $IDENT cpanm --verbose --installdeps /home/ryan/bots/perlbuut || perlbrew exec --with $IDENT cpanm --verbose --installdeps /home/ryan/bots/perlbuut
