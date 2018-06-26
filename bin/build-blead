@@ -23,4 +23,4 @@ git fetch --all
 git pull --no-edit || echo NOT ON BRANCH
 git stash apply
 
-perlbrew install /home/ryan/workspace/perl --as $IDENT -Dccflags="-fpie -fPIC -march=native -fstack-protector-all -pie -D_FORTIFY_SOURCE=2" -Dldflags="-Wl,-z,now -Wl,-zrelro" -Duseshrplib $PERLBREWOPTS
+perlbrew install /home/ryan/workspace/perl --as $IDENT -Dccflags="-fpie -fPIC -march=native -fstack-protector-all -pie -D_FORTIFY_SOURCE=2 -ggdb" -Dldflags="-Wl,-z,now -Wl,-zrelro" -Duseshrplib $PERLBREWOPTS
