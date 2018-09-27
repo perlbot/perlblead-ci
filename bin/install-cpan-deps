@@ -14,11 +14,16 @@ function call_cpanm() {
 # perlbrew exec --with $IDENT cpanm --force --verbose Class::Load Class::Load::XS
 #call_cpanm B::Debug
 # call_cpanm List::MoreUtils::XS # TODO find out wtf this is all about
-call_cpanm MooseX::Types::Common::Numeric strictures Mouse::Role # Needed for Moo's author tests in xt/
-call_cpanm --force Types::Standard  # force install, broken in 5.27.3+ but there's not much i can do about it
-call_cpanm Class::Tiny
-call_cpanm https://github.com/moose/Moo.git # Needed for 5.27.3+ with breaking change to cpan modules
-call_cpanm --notest --force Devel::NYTProf
+
+#temp for arybase
+call_cpanm /home/ryan/workspace/perlblead-ci/extern/Modern-Perl/*gz
+
+#call_cpanm MooseX::Types::Common::Numeric strictures Mouse::Role # Needed for Moo's author tests in xt/
+#call_cpanm --force Types::Standard  # force install, broken in 5.27.3+ but there's not much i can do about it
+#call_cpanm Class::Tiny
+#call_cpanm https://github.com/moose/Moo.git # Needed for 5.27.3+ with breaking change to cpan modules
+#call_cpanm --notest --force Devel::NYTProf
+
 call_cpanm --installdeps /home/ryan/bots/perlbuut || call_cpanm --installdeps /home/ryan/bots/perlbuut
 # perlbrew exec --with $IDENT cpanm --verbose B::Debug
 # perlbrew exec --with $IDENT cpanm --verbose
