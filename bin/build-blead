@@ -7,6 +7,12 @@ echo ident: $IDENT
 GITBRANCH=${GITBRANCH:-"blead"}
 
 PERLBREWOPTS=${PERLBREWOPTS:-"--verbose"}
+if [[ "$THREADED" == "1" ]]; then
+  THREADING="--thread"
+else
+  THREADING=""
+fi
+
 # Remove old blead tarball.  full clean might lose data we want to keep for now
 #rm -f $PERLBREW_ROOT/dists/blead.tar.gz
 echo Uninstalling any previous perl as $IDENT
@@ -19,8 +25,13 @@ rm -f /home/ryan/workspace/perl/dist/Time-HiRes/xdefine # clean up xdefine, not 
 git reset --hard HEAD
 git clean -fd
 git checkout $GITBRANCH
+git clean -xfd
 git fetch --all
 git pull --no-edit || echo NOT ON BRANCH
-git stash apply
+git clean -xfd
 
-perlbrew install /home/ryan/workspace/perl --as $IDENT -Accflags="-fpie -fPIC -march=native -fstack-protector-all -pie -D_FORTIFY_SOURCE=2 -ggdb  -DPERL_EMERGENCY_SBRK" -Aldflags="-Wl,-z,now -Wl,-zrelro -Wl,-z,noexecstack" -Duseshrplib -Dusemymalloc=y $PERLBREWOPTS
+if [[ $GITBRANCH != "blead" ]]; then
+echo "Ryan Voots                      <simcop2387@simcop2387.info>" >> AUTHORS
+fi
+
+perlbrew install /home/ryan/workspace/perl --as $IDENT -Dusedevel -Accflags="-fpie -fPIC -mtune=native -fstack-protector-all -pie -D_FORTIFY_SOURCE=2 -ggdb  -DPERL_EMERGENCY_SBRK" -Aldflags="-Wl,-z,now -Wl,-zrelro -Wl,-z,noexecstack" -Duseshrplib -Dusemymalloc=y $PERLBREWOPTS $THREADING

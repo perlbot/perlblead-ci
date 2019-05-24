@@ -24,7 +24,9 @@ function call_cpanm() {
 #call_cpanm https://github.com/moose/Moo.git # Needed for 5.27.3+ with breaking change to cpan modules
 #call_cpanm --notest --force Devel::NYTProf
 
-call_cpanm --force File::Slurp
+# call_cpanm --force File::Slurp
+
+call_cpanm --force --notest Perl::Critic || echo "WHAT?"
 
 call_cpanm --installdeps /home/ryan/bots/perlbuut || call_cpanm --installdeps /home/ryan/bots/perlbuut
 # perlbrew exec --with $IDENT cpanm --verbose B::Debug

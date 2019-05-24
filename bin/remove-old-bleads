@@ -11,7 +11,7 @@ my $PERLPATH = $ENV{HOME}."/perl5/perlbrew/perls/";
 sub get_perls {
     opendir(my $dh, $PERLPATH);
 
-    my @ret = sort grep {/^perlbot-/} readdir($dh);
+    my @ret = sort grep {/^perlbot-blead/} readdir($dh);
     close($dh);
     return @ret;
 }
@@ -67,7 +67,7 @@ sub remove_old_perls {
     my $intest = get_intest();
     my @not_inuse = grep {$_ ne $inuse && $_ ne $mainbot && $_ ne $intest} @perls;
 
-    pop @not_inuse for 1..5; # remove top 5, so we don't get rid of them
+    pop @not_inuse for 1..8; # remove top 5, so we don't get rid of them
 
     remove_perl($_) for @not_inuse;
 }

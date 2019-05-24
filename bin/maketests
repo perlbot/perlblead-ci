@@ -12,6 +12,7 @@ use utf8;
 use open ':utf8';
 use RunEval;
 use Storable qw/store/;
+use Carp::Always;
 
 use IO::Async::Function;
 use IO::Async::Loop;
