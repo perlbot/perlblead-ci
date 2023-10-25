@@ -26,7 +26,8 @@ function call_cpanm() {
 
 # call_cpanm --force File::Slurp
 
-call_cpanm --force --notest Perl::Critic || echo "WHAT?"
+# call_cpanm --force --notest Perl::Critic || echo "WHAT?"
+call_cpanm --notest --force indirect
 
 call_cpanm --installdeps /home/ryan/bots/perlbuut || call_cpanm --installdeps /home/ryan/bots/perlbuut
 # perlbrew exec --with $IDENT cpanm --verbose B::Debug

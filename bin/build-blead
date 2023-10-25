@@ -34,4 +34,4 @@ if [[ $GITBRANCH != "blead" ]]; then
 echo "Ryan Voots                      <simcop2387@simcop2387.info>" >> AUTHORS
 fi
 
-perlbrew install /home/ryan/workspace/perl --as $IDENT -Dusedevel -Accflags="-fpie -fPIC -mtune=native -fstack-protector-all -pie -D_FORTIFY_SOURCE=2 -ggdb  -DPERL_EMERGENCY_SBRK" -Aldflags="-Wl,-z,now -Wl,-zrelro -Wl,-z,noexecstack" -Duseshrplib -Dusemymalloc=y $PERLBREWOPTS $THREADING
+perlbrew install /home/ryan/workspace/perl --as $IDENT --debug -Dusedevel -Accflags="-fpie -fPIC -mtune=native -fstack-protector-all -pie -D_FORTIFY_SOURCE=2 -ggdb  -DPERL_EMERGENCY_SBRK" -Aldflags="-Wl,-z,now -Wl,-zrelro -Wl,-z,noexecstack" -Duseshrplib -Dusemymalloc=y $PERLBREWOPTS $THREADING
